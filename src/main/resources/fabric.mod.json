@@ -15,8 +15,14 @@
 	"icon": "bitter_brews_logo.png",
 	"environment": "*",
 	"entrypoints": {
+		"fabric-datagen": [
+			"net.yirmiri.BitterBrewsDataGen"
+		],
 		"main": [
 			"net.yirmiri.BitterBrews"
+		],
+		"client": [
+			"net.yirmiri.BitterBrewsClient"
 		]
 	},
 	"mixins": [
@@ -26,7 +32,8 @@
 		"fabricloader": ">=0.15.11",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"tipsylib": "1.1.2"
 	},
 	"suggests": {
 		"another-mod": "*"
