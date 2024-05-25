@@ -2,6 +2,7 @@ package net.yirmiri.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.yirmiri.register.BBBlocks;
 
 public class BBLootTableGen extends FabricBlockLootTableProvider {
     public BBLootTableGen(FabricDataOutput output) {
@@ -10,6 +11,6 @@ public class BBLootTableGen extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        //addDrop(AUBlocks.GLOOM_LOG);
+        addDrop(BBBlocks.MUD_STOVE);
     }
 }

@@ -1,0 +1,6 @@
+{
+  "block.bitter_brews.mud_stove": "Mud Stove",
+  "death.attack.bitter_brews.stove": "%1$s was cooked sunny side up",
+  "death.attack.bitter_brews.stove.player": "%2$s watched %1$s be cooked sunny side up",
+  "itemgroup.bitter_brews": "Bitter Brews"
+}
