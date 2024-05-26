@@ -99,14 +99,7 @@ public class StoveBlock extends HorizontalFacingBlock {
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (state.get(LIT)) {
-            double posX = pos.getX();
-            double posY = pos.getY();
-            double posZ = pos.getZ();
-            if (random.nextDouble() < 0.1) {
-                world.playSound(posX, posY, posZ, SoundEvents.BLOCK_SMOKER_SMOKE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
-            }
-
-            world.addParticle(ParticleTypes.SMOKE, posX, posY + 1.1, posZ, 0.0, 0.0, 0.0);
+            world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_SMOKER_SMOKE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
         }
     }
 
