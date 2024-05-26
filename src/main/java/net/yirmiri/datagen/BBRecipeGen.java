@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
@@ -21,10 +22,15 @@ public class BBRecipeGen extends FabricRecipeProvider {
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
 
-        //ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, AUBlocks.GLOOM_PLANKS, 4)
-                //.input(AUBlocks.STRIPPED_GLOOM_WOOD)
-                //.criterion(hasItem(AUBlocks.STRIPPED_GLOOM_WOOD), conditionsFromItem(AUBlocks.STRIPPED_GLOOM_WOOD))
-                //.offerTo(exporter, new Identifier(getRecipeName(AUBlocks.GLOOM_PLANKS) + "_from_stripped_wood"));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BBItems.PEPPER_SEEDS, 2)
+                .input(BBItems.PEPPER)
+                .criterion(hasItem(BBItems.PEPPER), conditionsFromItem(BBItems.PEPPER))
+                .offerTo(exporter, new Identifier(getRecipeName(BBItems.PEPPER)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, BBItems.SOUL_PEPPER_SEEDS, 2)
+                .input(BBItems.SOUL_PEPPER)
+                .criterion(hasItem(BBItems.SOUL_PEPPER), conditionsFromItem(BBItems.SOUL_PEPPER))
+                .offerTo(exporter, new Identifier(getRecipeName(BBItems.SOUL_PEPPER)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, BBBlocks.MUD_STOVE, 1)
                 .input('#', Blocks.MUD_BRICKS).input('@', Blocks.MAGMA_BLOCK).input('$', Items.IRON_INGOT)

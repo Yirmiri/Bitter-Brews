@@ -9,6 +9,9 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
+import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.DyeColor;
+import net.yirmiri.block.SoulPepperCropBlock;
 import net.yirmiri.block.StoveBlock;
 import net.yirmiri.register.TLStatusEffects;
 
@@ -17,6 +20,9 @@ public class BBProperties {
         //MISC
         public static final Block.Settings MUD_STOVE = FabricBlockSettings.copyOf(Blocks.MUD_BRICKS).mapColor(MapColor.DARK_RED).luminance((state) -> { return StoveBlock.burntOut(state) ? 6 : 15; });
         public static final Block.Settings MUD_COUNTER = FabricBlockSettings.copyOf(Blocks.MUD_BRICKS);
+        public static final Block.Settings AZALEA_FLOWER = FabricBlockSettings.copyOf(Blocks.GLOW_LICHEN).luminance(0).sounds(BlockSoundGroup.WET_GRASS).mapColor(MapColor.DULL_PINK);
+        public static final Block.Settings PEPPER_CROP = FabricBlockSettings.copyOf(Blocks.NETHER_WART).sounds(BlockSoundGroup.ROOTS).mapColor(MapColor.RED);
+        public static final Block.Settings SOUL_PEPPER_CROP = FabricBlockSettings.copyOf(PEPPER_CROP).mapColor(MapColor.CYAN).luminance((state) -> { return SoulPepperCropBlock.mature(state) ? 0 : 7; });
     }
 
     public static class ItemP {
@@ -29,7 +35,8 @@ public class BBProperties {
 
         //MISC
         public static final Item.Settings GENERIC_ITEM = new FabricItemSettings();
-        public static final Item.Settings TEA_LEAVES = new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1F).build());
+        public static final Item.Settings DRIED_TEA_LEAVES = new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1F).build());
+        public static final Item.Settings MANGO = new FabricItemSettings().food(new FoodComponent.Builder().hunger(4).saturationModifier(0.4F).build());
         public static final Item.Settings PEPPER = new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3F).build());
         public static final Item.Settings SOUL_PEPPER = new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.6F).statusEffect(new StatusEffectInstance(TLStatusEffects.TRAIL_BLAZING, BRIEF_DURATION, 0), 1.0F).alwaysEdible().build());
 

@@ -15,6 +15,7 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         //BLOCKS
         builder.add(BBBlocks.MUD_STOVE, "Mud Stove");
         builder.add(BBBlocks.MUD_COUNTER, "Mud Counter");
+        builder.add(BBBlocks.AZALEA_FLOWER, "Azalea Flower");
 
         //ITEMS
         builder.add(BBItems.MUD_CUP, "Mud Cup");
@@ -39,9 +40,12 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         builder.add(BBItems.COFFEE_BEANS, "Coffee Beans");
         builder.add(BBItems.PEPPER, "Pepper");
         builder.add(BBItems.SOUL_PEPPER, "Soul Pepper");
+        builder.add(BBItems.MANGO, "Mango");
+        builder.add(BBItems.PEPPER_SEEDS, "Pepper Seeds");
+        builder.add(BBItems.SOUL_PEPPER_SEEDS, "Soul Pepper Seeds");
 
         //TOOLTIPS
-        builder.add("bitter_brews.tooltip.soul_pepper", "You might wanna have a cup of milk.");
+        builder.add("bitter_brews.tooltip.soul_pepper", "You might wanna bring a cup of milk.");
         builder.add("bitter_brews.tooltip.cup_of_green_tea", "A sweet earthly brew that soothes you.");
         builder.add("bitter_brews.tooltip.cup_of_azalea_tea", "A sweet blooming brew that soothes you");
         builder.add("bitter_brews.tooltip.cup_of_honey_tea", "Honey the tea is ready!");

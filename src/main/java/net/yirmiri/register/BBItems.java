@@ -1,5 +1,7 @@
 package net.yirmiri.register;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -14,11 +16,14 @@ import net.yirmiri.util.BBProperties;
 public class BBItems {
     //MISC
     public static final Item MUD_CUP = register("mud_cup", new CupItem(BBProperties.ItemP.GENERIC_ITEM));
-    public static final Item PEPPER = register("pepper", new SoulPepperItem(BBProperties.ItemP.PEPPER));
+    public static final Item PEPPER = register("pepper", new Item(BBProperties.ItemP.PEPPER));
     public static final Item SOUL_PEPPER = register("soul_pepper", new SoulPepperItem(BBProperties.ItemP.SOUL_PEPPER));
-    public static final Item COFFEE_BEANS = register("coffee_beans", new CupItem(BBProperties.ItemP.GENERIC_ITEM));
-    public static final Item TEA_LEAVES = register("tea_leaves", new CupItem(BBProperties.ItemP.GENERIC_ITEM));
-    public static final Item DRIED_TEA_LEAVES = register("dried_tea_leaves", new CupItem(BBProperties.ItemP.TEA_LEAVES));
+    public static final Item COFFEE_BEANS = register("coffee_beans", new Item(BBProperties.ItemP.GENERIC_ITEM));
+    public static final Item TEA_LEAVES = register("tea_leaves", new Item(BBProperties.ItemP.GENERIC_ITEM));
+    public static final Item DRIED_TEA_LEAVES = register("dried_tea_leaves", new Item(BBProperties.ItemP.DRIED_TEA_LEAVES));
+    public static final Item MANGO = register("mango", new Item(BBProperties.ItemP.MANGO));
+    public static final Item PEPPER_SEEDS = register("pepper_seeds", new AliasedBlockItem(BBBlocks.PEPPER_CROP, new Item.Settings()));
+    public static final Item SOUL_PEPPER_SEEDS = register("soul_pepper_seeds", new AliasedBlockItem(BBBlocks.SOUL_PEPPER_CROP, new Item.Settings()));
 
     //DRINKS
     public static final Item CUP_OF_WATER = register("cup_of_water", new GenericDrinkItem(BBProperties.ItemP.GENERIC_ITEM, 32, false));

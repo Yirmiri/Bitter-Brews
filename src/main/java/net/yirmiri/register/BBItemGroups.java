@@ -21,10 +21,14 @@ public class BBItemGroups {
 
                 entries.add(BBItems.TEA_LEAVES);
                 entries.add(BBItems.DRIED_TEA_LEAVES);
+                entries.add(BBBlocks.AZALEA_FLOWER);
                 entries.add(BBItems.COFFEE_BEANS);
 
+                entries.add(BBItems.MANGO);
                 entries.add(BBItems.PEPPER);
                 entries.add(BBItems.SOUL_PEPPER);
+                entries.add(BBItems.PEPPER_SEEDS);
+                entries.add(BBItems.SOUL_PEPPER_SEEDS);
 
                 entries.add(BBItems.MUD_CUP);
                 entries.add(BBItems.CUP_OF_WATER);
@@ -45,16 +49,22 @@ public class BBItemGroups {
             }).build());
 
     public static void registerAddToVanilla() {
+    ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
+            entries.addBefore(Items.NETHER_WART, BBItems.PEPPER_SEEDS);
+        entries.addAfter(BBItems.PEPPER_SEEDS, BBItems.SOUL_PEPPER_SEEDS);
+        });
+
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
             entries.addAfter(Blocks.SMOKER, BBBlocks.MUD_STOVE);
             entries.addAfter(BBBlocks.MUD_STOVE, BBBlocks.MUD_COUNTER);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
+            entries.addAfter(Items.ENCHANTED_GOLDEN_APPLE, BBItems.MANGO);
             entries.addAfter(Items.BEETROOT, BBItems.PEPPER);
             entries.addAfter(BBItems.PEPPER, BBItems.SOUL_PEPPER);
             entries.addBefore(Items.DRIED_KELP, BBItems.DRIED_TEA_LEAVES);
-            entries.addAfter(Items.MILK_BUCKET, BBItems.CUP_OF_WATER);
+            entries.addAfter(Items.SPIDER_EYE, BBItems.CUP_OF_WATER);
             entries.addAfter(BBItems.CUP_OF_WATER, BBItems.CUP_OF_GREEN_TEA);
             entries.addAfter(BBItems.CUP_OF_GREEN_TEA, BBItems.CUP_OF_AZALEA_TEA);
             entries.addAfter(BBItems.CUP_OF_AZALEA_TEA, BBItems.CUP_OF_BLACK_TEA);
@@ -73,6 +83,7 @@ public class BBItemGroups {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.addAfter(Items.WHEAT, BBItems.TEA_LEAVES);
+            entries.addAfter(BBItems.TEA_LEAVES, BBBlocks.AZALEA_FLOWER);
             entries.addAfter(Items.COCOA_BEANS, BBItems.COFFEE_BEANS);
             entries.addAfter(Items.GLASS_BOTTLE, BBItems.MUD_CUP);
         });

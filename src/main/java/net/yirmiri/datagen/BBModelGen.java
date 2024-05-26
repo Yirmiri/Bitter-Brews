@@ -36,5 +36,13 @@ public class BBModelGen extends FabricModelProvider {
         itemModelGenerator.register(BBItems.CUP_OF_HOT_COCOA, Models.GENERATED);
         itemModelGenerator.register(BBItems.CUP_OF_ICED_TEA, Models.GENERATED);
         itemModelGenerator.register(BBItems.CUP_OF_JASMINE_TEA, Models.GENERATED);
+        itemModelGenerator.register(BBItems.PEPPER, Models.GENERATED);
+        itemModelGenerator.register(BBItems.SOUL_PEPPER, Models.GENERATED);
+        itemModelGenerator.register(BBItems.TEA_LEAVES, Models.GENERATED);
+        itemModelGenerator.register(BBItems.DRIED_TEA_LEAVES, Models.GENERATED);
+        itemModelGenerator.register(BBItems.COFFEE_BEANS, Models.GENERATED);
+        itemModelGenerator.register(BBItems.MANGO, Models.GENERATED);
+        itemModelGenerator.register(BBItems.PEPPER_SEEDS, Models.GENERATED);
+        itemModelGenerator.register(BBItems.SOUL_PEPPER_SEEDS, Models.GENERATED);
     }
 }
