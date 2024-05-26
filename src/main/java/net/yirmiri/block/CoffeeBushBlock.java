@@ -31,7 +31,6 @@ import net.yirmiri.register.BBItems;
 
 public class CoffeeBushBlock extends PlantBlock implements Fertilizable {
     public static final IntProperty AGE;
-    private static final VoxelShape SMALL_SHAPE;
     private static final VoxelShape LARGE_SHAPE;
 
     public CoffeeBushBlock(AbstractBlock.Settings settings) {
@@ -44,11 +43,7 @@ public class CoffeeBushBlock extends PlantBlock implements Fertilizable {
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx) {
-        if (state.get(AGE) == 0) {
-            return SMALL_SHAPE;
-        } else {
-            return state.get(AGE) < 3 ? LARGE_SHAPE : super.getOutlineShape(state, world, pos, ctx);
-        }
+        return LARGE_SHAPE;
     }
 
     public boolean hasRandomTicks(BlockState state) {
@@ -86,7 +81,7 @@ public class CoffeeBushBlock extends PlantBlock implements Fertilizable {
             int j = 1 + world.random.nextInt(2);
             dropStack(world, pos, new ItemStack(BBItems.COFFEE_BEANS, j + (bl ? 1 : 0)));
             world.playSound(null, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
-            BlockState blockState = state.with(AGE, 1);
+            BlockState blockState = state.with(AGE, 2);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, blockState));
             return ActionResult.success(world.isClient);
@@ -114,7 +109,6 @@ public class CoffeeBushBlock extends PlantBlock implements Fertilizable {
 
     static {
         AGE = Properties.AGE_3;
-        LARGE_SHAPE = Block.createCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);
-        SMALL_SHAPE = Block.createCuboidShape(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
+        LARGE_SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
     }
 }
