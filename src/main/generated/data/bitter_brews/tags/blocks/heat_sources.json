@@ -4,6 +4,7 @@
     "minecraft:magma_block",
     "minecraft:fire",
     "minecraft:soul_fire",
-    "bitter_brews:mud_stove"
+    "bitter_brews:mud_stove",
+    "bitter_brews:soul_pepper_crop"
   ]
 }

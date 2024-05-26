@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-26T18:55:48.6109459	Bitter Brews/Recipes
+// 1.20.1	2024-05-26T18:58:07.2571661	Bitter Brews/Recipes
 a618e777ef56dffc8992e9684d819979ea6cac25 data\bitter_brews\advancements\recipes\building_blocks\pepper.json
 eaac4f05e473429c7ccb8d83481db4ba423c0106 data\bitter_brews\recipes\mud_counter.json
 1d8f08bc7a4dd7eb65dace5bd304d478a8623564 data\bitter_brews\recipes\mud_stove.json
@@ -6,6 +6,6 @@ eaac4f05e473429c7ccb8d83481db4ba423c0106 data\bitter_brews\recipes\mud_counter.j
 6d0cfe30b0bd5357446432205d3967770232dc0e data\bitter_brews\advancements\recipes\building_blocks\soul_pepper.json
 e34635fb57595b8fd6a26396560a4174a47e4993 data\bitter_brews\advancements\recipes\decorations\mud_stove.json
 edc6ab5259b815de81f8364ca15b24abd063c78b data\bitter_brews\recipes\pepper.json
-673ff7ea8e32dea41c1f4222eea13fc510200deb data\bitter_brews\recipes\mud_cup.json
 a58bce105acbb7050bf5caa16c2875b8e2337876 data\bitter_brews\advancements\recipes\decorations\mud_counter.json
+673ff7ea8e32dea41c1f4222eea13fc510200deb data\bitter_brews\recipes\mud_cup.json
 4f085390dcf0b2ca1d60750badc1b555f6df46c9 data\bitter_brews\recipes\soul_pepper.json
