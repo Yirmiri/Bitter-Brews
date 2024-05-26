@@ -13,7 +13,7 @@ import net.yirmiri.util.BBProperties;
 
 public class BBBlocks {
     //MISC
-    public static final Block MUD_STOVE = register("mud_stove", new StoveBlock(BBProperties.BlockP.MUD_STOVE, 1, 2));
+    public static final Block MUD_STOVE = register("mud_stove", new StoveBlock(BBProperties.BlockP.MUD_STOVE, 1));
 
     private static Block register(String name, Block block) {
         registerItem(name, block);

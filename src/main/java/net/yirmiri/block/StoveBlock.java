@@ -30,18 +30,14 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.yirmiri.register.BBDamageTypes;
 
-import java.util.function.ToIntFunction;
-
 public class StoveBlock extends HorizontalFacingBlock {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty LIT = Properties.LIT;
     private final int stoveDamage;
-    private final int hotStoveDamage;
 
-    public StoveBlock(Settings settings, int stoveDamage, int hotStoveDamage) {
+    public StoveBlock(Settings settings, int stoveDamage) {
         super(settings);
         this.stoveDamage = stoveDamage;
-        this.hotStoveDamage = hotStoveDamage;
         setDefaultState(getStateManager().getDefaultState().with(LIT, false));
     }
 
@@ -70,7 +66,7 @@ public class StoveBlock extends HorizontalFacingBlock {
             if (!state.get(LIT)) {
                 entity.damage(BBDamageTypes.of(world, BBDamageTypes.STOVE), stoveDamage);
             } else if (state.get(LIT)) {
-                entity.damage(BBDamageTypes.of(world, BBDamageTypes.STOVE), hotStoveDamage);
+                entity.damage(BBDamageTypes.of(world, BBDamageTypes.STOVE), stoveDamage * 2);
             }
         }
         super.onSteppedOn(world, pos, state, entity);
