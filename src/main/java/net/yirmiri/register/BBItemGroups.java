@@ -17,6 +17,7 @@ public class BBItemGroups {
     public static ItemGroup BITTER_BREWS = Registry.register(Registries.ITEM_GROUP, new Identifier(BitterBrews.MODID, "bitter_brews"),
             FabricItemGroup.builder().icon(() -> new ItemStack(BBBlocks.MUD_STOVE)).displayName(Text.translatable("itemgroup.bitter_brews")).entries((displayContext, entries) -> {
                 entries.add(BBBlocks.MUD_STOVE);
+                entries.add(BBBlocks.MUD_COUNTER);
 
                 entries.add(BBItems.MUD_CUP);
                 entries.add(BBItems.CUP_OF_WATER);
@@ -39,6 +40,7 @@ public class BBItemGroups {
     public static void registerAddToVanilla() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
             entries.addAfter(Blocks.SMOKER, BBBlocks.MUD_STOVE);
+            entries.addAfter(BBBlocks.MUD_STOVE, BBBlocks.MUD_COUNTER);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {

@@ -14,6 +14,7 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
     public void generateTranslations(TranslationBuilder builder) {
         //BLOCKS
         builder.add(BBBlocks.MUD_STOVE, "Mud Stove");
+        builder.add(BBBlocks.MUD_COUNTER, "Mud Counter");
 
         //ITEMS
         builder.add(BBItems.MUD_CUP, "Mud Cup");

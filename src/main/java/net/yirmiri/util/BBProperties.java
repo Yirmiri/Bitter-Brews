@@ -16,6 +16,7 @@ public class BBProperties {
     public static class BlockP {
         //MISC
         public static final Block.Settings MUD_STOVE = FabricBlockSettings.copyOf(Blocks.MUD_BRICKS).mapColor(MapColor.DARK_RED).luminance((state) -> { return StoveBlock.burntOut(state) ? 6 : 15; });
+        public static final Block.Settings MUD_COUNTER = FabricBlockSettings.copyOf(Blocks.MUD_BRICKS);
     }
 
     public static class ItemP {

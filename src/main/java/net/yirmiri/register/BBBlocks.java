@@ -8,12 +8,14 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.yirmiri.BitterBrews;
+import net.yirmiri.block.CounterBlock;
 import net.yirmiri.block.StoveBlock;
 import net.yirmiri.util.BBProperties;
 
 public class BBBlocks {
     //MISC
     public static final Block MUD_STOVE = register("mud_stove", new StoveBlock(BBProperties.BlockP.MUD_STOVE, 1));
+    public static final Block MUD_COUNTER = register("mud_counter", new CounterBlock(BBProperties.BlockP.MUD_COUNTER));
 
     private static Block register(String name, Block block) {
         registerItem(name, block);

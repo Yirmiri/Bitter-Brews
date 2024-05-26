@@ -12,5 +12,6 @@ public class BBLootTableGen extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(BBBlocks.MUD_STOVE);
+        addDrop(BBBlocks.MUD_COUNTER);
     }
 }

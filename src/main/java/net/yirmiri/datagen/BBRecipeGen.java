@@ -34,6 +34,14 @@ public class BBRecipeGen extends FabricRecipeProvider {
                 .criterion(hasItem(Blocks.MUD_BRICKS), conditionsFromItem(Blocks.MUD_BRICKS))
                 .offerTo(exporter, new Identifier(getRecipeName(BBBlocks.MUD_STOVE)));
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, BBBlocks.MUD_COUNTER, 4)
+                .input('#', Blocks.MUD_BRICKS).input('$', Items.IRON_INGOT)
+                .pattern("$$$")
+                .pattern("# #")
+                .pattern("$$$")
+                .criterion(hasItem(Blocks.MUD_BRICKS), conditionsFromItem(Blocks.MUD_BRICKS))
+                .offerTo(exporter, new Identifier(getRecipeName(BBBlocks.MUD_COUNTER)));
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, BBItems.MUD_CUP, 4)
                 .input('#', Blocks.PACKED_MUD)
                 .pattern("# #")

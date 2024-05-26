@@ -1,5 +1,5 @@
 {
-  "parent": "bitter_brews:block/mud_stove_on",
+  "parent": "bitter_brews:block/mud_counter",
   "display": {
     "thirdperson": {
       "rotation": [

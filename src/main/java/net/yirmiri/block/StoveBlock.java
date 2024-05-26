@@ -38,7 +38,7 @@ public class StoveBlock extends HorizontalFacingBlock {
     public StoveBlock(Settings settings, int stoveDamage) {
         super(settings);
         this.stoveDamage = stoveDamage;
-        setDefaultState(getStateManager().getDefaultState().with(LIT, false));
+        setDefaultState(getStateManager().getDefaultState().with(LIT, true));
     }
 
     @Override

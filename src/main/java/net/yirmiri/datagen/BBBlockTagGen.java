@@ -25,6 +25,7 @@ public class BBBlockTagGen extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(BBBlocks.MUD_STOVE)
+                .add(BBBlocks.MUD_COUNTER)
         ;
 
         getOrCreateTagBuilder(HEAT_SOURCES)
