@@ -26,6 +26,11 @@ public class BBBlockTagGen extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(BBBlocks.MUD_STOVE)
                 .add(BBBlocks.MUD_COUNTER)
+                .add(BBBlocks.COPPER_TEA_KETTLE)
+        ;
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(BBBlocks.COPPER_TEA_KETTLE)
         ;
 
         getOrCreateTagBuilder(HEAT_SOURCES)
@@ -33,6 +38,7 @@ public class BBBlockTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.FIRE)
                 .add(Blocks.SOUL_FIRE)
                 .add(BBBlocks.MUD_STOVE)
+                .add(BBBlocks.SOUL_PEPPER_CROP)
         ;
     }
 

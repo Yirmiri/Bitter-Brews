@@ -16,6 +16,8 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         builder.add(BBBlocks.MUD_STOVE, "Mud Stove");
         builder.add(BBBlocks.MUD_COUNTER, "Mud Counter");
         builder.add(BBBlocks.AZALEA_FLOWER, "Azalea Flower");
+        builder.add(BBBlocks.COFFEE_BUSH, "Coffee Bush");
+        builder.add(BBBlocks.COPPER_TEA_KETTLE, "Tea Kettle");
 
         //ITEMS
         builder.add(BBItems.MUD_CUP, "Mud Cup");
@@ -69,5 +71,7 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         builder.add("death.attack.bitter_brews.stove.player", "%1$s was cooked into a delicacy by %2$s");
         builder.add("death.attack.bitter_brews.soul_pepper", "%1$s failed the soul pepper challenge");
         builder.add("death.attack.bitter_brews.soul_pepper.player", "%1$s failed the soul pepper challenge to %2$s");
+        builder.add("death.attack.bitter_brews.coffee_bush", "%1$s was tangled and pricked to death by coffee bush");
+        builder.add("death.attack.bitter_brews.coffee_bush.player", "%1$s was forced into a prickly death to a coffee bush by %2$s");
     }
 }

@@ -13,5 +13,7 @@ public class BitterBrewsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.PEPPER_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.SOUL_PEPPER_CROP, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.AZALEA_FLOWER, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.COPPER_TEA_KETTLE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.COFFEE_BUSH, RenderLayer.getCutout());
     }
 }

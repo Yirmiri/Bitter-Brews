@@ -13,5 +13,7 @@ public class BBLootTableGen extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(BBBlocks.MUD_STOVE);
         addDrop(BBBlocks.MUD_COUNTER);
+        addDrop(BBBlocks.COPPER_TEA_KETTLE);
+        addDrop(BBBlocks.COFFEE_BUSH);
     }
 }

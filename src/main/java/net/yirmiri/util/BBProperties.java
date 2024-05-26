@@ -23,6 +23,8 @@ public class BBProperties {
         public static final Block.Settings AZALEA_FLOWER = FabricBlockSettings.copyOf(Blocks.GLOW_LICHEN).luminance(0).sounds(BlockSoundGroup.WET_GRASS).mapColor(MapColor.DULL_PINK);
         public static final Block.Settings PEPPER_CROP = FabricBlockSettings.copyOf(Blocks.NETHER_WART).sounds(BlockSoundGroup.ROOTS).mapColor(MapColor.RED);
         public static final Block.Settings SOUL_PEPPER_CROP = FabricBlockSettings.copyOf(PEPPER_CROP).mapColor(MapColor.CYAN).luminance((state) -> { return SoulPepperCropBlock.mature(state) ? 0 : 7; });
+        public static final Block.Settings COPPER_TEA_KETTLE = FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK).sounds(BlockSoundGroup.LANTERN);
+        public static final Block.Settings COFFEE_BUSH = FabricBlockSettings.copyOf(Blocks.WHEAT).sounds(BlockSoundGroup.WET_GRASS).mapColor(MapColor.DARK_GREEN);
     }
 
     public static class ItemP {

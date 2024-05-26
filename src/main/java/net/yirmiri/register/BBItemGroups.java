@@ -18,10 +18,12 @@ public class BBItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(BBBlocks.MUD_STOVE)).displayName(Text.translatable("itemgroup.bitter_brews")).entries((displayContext, entries) -> {
                 entries.add(BBBlocks.MUD_STOVE);
                 entries.add(BBBlocks.MUD_COUNTER);
+                entries.add(BBBlocks.COPPER_TEA_KETTLE);
 
                 entries.add(BBItems.TEA_LEAVES);
                 entries.add(BBItems.DRIED_TEA_LEAVES);
                 entries.add(BBBlocks.AZALEA_FLOWER);
+                entries.add(BBBlocks.COFFEE_BUSH);
                 entries.add(BBItems.COFFEE_BEANS);
 
                 entries.add(BBItems.MANGO);
@@ -52,11 +54,13 @@ public class BBItemGroups {
     ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.addBefore(Items.NETHER_WART, BBItems.PEPPER_SEEDS);
         entries.addAfter(BBItems.PEPPER_SEEDS, BBItems.SOUL_PEPPER_SEEDS);
+        entries.addBefore(Items.FLOWERING_AZALEA, BBBlocks.COFFEE_BUSH);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
             entries.addAfter(Blocks.SMOKER, BBBlocks.MUD_STOVE);
             entries.addAfter(BBBlocks.MUD_STOVE, BBBlocks.MUD_COUNTER);
+            entries.addAfter(BBBlocks.MUD_COUNTER, BBBlocks.COPPER_TEA_KETTLE);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {

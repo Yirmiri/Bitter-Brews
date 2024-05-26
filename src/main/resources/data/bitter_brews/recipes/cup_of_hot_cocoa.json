@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 300,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "bitter_brews:cup_of_chocolate_milk"
+  },
+  "result": "bitter_brews:cup_of_hot_cocoa"
+}
