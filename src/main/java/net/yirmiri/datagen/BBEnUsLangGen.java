@@ -24,6 +24,13 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         builder.add(BBItems.CUP_OF_MANGO_TEA, "Cup of Mango Tea");
         builder.add(BBItems.CUP_OF_FUDGE_SUNDAE, "Cup of Fudge Sundae");
         builder.add(BBItems.CUP_OF_AZALEA_TEA, "Cup of Azalea Tea");
+        builder.add(BBItems.CUP_OF_BLACK_TEA, "Cup of Black Tea");
+        builder.add(BBItems.CUP_OF_HOT_COCOA, "Cup of Hot Cocoa");
+        builder.add(BBItems.CUP_OF_CHOCOLATE_MILK, "Cup of Chocolate Milk");
+        builder.add(BBItems.CUP_OF_MILK, "Cup of Milk");
+        builder.add(BBItems.CUP_OF_ESPRESSO, "Cup of Espresso");
+        builder.add(BBItems.CUP_OF_COFFEE, "Cup of Coffee");
+        builder.add(BBItems.CUP_OF_DARK_COFFEE, "Cup of Dark Coffee");
 
         //TOOLTIPS
         builder.add("bitter_brews.tooltip.cup_of_green_tea", "A sweet earthly brew that soothes you.");
@@ -32,12 +39,18 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         builder.add("bitter_brews.tooltip.cup_of_kelp_tea", "I chose coral fans instead of normal coral for the recipe on purpose.");
         builder.add("bitter_brews.tooltip.cup_of_mango_tea", "A mango a day keeps the doctor away.");
         builder.add("bitter_brews.tooltip.cup_of_fudge_sundae", "This isn't fudge sundae, is it?");
+        builder.add("bitter_brews.tooltip.cup_of_black_tea", "Black tea makes great rocket fuel.");
+        builder.add("bitter_brews.tooltip.cup_of_hot_cocoa", "Not to be confused with chocolate milk.");
+        builder.add("bitter_brews.tooltip.cup_of_chocolate_milk", "Not to be confused with hot cocoa.");
+        builder.add("bitter_brews.tooltip.cup_of_espresso", "Fit for a §6Queen!");
+        builder.add("bitter_brews.tooltip.cup_of_coffee", "Hello darkness my old friend.");
+        builder.add("bitter_brews.tooltip.cup_of_dark_coffee", "You might need a backup cup.");
 
         //ITEM GROUPS
         builder.add("itemgroup.bitter_brews", "Bitter Brews");
 
         //DAMAGE
-        builder.add("death.attack.bitter_brews.stove", "%1$s was cooked sunny side up");
-        builder.add("death.attack.bitter_brews.stove.player", "%2$s watched %1$s be cooked sunny side up");
+        builder.add("death.attack.bitter_brews.stove", "%1$s learnt it wasn't a good idea to play on the stove top");
+        builder.add("death.attack.bitter_brews.stove.player", "%1$s was cooked into a delicacy by %2$s");
     }
 }

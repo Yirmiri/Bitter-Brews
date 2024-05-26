@@ -22,9 +22,16 @@ public class BBItemGroups {
                 entries.add(BBItems.CUP_OF_WATER);
                 entries.add(BBItems.CUP_OF_GREEN_TEA);
                 entries.add(BBItems.CUP_OF_AZALEA_TEA);
+                entries.add(BBItems.CUP_OF_BLACK_TEA);
                 entries.add(BBItems.CUP_OF_HONEY_TEA);
                 entries.add(BBItems.CUP_OF_MANGO_TEA);
                 entries.add(BBItems.CUP_OF_KELP_TEA);
+                entries.add(BBItems.CUP_OF_COFFEE);
+                entries.add(BBItems.CUP_OF_DARK_COFFEE);
+                entries.add(BBItems.CUP_OF_ESPRESSO);
+                entries.add(BBItems.CUP_OF_MILK);
+                entries.add(BBItems.CUP_OF_CHOCOLATE_MILK);
+                entries.add(BBItems.CUP_OF_HOT_COCOA);
             }).build());
 
     public static void registerAddToVanilla() {
@@ -36,9 +43,16 @@ public class BBItemGroups {
             entries.addAfter(Items.MILK_BUCKET, BBItems.CUP_OF_WATER);
             entries.addAfter(BBItems.CUP_OF_WATER, BBItems.CUP_OF_GREEN_TEA);
             entries.addAfter(BBItems.CUP_OF_GREEN_TEA, BBItems.CUP_OF_AZALEA_TEA);
-            entries.addAfter(BBItems.CUP_OF_AZALEA_TEA, BBItems.CUP_OF_HONEY_TEA);
+            entries.addAfter(BBItems.CUP_OF_AZALEA_TEA, BBItems.CUP_OF_BLACK_TEA);
+            entries.addAfter(BBItems.CUP_OF_BLACK_TEA, BBItems.CUP_OF_HONEY_TEA);
             entries.addAfter(BBItems.CUP_OF_HONEY_TEA, BBItems.CUP_OF_MANGO_TEA);
             entries.addAfter(BBItems.CUP_OF_MANGO_TEA, BBItems.CUP_OF_KELP_TEA);
+            entries.addAfter(BBItems.CUP_OF_KELP_TEA, BBItems.CUP_OF_COFFEE);
+            entries.addAfter(BBItems.CUP_OF_COFFEE, BBItems.CUP_OF_DARK_COFFEE);
+            entries.addAfter(BBItems.CUP_OF_DARK_COFFEE, BBItems.CUP_OF_ESPRESSO);
+            entries.addAfter(BBItems.CUP_OF_ESPRESSO, BBItems.CUP_OF_MILK);
+            entries.addAfter(BBItems.CUP_OF_MILK, BBItems.CUP_OF_CHOCOLATE_MILK);
+            entries.addAfter(BBItems.CUP_OF_CHOCOLATE_MILK, BBItems.CUP_OF_HOT_COCOA);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
