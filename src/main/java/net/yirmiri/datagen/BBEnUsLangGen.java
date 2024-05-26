@@ -67,5 +67,7 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         //DAMAGE
         builder.add("death.attack.bitter_brews.stove", "%1$s learnt it wasn't a good idea to play on the stove top");
         builder.add("death.attack.bitter_brews.stove.player", "%1$s was cooked into a delicacy by %2$s");
+        builder.add("death.attack.bitter_brews.soul_pepper", "%1$s failed the soul pepper challenge");
+        builder.add("death.attack.bitter_brews.soul_pepper.player", "%1$s failed the soul pepper challenge to %2$s");
     }
 }

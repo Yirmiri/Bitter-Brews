@@ -24,12 +24,12 @@ public class SoulPepperCropBlock extends NetherWartBlock {
         return new ItemStack(BBItems.SOUL_PEPPER_SEEDS);
     }
 
-    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
+    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         int i = state.get(AGE);
         if (!entity.bypassesSteppingEffects() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity) && i >= 2) {
             entity.damage(BBDamageTypes.of(world, BBDamageTypes.SOUL_PEPPER), 2);
         }
-        super.onSteppedOn(world, pos, state, entity);
+        super.onEntityCollision(state, world, pos, entity);
     }
 
     public static boolean mature(BlockState state) {
