@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:mud_bricks"
+    },
+    "$": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "$$$",
+    "# #",
+    "$$$"
+  ],
+  "result": {
+    "count": 4,
+    "item": "bitter_brews:mud_counter"
+  },
+  "show_notification": true
+}
