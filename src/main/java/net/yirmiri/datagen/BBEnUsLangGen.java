@@ -34,8 +34,14 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         builder.add(BBItems.CUP_OF_DARK_COFFEE, "Cup of Dark Coffee");
         builder.add(BBItems.CUP_OF_ICED_TEA, "Cup of Iced Tea");
         builder.add(BBItems.CUP_OF_JASMINE_TEA, "Cup of Jasmine Tea");
+        builder.add(BBItems.TEA_LEAVES, "Tea Leaves");
+        builder.add(BBItems.DRIED_TEA_LEAVES, "Dried Tea Leaves");
+        builder.add(BBItems.COFFEE_BEANS, "Coffee Beans");
+        builder.add(BBItems.PEPPER, "Pepper");
+        builder.add(BBItems.SOUL_PEPPER, "Soul Pepper");
 
         //TOOLTIPS
+        builder.add("bitter_brews.tooltip.soul_pepper", "You might wanna have a cup of milk.");
         builder.add("bitter_brews.tooltip.cup_of_green_tea", "A sweet earthly brew that soothes you.");
         builder.add("bitter_brews.tooltip.cup_of_azalea_tea", "A sweet blooming brew that soothes you");
         builder.add("bitter_brews.tooltip.cup_of_honey_tea", "Honey the tea is ready!");

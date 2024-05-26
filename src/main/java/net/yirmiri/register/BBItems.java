@@ -6,22 +6,29 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.yirmiri.BitterBrews;
 import net.yirmiri.item.CupItem;
+import net.yirmiri.item.ExtinguishDrinkItem;
 import net.yirmiri.item.GenericDrinkItem;
+import net.yirmiri.item.SoulPepperItem;
 import net.yirmiri.util.BBProperties;
 
 public class BBItems {
     //MISC
     public static final Item MUD_CUP = register("mud_cup", new CupItem(BBProperties.ItemP.GENERIC_ITEM));
+    public static final Item PEPPER = register("pepper", new SoulPepperItem(BBProperties.ItemP.PEPPER));
+    public static final Item SOUL_PEPPER = register("soul_pepper", new SoulPepperItem(BBProperties.ItemP.SOUL_PEPPER));
+    public static final Item COFFEE_BEANS = register("coffee_beans", new CupItem(BBProperties.ItemP.GENERIC_ITEM));
+    public static final Item TEA_LEAVES = register("tea_leaves", new CupItem(BBProperties.ItemP.GENERIC_ITEM));
+    public static final Item DRIED_TEA_LEAVES = register("dried_tea_leaves", new CupItem(BBProperties.ItemP.TEA_LEAVES));
 
     //DRINKS
-    public static final Item CUP_OF_WATER = register("cup_of_water", new GenericDrinkItem(BBProperties.ItemP.GENERIC_DRINK, 32, false));
-    public static final Item CUP_OF_MILK = register("cup_of_milk", new GenericDrinkItem(BBProperties.ItemP.GENERIC_DRINK, 32, false));
+    public static final Item CUP_OF_WATER = register("cup_of_water", new GenericDrinkItem(BBProperties.ItemP.GENERIC_ITEM, 32, false));
+    public static final Item CUP_OF_MILK = register("cup_of_milk", new ExtinguishDrinkItem(BBProperties.ItemP.MILK, 48, false));
     public static final Item CUP_OF_GREEN_TEA = register("cup_of_green_tea", new GenericDrinkItem(BBProperties.ItemP.GREEN_TEA, 32, true));
     public static final Item CUP_OF_AZALEA_TEA = register("cup_of_azalea_tea", new GenericDrinkItem(BBProperties.ItemP.AZALEA_TEA, 32, true));
     public static final Item CUP_OF_HONEY_TEA = register("cup_of_honey_tea", new GenericDrinkItem(BBProperties.ItemP.HONEY_TEA, 48, true));
     public static final Item CUP_OF_KELP_TEA = register("cup_of_kelp_tea", new GenericDrinkItem(BBProperties.ItemP.KELP_TEA, 32, true));
     public static final Item CUP_OF_MANGO_TEA = register("cup_of_mango_tea", new GenericDrinkItem(BBProperties.ItemP.MANGO_TEA, 32, true));
-    public static final Item CUP_OF_FUDGE_SUNDAE = register("cup_of_fudge_sundae", new GenericDrinkItem(BBProperties.ItemP.GENERIC_DRINK, 256, true));
+    public static final Item CUP_OF_FUDGE_SUNDAE = register("cup_of_fudge_sundae", new GenericDrinkItem(BBProperties.ItemP.MILK, 256, true));
     public static final Item CUP_OF_BLACK_TEA = register("cup_of_black_tea", new GenericDrinkItem(BBProperties.ItemP.BLACK_TEA, 32, true));
     public static final Item CUP_OF_CHOCOLATE_MILK = register("cup_of_chocolate_milk", new GenericDrinkItem(BBProperties.ItemP.CHOCOLATE_MILK, 48, true));
     public static final Item CUP_OF_COFFEE = register("cup_of_coffee", new GenericDrinkItem(BBProperties.ItemP.COFFEE, 32, true));

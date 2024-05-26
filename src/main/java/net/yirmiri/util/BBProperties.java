@@ -29,9 +29,12 @@ public class BBProperties {
 
         //MISC
         public static final Item.Settings GENERIC_ITEM = new FabricItemSettings();
+        public static final Item.Settings TEA_LEAVES = new FabricItemSettings().food(new FoodComponent.Builder().hunger(1).saturationModifier(0.1F).build());
+        public static final Item.Settings PEPPER = new FabricItemSettings().food(new FoodComponent.Builder().hunger(3).saturationModifier(0.3F).build());
+        public static final Item.Settings SOUL_PEPPER = new FabricItemSettings().food(new FoodComponent.Builder().hunger(6).saturationModifier(0.6F).statusEffect(new StatusEffectInstance(TLStatusEffects.TRAIL_BLAZING, BRIEF_DURATION, 0), 1.0F).alwaysEdible().build());
 
         //DRINKS
-        public static final Item.Settings GENERIC_DRINK = new FabricItemSettings().maxCount(16);
+        public static final Item.Settings MILK = new FabricItemSettings().maxCount(4);
 
         public static final Item.Settings GREEN_TEA = new FabricItemSettings().maxCount(4).food(new FoodComponent.Builder().hunger(0).saturationModifier(0.0F)
                 .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, BRIEF_DURATION, 0), 1.0F)
@@ -83,8 +86,8 @@ public class BBProperties {
                 .alwaysEdible().build());
 
         public static final Item.Settings ICED_TEA = new FabricItemSettings().maxCount(1).food(new FoodComponent.Builder().hunger(0).saturationModifier(0.0F)
-                .statusEffect(new StatusEffectInstance(TLStatusEffects.HEARTBREAK, LONG_DURATION, 17), 1.0F)
-                .statusEffect(new StatusEffectInstance(TLStatusEffects.LESSER_STRENGTH, LONG_DURATION, 9), 1.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.HEARTBREAK, LONG_DURATION, 9), 1.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.LESSER_STRENGTH, LONG_DURATION, 7), 1.0F)
                 .alwaysEdible().build());
 
         public static final Item.Settings JASMINE_TEA = new FabricItemSettings().maxCount(1).food(new FoodComponent.Builder().hunger(0).saturationModifier(0.0F)

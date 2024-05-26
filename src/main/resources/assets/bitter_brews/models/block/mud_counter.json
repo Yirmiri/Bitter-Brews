@@ -4,6 +4,6 @@
     "bottom": "bitter_brews:block/mud_stove_bottom",
     "front": "bitter_brews:block/mud_stove_side",
     "side": "bitter_brews:block/mud_stove_side",
-    "top": "bitter_brews:block/mud_stove_top"
+    "top": "bitter_brews:block/mud_counter_top"
   }
 }
