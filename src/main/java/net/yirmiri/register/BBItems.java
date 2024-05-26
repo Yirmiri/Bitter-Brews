@@ -28,6 +28,8 @@ public class BBItems {
     public static final Item CUP_OF_DARK_COFFEE = register("cup_of_dark_coffee", new GenericDrinkItem(BBProperties.ItemP.DARK_COFFEE, 32, true));
     public static final Item CUP_OF_ESPRESSO = register("cup_of_espresso", new GenericDrinkItem(BBProperties.ItemP.ESPRESSO, 48, true));
     public static final Item CUP_OF_HOT_COCOA = register("cup_of_hot_cocoa", new GenericDrinkItem(BBProperties.ItemP.HOT_COCOA, 48, true));
+    public static final Item CUP_OF_ICED_TEA = register("cup_of_iced_tea", new GenericDrinkItem(BBProperties.ItemP.ICED_TEA, 64, true));
+    public static final Item CUP_OF_JASMINE_TEA = register("cup_of_jasmine_tea", new GenericDrinkItem(BBProperties.ItemP.JASMINE_TEA, 32, true));
 
     private static Item register(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(BitterBrews.MODID, name), item);

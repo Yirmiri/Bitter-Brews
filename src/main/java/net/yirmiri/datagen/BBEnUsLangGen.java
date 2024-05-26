@@ -31,6 +31,8 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         builder.add(BBItems.CUP_OF_ESPRESSO, "Cup of Espresso");
         builder.add(BBItems.CUP_OF_COFFEE, "Cup of Coffee");
         builder.add(BBItems.CUP_OF_DARK_COFFEE, "Cup of Dark Coffee");
+        builder.add(BBItems.CUP_OF_ICED_TEA, "Cup of Iced Tea");
+        builder.add(BBItems.CUP_OF_JASMINE_TEA, "Cup of Jasmine Tea");
 
         //TOOLTIPS
         builder.add("bitter_brews.tooltip.cup_of_green_tea", "A sweet earthly brew that soothes you.");
@@ -45,6 +47,8 @@ public class BBEnUsLangGen extends FabricLanguageProvider {
         builder.add("bitter_brews.tooltip.cup_of_espresso", "Fit for a §6Queen!");
         builder.add("bitter_brews.tooltip.cup_of_coffee", "Hello darkness my old friend.");
         builder.add("bitter_brews.tooltip.cup_of_dark_coffee", "You might need a backup cup.");
+        builder.add("bitter_brews.tooltip.cup_of_iced_tea", "Tastes like perfection.");
+        builder.add("bitter_brews.tooltip.cup_of_jasmine_tea", "A calming brew that could put you to sleep.");
 
         //ITEM GROUPS
         builder.add("itemgroup.bitter_brews", "Bitter Brews");

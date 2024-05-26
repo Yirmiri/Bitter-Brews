@@ -34,5 +34,7 @@ public class BBModelGen extends FabricModelProvider {
         itemModelGenerator.register(BBItems.CUP_OF_DARK_COFFEE, Models.GENERATED);
         itemModelGenerator.register(BBItems.CUP_OF_ESPRESSO, Models.GENERATED);
         itemModelGenerator.register(BBItems.CUP_OF_HOT_COCOA, Models.GENERATED);
+        itemModelGenerator.register(BBItems.CUP_OF_ICED_TEA, Models.GENERATED);
+        itemModelGenerator.register(BBItems.CUP_OF_JASMINE_TEA, Models.GENERATED);
     }
 }

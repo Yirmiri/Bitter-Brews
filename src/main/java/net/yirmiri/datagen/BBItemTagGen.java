@@ -35,6 +35,8 @@ public class BBItemTagGen extends FabricTagProvider.ItemTagProvider {
                 .add(BBItems.CUP_OF_HOT_COCOA)
                 .add(BBItems.CUP_OF_CHOCOLATE_MILK)
                 .add(BBItems.CUP_OF_MILK)
+                .add(BBItems.CUP_OF_ICED_TEA)
+                .add(BBItems.CUP_OF_JASMINE_TEA)
         ;
     }
 

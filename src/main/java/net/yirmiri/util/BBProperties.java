@@ -72,14 +72,24 @@ public class BBProperties {
                 .alwaysEdible().build());
 
         public static final Item.Settings DARK_COFFEE = new FabricItemSettings().maxCount(2).food(new FoodComponent.Builder().hunger(0).saturationModifier(0.0F)
-                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, LONG_DURATION, 1), 1.0F)
-                .statusEffect(new StatusEffectInstance(TLStatusEffects.LESSER_WEAKNESS, LONG_DURATION, 0), 1.0F)
+                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, AVERAGE_DURATION, 2), 1.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.LESSER_WEAKNESS, AVERAGE_DURATION, 0), 1.0F)
                 .alwaysEdible().build());
 
         public static final Item.Settings ESPRESSO = new FabricItemSettings().maxCount(1).food(new FoodComponent.Builder().hunger(0).saturationModifier(0.0F)
-                .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, AVERAGE_DURATION, 2), 1.0F)
-                .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, AVERAGE_DURATION, 1), 1.0F)
-                .statusEffect(new StatusEffectInstance(TLStatusEffects.LESSER_WEAKNESS, AVERAGE_DURATION, 2), 1.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.BERSERK, LONG_DURATION, 2), 1.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.SHATTERSPLEEN, LONG_DURATION, 1), 1.0F)
+                .alwaysEdible().build());
+
+        public static final Item.Settings ICED_TEA = new FabricItemSettings().maxCount(1).food(new FoodComponent.Builder().hunger(0).saturationModifier(0.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.HEARTBREAK, LONG_DURATION, 17), 1.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.LESSER_STRENGTH, LONG_DURATION, 9), 1.0F)
+                .alwaysEdible().build());
+
+        public static final Item.Settings JASMINE_TEA = new FabricItemSettings().maxCount(1).food(new FoodComponent.Builder().hunger(0).saturationModifier(0.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.CONFUSION, AVERAGE_DURATION, 0), 1.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.INACCURATE, AVERAGE_DURATION, 0), 1.0F)
+                .statusEffect(new StatusEffectInstance(TLStatusEffects.DIVERSION, AVERAGE_DURATION, 0), 1.0F)
                 .alwaysEdible().build());
     }
 }
