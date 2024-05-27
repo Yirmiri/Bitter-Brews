@@ -51,9 +51,9 @@ public class CoffeeBushBlock extends PlantBlock implements Fertilizable {
     }
 
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        int i = state.get(AGE);
-        if (i < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
-            BlockState blockState = state.with(AGE, i + 1);
+        int age = state.get(AGE);
+        if (age < 3 && random.nextInt(5) == 0 && world.getBaseLightLevel(pos.up(), 0) >= 9) {
+            BlockState blockState = state.with(AGE, age + 1);
             world.setBlockState(pos, blockState, 2);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(blockState));
         }
@@ -62,24 +62,27 @@ public class CoffeeBushBlock extends PlantBlock implements Fertilizable {
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity && entity.getType() != EntityType.BEE) {
             entity.slowMovement(state, new Vec3d(0.800000011920929, 0.75, 0.800000011920929));
-            if (!world.isClient && state.get(AGE) > 0 && (entity.lastRenderX != entity.getX() || entity.lastRenderZ != entity.getZ())) {
+            if (!world.isClient && (entity.lastRenderX != entity.getX() || entity.lastRenderZ != entity.getZ())) {
                 double d = Math.abs(entity.getX() - entity.lastRenderX);
                 double e = Math.abs(entity.getZ() - entity.lastRenderZ);
                 if (d >= 0.003000000026077032 || e >= 0.003000000026077032) {
-                    entity.damage(BBDamageTypes.of(world, BBDamageTypes.COFFEE_BUSH), 1);
+                    if (state.get(AGE) > 1) {
+                        entity.damage(BBDamageTypes.of(world, BBDamageTypes.COFFEE_BUSH), 2);
+                    } else {
+                        entity.damage(BBDamageTypes.of(world, BBDamageTypes.COFFEE_BUSH), 1);
+                    }
                 }
             }
         }
     }
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        int i = state.get(AGE);
-        boolean bl = i == 3;
+        int age = state.get(AGE);
+        boolean bl = age == 3;
         if (!bl && player.getStackInHand(hand).isOf(Items.BONE_MEAL)) {
             return ActionResult.PASS;
-        } else if (i > 1) {
-            int j = 1 + world.random.nextInt(2);
-            dropStack(world, pos, new ItemStack(BBItems.COFFEE_BEANS, j + (bl ? 1 : 0)));
+        } else if (bl) {
+            dropStack(world, pos, new ItemStack(BBItems.COFFEE_BEANS, 2));
             world.playSound(null, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1.0F, 0.8F + world.random.nextFloat() * 0.4F);
             BlockState blockState = state.with(AGE, 2);
             world.setBlockState(pos, blockState, 2);

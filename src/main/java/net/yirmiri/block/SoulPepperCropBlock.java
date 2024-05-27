@@ -25,15 +25,15 @@ public class SoulPepperCropBlock extends NetherWartBlock {
     }
 
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        int i = state.get(AGE);
-        if (!entity.bypassesSteppingEffects() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity) && i >= 2) {
+        int age = state.get(AGE);
+        if (!entity.bypassesSteppingEffects() && entity instanceof LivingEntity && !EnchantmentHelper.hasFrostWalker((LivingEntity)entity) && age >= 2) {
             entity.damage(BBDamageTypes.of(world, BBDamageTypes.SOUL_PEPPER), 2);
         }
         super.onEntityCollision(state, world, pos, entity);
     }
 
     public static boolean mature(BlockState state) {
-        int i = state.get(AGE);
-        return i < 2;
+        int age = state.get(AGE);
+        return age < 2;
     }
 }
