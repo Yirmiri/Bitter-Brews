@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.yirmiri.datagen.BBLootModifiers;
+import net.yirmiri.register.BBBlockEntities;
 import net.yirmiri.register.BBBlocks;
 import net.yirmiri.register.BBItemGroups;
 import net.yirmiri.register.BBItems;
@@ -27,5 +28,6 @@ public class BitterBrews implements ModInitializer {
 		BBItemGroups.registerAddToVanilla();
 		BBItems.registerBBItems();
 		BBLootModifiers.modifyLoot();
+		BBBlockEntities.registerBBBlockEntities();
 	}
 }
