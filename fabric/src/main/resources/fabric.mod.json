@@ -26,6 +26,7 @@
     "depends": {
         "fabricloader": ">=0.14",
         "fabric": "*",
+        "tipsylib": ">=2.0.0",
         "minecraft": "${minecraft_version}",
         "java": ">=17"
     },

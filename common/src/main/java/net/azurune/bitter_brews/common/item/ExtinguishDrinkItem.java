@@ -1,5 +1,6 @@
 package net.azurune.bitter_brews.common.item;
 
+import net.azurune.tipsylib.core.register.TLStatusEffects;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
