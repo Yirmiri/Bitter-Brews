@@ -1,6 +1,7 @@
 package net.azurune.bitter_brews;
 
 import net.azurune.bitter_brews.core.platform.Services;
+import net.azurune.bitter_brews.core.registry.BBBlocks;
 import net.azurune.bitter_brews.core.registry.BBItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -19,10 +20,8 @@ public class BitterBrews {
     // code that gets invoked by the entry point of the loader specific projects.
     public static void init() {
 
-        BitterBrewsConstants.LOG.info("Hello from Common init on {}! we are currently in a {} environment!", Services.PLATFORM.getPlatformName(), Services.PLATFORM.getEnvironmentName());
-        BitterBrewsConstants.LOG.info("The ID for diamonds is {}", BuiltInRegistries.ITEM.getKey(Items.DIAMOND));
-
         BBItems.loadItems();
+        BBBlocks.loadBlocks();
 
 
         // the platform specific approach.
