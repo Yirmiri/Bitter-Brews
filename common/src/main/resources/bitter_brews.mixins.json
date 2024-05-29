@@ -7,7 +7,7 @@
     "mixins": [
     ],
     "client": [
-      "MixinMinecraft"
+        "net.azurune.bitter_brews.core.mixin.MixinMinecraft"
     ],
     "server": [
     ],

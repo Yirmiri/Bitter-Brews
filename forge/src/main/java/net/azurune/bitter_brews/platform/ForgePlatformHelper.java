@@ -1,6 +1,6 @@
 package net.azurune.bitter_brews.platform;
 
-import net.azurune.bitter_brews.platform.services.IPlatformHelper;
+import net.azurune.bitter_brews.core.platform.services.IPlatformHelper;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
 

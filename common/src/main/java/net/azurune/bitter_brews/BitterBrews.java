@@ -1,7 +1,9 @@
 package net.azurune.bitter_brews;
 
-import net.azurune.bitter_brews.platform.Services;
+import net.azurune.bitter_brews.core.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.Items;
 
 // This class is part of the common project meaning it is shared between all supported loaders. Code written here can only
@@ -27,5 +29,9 @@ public class BitterBrews {
 
             BitterBrewsConstants.LOG.info("Hello to examplemod");
         }
+    }
+
+    public static MutableComponent tooltipId(String key, Object... args) {
+        return Component.translatable(BitterBrewsConstants.MOD_ID + "." + key, args);
     }
 }

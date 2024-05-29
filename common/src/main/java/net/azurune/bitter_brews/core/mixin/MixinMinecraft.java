@@ -1,4 +1,4 @@
-package net.azurune.bitter_brews.mixin;
+package net.azurune.bitter_brews.core.mixin;
 
 import net.azurune.bitter_brews.BitterBrewsConstants;
 import net.minecraft.client.Minecraft;

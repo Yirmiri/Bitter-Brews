@@ -1,7 +1,7 @@
-package net.azurune.bitter_brews.platform;
+package net.azurune.bitter_brews.core.platform;
 
 import net.azurune.bitter_brews.BitterBrewsConstants;
-import net.azurune.bitter_brews.platform.services.IPlatformHelper;
+import net.azurune.bitter_brews.core.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 

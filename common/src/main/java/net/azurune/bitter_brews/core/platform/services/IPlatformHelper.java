@@ -1,4 +1,4 @@
-package net.azurune.bitter_brews.platform.services;
+package net.azurune.bitter_brews.core.platform.services;
 
 public interface IPlatformHelper {
 
