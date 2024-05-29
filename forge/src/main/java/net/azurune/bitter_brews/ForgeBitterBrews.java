@@ -18,7 +18,6 @@ import java.util.concurrent.CompletableFuture;
 public class ForgeBitterBrews {
     
     public ForgeBitterBrews() {
-
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         BitterBrews.init();

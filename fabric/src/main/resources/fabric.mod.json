@@ -16,7 +16,10 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-          "net.azurune.bitter_brews.FabricBitterBrews"
+            "net.azurune.bitter_brews.FabricBitterBrews"
+        ],
+        "client": [
+            "net.azurune.bitter_brews.ClientFabricBitterBrews"
         ]
     },
     "mixins": [
