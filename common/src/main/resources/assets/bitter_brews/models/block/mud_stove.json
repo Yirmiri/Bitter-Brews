@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "bitter_brews:block/mud_stove_bottom",
+    "front": "bitter_brews:block/mud_stove_front",
+    "side": "bitter_brews:block/mud_stove_side",
+    "top": "bitter_brews:block/mud_stove_top"
+  }
+}

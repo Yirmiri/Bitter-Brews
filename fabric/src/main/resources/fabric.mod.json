@@ -1,6 +1,6 @@
 {
     "schemaVersion": 1,
-    "id": "mod_id",
+    "id": "bitter_brews",
     "version": "${version}",
     "name": "${mod_name}",
     "description": "${description}",
@@ -26,7 +26,6 @@
     "depends": {
         "fabricloader": ">=0.14",
         "fabric": "*",
-        "tipsylib": ">=2.0.0",
         "minecraft": "${minecraft_version}",
         "java": ">=17"
     },
