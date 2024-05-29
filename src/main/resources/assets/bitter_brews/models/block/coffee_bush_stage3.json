@@ -1,7 +1,0 @@
-{
-  "parent": "bitter_brews:template/template_small_to_double_plant",
-  "textures": {
-    "particle": "minecraft:block/spruce_leaves",
-    "0": "bitter_brews:block/coffee_bush_stage3"
-  }
-}

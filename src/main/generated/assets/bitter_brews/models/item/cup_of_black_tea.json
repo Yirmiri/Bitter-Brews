@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "bitter_brews:item/cup_of_black_tea"
-  }
-}
