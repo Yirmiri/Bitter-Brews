@@ -1,6 +1,7 @@
 package net.azurune.bitter_brews.common.item;
 
 import net.azurune.bitter_brews.BitterBrews;
+import net.azurune.bitter_brews.core.registry.BBItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
@@ -47,10 +48,10 @@ public class GenericDrinkItem extends Item {
         }
 
         if (stack.isEmpty()) {
-            return new ItemStack(BBItems.MUD_CUP);
+            return new ItemStack(BBItems.MUD_CUP.get());
         } else {
             if (user instanceof Player playerEntity && !((Player)user).getAbilities().instabuild) {
-                ItemStack itemStack = new ItemStack(BBItems.MUD_CUP);
+                ItemStack itemStack = new ItemStack(BBItems.MUD_CUP.get());
                 if (!playerEntity.getInventory().add(itemStack)) {
                     playerEntity.drop(itemStack, false);
                 }

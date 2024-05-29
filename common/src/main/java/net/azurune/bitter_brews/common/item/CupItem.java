@@ -1,5 +1,6 @@
 package net.azurune.bitter_brews.common.item;
 
+import net.azurune.bitter_brews.core.registry.BBItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -35,7 +36,7 @@ public class CupItem extends Item {
                 if (level.getFluidState(blockPos).is(FluidTags.WATER)) {
                     level.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
                     level.gameEvent(user, GameEvent.FLUID_PICKUP, blockPos);
-                    return InteractionResultHolder.success(this.fill(itemStack, user, (new ItemStack(BBItems.CUP_OF_WATER))));
+                    return InteractionResultHolder.success(this.fill(itemStack, user, (new ItemStack(BBItems.CUP_OF_WATER.get()))));
                 }
             }
 
