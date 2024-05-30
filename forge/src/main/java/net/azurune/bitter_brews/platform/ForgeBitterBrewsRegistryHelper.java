@@ -4,6 +4,8 @@ import net.azurune.bitter_brews.BitterBrewsConstants;
 import net.azurune.bitter_brews.core.platform.services.BitterBrewsRegistryHelper;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -18,6 +20,7 @@ public class ForgeBitterBrewsRegistryHelper implements BitterBrewsRegistryHelper
 
     private static final RegistryMap registryMap = new RegistryMap();
 
+    public static final DeferredRegister<MenuType<?>> MENU = DeferredRegister.create(ForgeRegistries.MENU_TYPES, BitterBrewsConstants.MOD_ID);
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BitterBrewsConstants.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BitterBrewsConstants.MOD_ID);
 
