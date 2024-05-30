@@ -19,7 +19,7 @@ public class BBBlocks {
     public static final Supplier<Block> AZALEA_FLOWER = registerBlockWithItem("azalea_flower", () -> new GlowLichenBlock(BBProperties.BlockP.AZALEA_FLOWER));
     public static final Supplier<Block> PEPPER_CROP = registerBlock("pepper_crop", () -> new PepperCropBlock(BBProperties.BlockP.PEPPER_CROP));
     public static final Supplier<Block> SOUL_PEPPER_CROP = registerBlock("soul_pepper_crop", () -> new SoulPepperCropBlock(BBProperties.BlockP.SOUL_PEPPER_CROP));
-    public static final Supplier<Block> COFFEE_BUSH = registerBlock("coffee_bush", () -> new CoffeeBushBlock(BBProperties.BlockP.COFFEE_BUSH));
+    public static final Supplier<Block> COFFEE_BUSH = registerBlockWithItem("coffee_bush", () -> new CoffeeBushBlock(BBProperties.BlockP.COFFEE_BUSH));
 
     private static <T extends Block> Supplier<T> registerBlock(String name, Supplier<T> blockSupplier) {
         return Services.REGISTRY_HELPER.registerBlock(name, blockSupplier);

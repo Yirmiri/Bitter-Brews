@@ -12,6 +12,7 @@ public class BBEnUsLangGen extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        //BLOCKS
         add(BBBlocks.MUD_STOVE.get(), "Mud Stove");
         add(BBBlocks.MUD_COUNTER.get(), "Mud Counter");
         add(BBBlocks.AZALEA_FLOWER.get(), "Azalea Flower");

@@ -27,7 +27,7 @@ public class BitterBrews {
         // the platform specific approach.
         if (Services.PLATFORM.isModLoaded("tipsylib")) {
 
-            BitterBrewsConstants.LOG.info("Bitter Brews Depends off TipsyLib which is a mod that adds many different effects for mod creators to use!");
+            BitterBrewsConstants.LOG.info("Bitter Brews depends off TipsyLib which is a mod that adds many different effects for mod creators to use!");
         }
     }
 
