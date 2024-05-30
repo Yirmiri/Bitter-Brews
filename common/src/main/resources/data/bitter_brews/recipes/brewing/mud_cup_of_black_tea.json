@@ -1,0 +1,20 @@
+{
+  "type": "dried_spice:brewing",
+  "ingredients": [
+    {
+      "item": "dried_spice:mud_cup_of_water"
+    },
+    {
+      "item": "dried_spice:pepper"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:hanging_roots"
+    }
+  ],
+  "result": {
+    "item": "dried_spice:mud_cup_of_black_tea"
+  }
+}

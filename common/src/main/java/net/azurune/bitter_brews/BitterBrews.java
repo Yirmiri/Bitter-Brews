@@ -1,8 +1,7 @@
 package net.azurune.bitter_brews;
 
 import net.azurune.bitter_brews.core.platform.Services;
-import net.azurune.bitter_brews.core.registry.BBBlocks;
-import net.azurune.bitter_brews.core.registry.BBItems;
+import net.azurune.bitter_brews.core.registry.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -22,6 +21,9 @@ public class BitterBrews {
 
         BBItems.loadItems();
         BBBlocks.loadBlocks();
+        BBBlockEntityTypes.loadBlockEntityTypes();
+        BBRecipeSerializer.loadRecipeTypes();
+        BBMenuTypes.loadMenuTypes();
 
 
         // the platform specific approach.

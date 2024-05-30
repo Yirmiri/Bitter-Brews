@@ -2,11 +2,11 @@ package net.azurune.bitter_brews.common.block_entity;
 
 
 import net.azurune.bitter_brews.common.screen.TeaKettleMenu;
+import net.azurune.bitter_brews.core.registry.BBBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -15,7 +15,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,8 +33,9 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider {
     private int progress = 0;
     private int maxProgress = 72;
 
-    public TeaKettleBlockEntity(BlockEntityType<?> $$0, BlockPos $$1, BlockState $$2) {
-        super($$0, $$1, $$2);
+    public TeaKettleBlockEntity(BlockPos blockPos, BlockState blockState) {
+        super(BBBlockEntityTypes.TEA_KETTLE_BLOCK_ENTITY.get(), blockPos, blockState);
+        this.inventory = NonNullList.withSize(6, ItemStack.EMPTY);
         this.containerData = new ContainerData() {
             @Override
             public int get(int index) {

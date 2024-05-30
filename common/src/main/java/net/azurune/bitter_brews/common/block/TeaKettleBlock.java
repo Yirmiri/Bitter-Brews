@@ -1,20 +1,31 @@
 package net.azurune.bitter_brews.common.block;
 
+import net.azurune.bitter_brews.common.block_entity.TeaKettleBlockEntity;
+import net.azurune.bitter_brews.core.registry.BBBlockEntityTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.Mirror;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.Nullable;
 
-public class TeaKettleBlock extends HorizontalDirectionalBlock {
+public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     private static final VoxelShape SHAPE;
 
@@ -24,6 +35,10 @@ public class TeaKettleBlock extends HorizontalDirectionalBlock {
 
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext ctx) {
         return SHAPE;
+    }
+    @Override
+    public RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
     }
 
     @Override
@@ -44,6 +59,29 @@ public class TeaKettleBlock extends HorizontalDirectionalBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
         return defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
+    }
+
+    @Override
+    public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
+        return new TeaKettleBlockEntity(blockPos, blockState);
+    }
+
+
+    @Override
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+        if (!level.isClientSide()) {
+            BlockEntity entity = level.getBlockEntity(pos);
+            if(entity instanceof TeaKettleBlockEntity teaKettleBlockEntity) {
+                //teaKettleBlockEntity.createMenu(6, new Inventory(player), player);
+                player.openMenu(teaKettleBlockEntity);
+                //NetworkHooks.openScreen(((ServerPlayer)player), (TeaKettleBlockEntity)entity, pos);
+                //player.awardStat(DSStats.INTERACT_WITH_KETTLE);
+            } else {
+                throw new IllegalStateException("It seems our container is missing, uh oh!");
+            }
+        }
+
+        return InteractionResult.sidedSuccess(level.isClientSide());
     }
 
     static { //wtf

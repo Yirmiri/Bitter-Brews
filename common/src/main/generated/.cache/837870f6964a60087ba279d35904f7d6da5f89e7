@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-29T17:31:12.8228198	Item Models: bitter_brews
+// 1.20.1	2024-05-30T20:56:29.1685923	Item Models: bitter_brews
 6a9c4fa3b910341e7ad6cc7827f84bc22c1ea4f0 assets/bitter_brews/models/item/coffee_beans.json
 6324109eb1bb9217f29f24669f96beecb687d44d assets/bitter_brews/models/item/cup_of_azalea_tea.json
 1a5fefce452200928f5311b7e7b66907f7dffe17 assets/bitter_brews/models/item/cup_of_black_tea.json
@@ -20,5 +20,7 @@ a869bde0210504b0d964f65afa5000ac6d282ec0 assets/bitter_brews/models/item/cup_of_
 f54e4f838cbf9b381b1f8ae56763a8afe7f8ba6b assets/bitter_brews/models/item/mango.json
 f5339df8be1062c6c41d53d387f976388c62533b assets/bitter_brews/models/item/mud_cup.json
 fa70addc46284cf36494c981367fe896482add04 assets/bitter_brews/models/item/pepper.json
+1e0b6d7437b6e90736d7c06b92182c3aad120578 assets/bitter_brews/models/item/pepper_seeds.json
 0ec2b0c939d4a1e4b0eacf3260b2c57ed403e3ca assets/bitter_brews/models/item/soul_pepper.json
+9ffeacf962f86deee6d313ba70c500ca4ed091ff assets/bitter_brews/models/item/soul_pepper_seeds.json
 e623bbe86a73dae1760c16823f1a0d80a4e3ebc6 assets/bitter_brews/models/item/tea_leaves.json

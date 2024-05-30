@@ -1,14 +1,19 @@
 package net.azurune.bitter_brews.common.screen;
 
-import net.azurune.bitter_brews.common.block_entity.TeaKettleBlockEntity;
-import net.azurune.bitter_brews.core.registry.BBBlocks;
-import net.minecraft.network.FriendlyByteBuf;
+import net.azurune.bitter_brews.common.item.GenericDrinkItem;
+import net.azurune.bitter_brews.common.screen.slot.SimpleOutputSlot;
+import net.azurune.bitter_brews.common.screen.slot.TeaKettleSlot;
+import net.azurune.bitter_brews.core.registry.BBMenuTypes;
+import net.minecraft.world.Container;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.*;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.SimpleContainerData;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.entity.BlockEntity;
 
 public class TeaKettleMenu extends AbstractContainerMenu {
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
@@ -20,36 +25,34 @@ public class TeaKettleMenu extends AbstractContainerMenu {
     private static final int INVENTORY_SLOT_COUNT = 6;
     private static final int INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    public final TeaKettleBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
 
 
-    public TeaKettleMenu(int container, Inventory inventory, FriendlyByteBuf byteBuf) {
-        this(container, inventory, inventory.player.level().getBlockEntity(byteBuf.readBlockPos()), new SimpleContainerData(6));
+    public TeaKettleMenu(int container, Inventory inventory) {
+        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6));
     }
 
-    public TeaKettleMenu(int container, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(null, container);
+    public TeaKettleMenu(int containerInt, Inventory inv, Container container, ContainerData data) {
+        super(BBMenuTypes.TEA_KETTLE_MENU.get(), containerInt);
         checkContainerSize(inv, 6);
-        blockEntity = ((TeaKettleBlockEntity) entity);
         this.level = inv.player.level();
         this.data = data;
 
+        buildSlots(container);
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
         addDataSlots(data);
     }
 
-    public TeaKettleMenu(int i, Inventory inventory) {
-        this(i, inventory, null);
-    }
-
-
-    @Override
-    public boolean stillValid(Player player) {
-        return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()), player, BBBlocks.COPPER_TEA_KETTLE.get());
+    private void buildSlots(Container container) {
+        this.addSlot(new TeaKettleSlot(container, 0, 27, 55, stack -> stack.getItem() instanceof GenericDrinkItem));
+        this.addSlot(new TeaKettleSlot(container, 1, 18, 13, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 2, 36, 13, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 3, 18, 31, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 4, 36, 31, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new SimpleOutputSlot(container, 5, 120, 35));
     }
 
     public boolean isCrafting() {
@@ -93,17 +96,21 @@ public class TeaKettleMenu extends AbstractContainerMenu {
         return copyOfSourceStack;
     }
 
+    @Override
+    public boolean stillValid(Player player) {
+        return true;
+    }
+
     private void addPlayerInventory(Inventory inventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(inventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
+                this.addSlot(new Slot(inventory, l + i * 9 + 9, 8 + l * 18, 112 + i * 18));
             }
         }
     }
-
     private void addPlayerHotbar(Inventory inventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(inventory, i, 8 + i * 18, 142));
+            this.addSlot(new Slot(inventory, i, 8 + i * 18, 178));
         }
     }
 }

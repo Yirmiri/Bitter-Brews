@@ -34,6 +34,7 @@ public class ForgeBitterBrews {
 
         ForgeBitterBrewsRegistryHelper.BLOCKS.register(modEventBus);
         ForgeBitterBrewsRegistryHelper.ITEMS.register(modEventBus);
+        ForgeBitterBrewsRegistryHelper.MENU.register(modEventBus);
 
         modEventBus.addListener(this::gatherData);
         modEventBus.addListener(this::buildCreativeTabs);
