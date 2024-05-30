@@ -46,11 +46,11 @@ public class ForgeBitterBrews {
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        //Client
+        //Client Datagen
         generator.addProvider(event.includeClient(), new BBEnUsLangGen(packOutput, BitterBrewsConstants.MOD_ID, "en_us"));
         generator.addProvider(event.includeClient(), new BitterBrewsItemModelProvider(packOutput, BitterBrewsConstants.MOD_ID, fileHelper));
 
-        //Server
+        //Server Datagen
         generator.addProvider(event.includeServer(), new BBRecipeProvider(packOutput));
         BBBlockTagGen blockTagProvider = new BBBlockTagGen(packOutput, lookupProvider, BitterBrewsConstants.MOD_ID, fileHelper);
         generator.addProvider(event.includeServer(), blockTagProvider);
