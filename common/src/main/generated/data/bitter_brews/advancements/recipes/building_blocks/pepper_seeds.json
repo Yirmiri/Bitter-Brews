@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bitter_brews:pepper_seeds"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pepper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bitter_brews:pepper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "pepper",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bitter_brews:pepper_seeds"
+    ]
+  },
+  "sends_telemetry_event": false
+}

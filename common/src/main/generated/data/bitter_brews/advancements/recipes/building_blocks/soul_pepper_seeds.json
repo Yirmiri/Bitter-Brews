@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bitter_brews:soul_pepper_seeds"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "soul_pepper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bitter_brews:soul_pepper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "soul_pepper",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bitter_brews:soul_pepper_seeds"
+    ]
+  },
+  "sends_telemetry_event": false
+}

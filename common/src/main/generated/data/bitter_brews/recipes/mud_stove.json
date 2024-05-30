@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:mud_bricks"
+    },
+    "$": {
+      "item": "minecraft:iron_ingot"
+    },
+    "@": {
+      "item": "minecraft:magma_block"
+    }
+  },
+  "pattern": [
+    "$@$",
+    "# #",
+    "$$$"
+  ],
+  "result": {
+    "item": "bitter_brews:mud_stove"
+  },
+  "show_notification": true
+}
