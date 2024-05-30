@@ -7,6 +7,7 @@ plugins {
 base {
     archivesName = "${mod_name}-common-${minecraft_version}"
 }
+
 minecraft {
     version(minecraft_version)
     if(file("src/main/resources/${mod_id}.accesswidener").exists()){
@@ -15,9 +16,11 @@ minecraft {
 }
 
 dependencies {
-     compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
-     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
-     implementation "curse.maven:tipsylib-880879:5380079"
+    compileOnly group:'org.spongepowered', name:'mixin', version:'0.8.5'
+
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+
+    implementation "curse.maven:tipsylib-${tipsylib_forge}"
 }
 
 publishing {
@@ -27,12 +30,14 @@ publishing {
             from components.java
         }
     }
+
     repositories {
         maven {
             url "file://" + System.getenv("local_maven")
         }
     }
 }
+
 sourceSets {
     main {
         resources {
