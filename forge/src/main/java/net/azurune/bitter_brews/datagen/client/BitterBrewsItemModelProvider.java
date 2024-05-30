@@ -35,7 +35,7 @@ public class BitterBrewsItemModelProvider extends ItemModelProvider {
         basicItem(BBItems.DRIED_TEA_LEAVES.get() );
         basicItem(BBItems.COFFEE_BEANS.get() );
         basicItem(BBItems.MANGO.get() );
-        //basicItem(BBItems.PEPPER_SEEDS.get() );
-        //basicItem(BBItems.SOUL_PEPPER_SEEDS.get() );
+        basicItem(BBItems.PEPPER_SEEDS.get() );
+        basicItem(BBItems.SOUL_PEPPER_SEEDS.get() );
     }
 }

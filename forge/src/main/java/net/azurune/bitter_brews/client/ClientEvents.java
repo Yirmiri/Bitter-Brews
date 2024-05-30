@@ -20,7 +20,7 @@ public class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(BBBlocks.PEPPER_CROP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BBBlocks.SOUL_PEPPER_CROP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BBBlocks.AZALEA_FLOWER.get(), RenderType.cutout());
-        //ItemBlockRenderTypes.setRenderLayer(BBBlocks.COPPER_TEA_KETTLE, RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BBBlocks.COPPER_TEA_KETTLE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BBBlocks.COFFEE_BUSH.get(), RenderType.cutout());
     }
 }

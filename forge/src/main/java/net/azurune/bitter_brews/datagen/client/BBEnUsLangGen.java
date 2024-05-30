@@ -16,7 +16,7 @@ public class BBEnUsLangGen extends LanguageProvider {
         add(BBBlocks.MUD_COUNTER.get(), "Mud Counter");
         add(BBBlocks.AZALEA_FLOWER.get(), "Azalea Flower");
         add(BBBlocks.COFFEE_BUSH.get(), "Coffee Bush");
-        //add(BBBlocks.COPPER_TEA_KETTLE.get(), "Tea Kettle");
+        add(BBBlocks.COPPER_TEA_KETTLE.get(), "Tea Kettle");
 
         //ITEMS
         add(BBItems.MUD_CUP.get(), "Mud Cup");
