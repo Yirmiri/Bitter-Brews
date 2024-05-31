@@ -19,7 +19,6 @@ public class BBMenuTypes {
         return Services.REGISTRY_HELPER.register(BuiltInRegistries.MENU, name, menuType);
     }
 
-
     public static void loadMenuTypes() {
 
     }
