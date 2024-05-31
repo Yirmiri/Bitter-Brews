@@ -13,7 +13,8 @@ public class FabricBBItemGroups {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> {
             entries.addAfter(Items.NETHER_WART, BBItems.PEPPER_SEEDS.get());
             entries.addAfter(BBItems.PEPPER_SEEDS.get(), BBItems.SOUL_PEPPER_SEEDS.get());
-            entries.addAfter(Items.FLOWERING_AZALEA, BBBlocks.COFFEE_BUSH.get());
+            entries.addAfter(Items.FLOWERING_AZALEA, BBBlocks.AZALEA_FLOWER.get());
+            entries.addAfter(Items.SWEET_BERRIES, BBBlocks.COFFEE_BUSH.get());
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(entries -> {
