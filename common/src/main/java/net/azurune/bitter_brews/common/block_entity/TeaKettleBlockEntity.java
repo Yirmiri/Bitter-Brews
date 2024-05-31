@@ -4,6 +4,7 @@ package net.azurune.bitter_brews.common.block_entity;
 import net.azurune.bitter_brews.common.recipe.TeaKettleRecipe;
 import net.azurune.bitter_brews.common.screen.TeaKettleMenu;
 import net.azurune.bitter_brews.core.registry.BBBlockEntityTypes;
+import net.azurune.bitter_brews.core.registry.BBTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -109,15 +110,17 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
 
     public void tick(Level level, BlockPos pos, BlockState state) {
         if (!level.isClientSide()) {
-            if (canInsertOutputSlot() && hasRecipe()) {
-                increaseCraftingProgress();
-                setChanged(level, pos, state);
-                if (hasCraftingFinished()) {
-                    craftItem();
-                    resetProgress();
+            if (state.is(BBTags.BlockTags.HEAT_SOURCES) || getLevel().dimensionType().piglinSafe()) {
+                if (canInsertOutputSlot() && hasRecipe()) {
+                    increaseCraftingProgress();
+                    setChanged(level, pos, state);
+                    if (hasCraftingFinished()) {
+                        craftItem();
+                        resetProgress();
+                    }
+                } else {
+                    decreaseCraftingProgress();
                 }
-            } else {
-                decreaseCraftingProgress();
             }
         }
     }
