@@ -18,7 +18,7 @@ public class BBItemTagGen extends ItemTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider p_256380_) {
+    protected void addTags(HolderLookup.Provider provider) {
         appendBrews();
     }
 
