@@ -2,10 +2,6 @@ package net.azurune.bitter_brews.common.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import net.azurune.bitter_brews.BitterBrews;
-import net.azurune.bitter_brews.BitterBrewsConstants;
-import net.azurune.bitter_brews.core.registry.BBRecipeSerializer;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -15,122 +11,107 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class TeaKettleRecipe implements Recipe<SimpleContainer> {
-    private final NonNullList<Ingredient> ingredient;
-    private final ItemStack output;
+
     private final ResourceLocation id;
-    public static final int INGREDIENTS = 5;
+    private final ItemStack output;
+    private final NonNullList<Ingredient> recipeItems;
 
-    public TeaKettleRecipe(NonNullList<Ingredient> ingredient, ItemStack output, ResourceLocation id) {
-        this.ingredient = ingredient;
-        this.output = output;
+    public TeaKettleRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems) {
         this.id = id;
+        this.output = output;
+        this.recipeItems = recipeItems;
     }
-
-    public static class Type implements RecipeType<TeaKettleRecipe> {
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "brewing";
-    }
-
 
     @Override
-    public boolean matches(SimpleContainer simpleContainer, Level level) {
-        if (level.isClientSide()) {
+    public boolean matches(SimpleContainer inventory, Level world) {
+        if (world.isClientSide()) {
             return false;
         }
-        return ingredient.get(0).test(simpleContainer.getItem(0)) && ingredient.get(0).test(simpleContainer.getItem(0));
+        return recipeItems.get(1).test(inventory.getItem(1));
     }
 
     @Override
-    public ItemStack assemble(SimpleContainer simpleContainer, RegistryAccess registryAccess) {
+    public ItemStack assemble(SimpleContainer inventory, RegistryAccess registryManager) {
         return output.copy();
     }
 
     @Override
-    public boolean canCraftInDimensions(int i, int i1) {
+    public boolean canCraftInDimensions(int width, int height) {
         return true;
     }
-    @Override @NotNull
-    public NonNullList<Ingredient> getIngredients() {
-        return ingredient;
-    }
+
 
     @Override
-    public ItemStack getResultItem(RegistryAccess registryAccess) {
+    public ItemStack getResultItem(RegistryAccess registryManager) {
         return output.copy();
     }
 
     @Override
     public ResourceLocation getId() {
-        return id;
+        return this.id;
     }
-
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return BBRecipeSerializer.TEA_KETTLE_RECIPE.get();
+        return Serializer.INSTANCE;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return BBRecipeSerializer.TEA_KETTLE_RECIPE_TYPE.get();
+        return Type.INSTANCE;
+    }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return this.recipeItems;
+    }
+
+    public static class Type implements RecipeType<TeaKettleRecipe> {
+        private Type() { }
+        public static final Type INSTANCE = new Type();
+        public static final String ID = "brewing";
     }
 
     public static class Serializer implements RecipeSerializer<TeaKettleRecipe> {
+        public static final Serializer INSTANCE = new Serializer();
+        public static final String ID = "brewing";
+        // this is the name given in the json file
+
         @Override
         public TeaKettleRecipe fromJson(ResourceLocation id, JsonObject json) {
-            final NonNullList<Ingredient> ingredients = readIngredients(GsonHelper.getAsJsonArray(json, "ingredients"));
+            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
-            if (ingredients.isEmpty()) {
-                throw new JsonParseException("No ingredients for this recipe");
+            JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
+            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
 
-            } else if (ingredients.size() > TeaKettleRecipe.INGREDIENTS) {
-                throw new JsonParseException("The max amount of ingredients allowed in this recipe is " + TeaKettleRecipe.INGREDIENTS);
-
-            } else {
-                final ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "result"));
-                return new TeaKettleRecipe(ingredients, output, id);
-            }
-        }
-
-        private static NonNullList<Ingredient> readIngredients(JsonArray ingredientArray) {
-            NonNullList<Ingredient> nonnulllist = NonNullList.create();
-
-            for (int i = 0; i < ingredientArray.size(); ++i) {
-                Ingredient ingredient = Ingredient.fromJson(ingredientArray.get(i));
-                if (!ingredient.isEmpty()) {
-                    nonnulllist.add(ingredient);
-                }
+            for (int i = 0; i < inputs.size(); i++) {
+                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return nonnulllist;
+            return new TeaKettleRecipe(id, output, inputs);
         }
 
         @Override
-        public @Nullable TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf byteBuf) {
-            int i = byteBuf.readInt();
-            NonNullList<Ingredient> ingredients = NonNullList.withSize(i, Ingredient.EMPTY);
+        public TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+            NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
-            for (int j = 0; j < ingredients.size(); j++) {
-                ingredients.set(j, Ingredient.fromNetwork(byteBuf));
+            for (int i = 0; i < inputs.size(); i++) {
+                inputs.set(i, Ingredient.fromNetwork(buf));
             }
 
-            ItemStack output = byteBuf.readItem();
-            return new TeaKettleRecipe(ingredients, output, id);
+            ItemStack output = buf.readItem();
+            return new TeaKettleRecipe(id, output, inputs);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf byteBuf, TeaKettleRecipe recipe) {
-            byteBuf.writeInt(recipe.ingredient.size());
-
-            for (Ingredient ingredient : recipe.getIngredients()) {
-                ingredient.toNetwork(byteBuf);
+        public void toNetwork(FriendlyByteBuf buf, TeaKettleRecipe recipe) {
+            buf.writeInt(recipe.getIngredients().size());
+            for (Ingredient ing : recipe.getIngredients()) {
+                ing.toNetwork(buf);
             }
-
-            byteBuf.writeItem(recipe.getResultItem(RegistryAccess.EMPTY));
+            buf.writeItem(recipe.getResultItem(null));
         }
     }
 }
