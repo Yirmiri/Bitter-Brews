@@ -100,8 +100,16 @@ public class BBProperties {
 
         public static final Item.Properties JASMINE_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
                 .effect(new MobEffectInstance(TLStatusEffects.CONFUSION, AVERAGE_DURATION, 0), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.INACCURATE, AVERAGE_DURATION, 0), 1.0F)
                 .effect(new MobEffectInstance(TLStatusEffects.DIVERSION, AVERAGE_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties FUDGE_SUNDAE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.HEARTBREAK, AVERAGE_DURATION, 19), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.LESSER_STRENGTH, AVERAGE_DURATION, 7), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.CHRONOS, AVERAGE_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.PRECISION, AVERAGE_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.CONFUSION, AVERAGE_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.RETALIATION, AVERAGE_DURATION, 2), 1.0F)
                 .alwaysEat().build());
     }
 }

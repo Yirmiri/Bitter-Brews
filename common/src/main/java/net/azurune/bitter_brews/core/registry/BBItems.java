@@ -33,7 +33,7 @@ public class BBItems {
     public static final Supplier<Item> CUP_OF_HONEY_TEA = registerItem("cup_of_honey_tea", () -> new GenericDrinkItem(BBProperties.ItemP.HONEY_TEA, 48, true));
     public static final Supplier<Item> CUP_OF_KELP_TEA = registerItem("cup_of_kelp_tea", () -> new GenericDrinkItem(BBProperties.ItemP.KELP_TEA, 32, true));
     public static final Supplier<Item> CUP_OF_MANGO_TEA = registerItem("cup_of_mango_tea", () -> new GenericDrinkItem(BBProperties.ItemP.MANGO_TEA, 32, true));
-    public static final Supplier<Item> CUP_OF_FUDGE_SUNDAE = registerItem("cup_of_fudge_sundae", () -> new GenericDrinkItem(BBProperties.ItemP.MILK, 256, true));
+    public static final Supplier<Item> CUP_OF_FUDGE_SUNDAE = registerItem("cup_of_fudge_sundae", () -> new GenericDrinkItem(BBProperties.ItemP.FUDGE_SUNDAE, 256, true));
     public static final Supplier<Item> CUP_OF_BLACK_TEA = registerItem("cup_of_black_tea", () -> new GenericDrinkItem(BBProperties.ItemP.BLACK_TEA, 32, true));
     public static final Supplier<Item> CUP_OF_CHOCOLATE_MILK = registerItem("cup_of_chocolate_milk", () -> new GenericDrinkItem(BBProperties.ItemP.CHOCOLATE_MILK, 48, true));
     public static final Supplier<Item> CUP_OF_COFFEE = registerItem("cup_of_coffee", () -> new GenericDrinkItem(BBProperties.ItemP.COFFEE, 32, true));
@@ -42,7 +42,6 @@ public class BBItems {
     public static final Supplier<Item> CUP_OF_HOT_COCOA = registerItem("cup_of_hot_cocoa", () -> new GenericDrinkItem(BBProperties.ItemP.HOT_COCOA, 48, true));
     public static final Supplier<Item> CUP_OF_ICED_TEA = registerItem("cup_of_iced_tea", () -> new GenericDrinkItem(BBProperties.ItemP.ICED_TEA, 64, true));
     public static final Supplier<Item> CUP_OF_JASMINE_TEA = registerItem("cup_of_jasmine_tea", () -> new GenericDrinkItem(BBProperties.ItemP.JASMINE_TEA, 32, true));
-
 
     private static <T extends Item> Supplier<T> registerItem(String name, Supplier<T> itemSupplier) {
         return Services.REGISTRY_HELPER.register(BuiltInRegistries.ITEM, name, itemSupplier);
