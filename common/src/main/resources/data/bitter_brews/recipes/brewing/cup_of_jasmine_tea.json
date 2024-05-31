@@ -1,0 +1,23 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:cup_of_water"
+    },
+    {
+      "item": "bitter_brews:dried_tea_leaves"
+    },
+    {
+      "item": "bitter_brews:dried_tea_leaves"
+    },
+    {
+      "item": "bitter_brews:azalea_flower"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_jasmine_tea"
+  }
+}

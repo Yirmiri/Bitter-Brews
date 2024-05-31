@@ -1,0 +1,23 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:cup_of_water"
+    },
+    {
+      "item": "bitter_brews:mango"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:honey_block"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_mango_tea"
+  }
+}
