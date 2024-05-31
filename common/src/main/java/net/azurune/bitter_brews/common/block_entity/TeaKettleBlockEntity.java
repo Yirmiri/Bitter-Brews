@@ -144,6 +144,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
                 this.removeItem(i, 1);
             }
         }
+
         this.updateOutput(new ItemStack(recipe.get().getResultItem(this.getLevel().registryAccess()).getItem(),
                 this.getItem(OUTPUT_SLOT).getCount() + recipe.get().getResultItem(this.getLevel().registryAccess()).getCount()));
     }

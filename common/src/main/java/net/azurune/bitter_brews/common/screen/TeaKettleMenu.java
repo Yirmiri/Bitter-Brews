@@ -59,12 +59,12 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
     }
 
     private void buildSlots(Container container) {
-        this.addSlot(new TeaKettleSlot(container, 0, 27, 55, stack -> stack.getItem() instanceof GenericDrinkItem));
-        this.addSlot(new TeaKettleSlot(container, 1, 18, 13, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new TeaKettleSlot(container, 2, 36, 13, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new TeaKettleSlot(container, 3, 18, 31, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new TeaKettleSlot(container, 4, 36, 31, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new SimpleOutputSlot(container, 5, 120, 35));
+        this.addSlot(new TeaKettleSlot(container, 0, 28, 54, stack -> stack.getItem() instanceof GenericDrinkItem));
+        this.addSlot(new TeaKettleSlot(container, 1, 18, 12, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 2, 38, 12, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 3, 18, 32, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 4, 38, 32, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new SimpleOutputSlot(container, 5, 100, 32));
     }
 
     public boolean isCrafting() {

@@ -29,8 +29,8 @@ public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, GUI_TEXTURE);
-        int x = (width - imageWidth);
-        int y = (height - imageHeight);
+        int x = (width - imageWidth) / 2 + 1;
+        int y = (height - imageHeight) / 2 - 27;
 
         guiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
         renderProgressArrow(guiGraphics, x, y);
