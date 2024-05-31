@@ -1,10 +1,13 @@
 package net.azurune.bitter_brews.common.screen;
 
+import net.azurune.bitter_brews.BitterBrewsConstants;
+import net.azurune.bitter_brews.common.block_entity.TeaKettleBlockEntity;
 import net.azurune.bitter_brews.common.item.GenericDrinkItem;
 import net.azurune.bitter_brews.common.screen.slot.SimpleOutputSlot;
 import net.azurune.bitter_brews.common.screen.slot.TeaKettleSlot;
 import net.azurune.bitter_brews.core.registry.BBMenuTypes;
 import net.minecraft.world.Container;
+import net.minecraft.world.ContainerListener;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -15,7 +18,10 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-public class TeaKettleMenu extends AbstractContainerMenu {
+import java.util.ArrayList;
+import java.util.List;
+
+public class TeaKettleMenu extends AbstractContainerMenu implements ContainerListener {
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
@@ -27,19 +33,25 @@ public class TeaKettleMenu extends AbstractContainerMenu {
 
     private final Level level;
     private final ContainerData data;
+    private final TeaKettleBlockEntity kettle;
+    private final SimpleContainer container;
 
-
-
-    public TeaKettleMenu(int container, Inventory inventory) {
-        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6));
+    public TeaKettleMenu(int container, Inventory inventory, TeaKettleBlockEntity kettle) {
+        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), kettle);
     }
 
-    public TeaKettleMenu(int containerInt, Inventory inv, Container container, ContainerData data) {
+    public TeaKettleMenu(int container, Inventory inventory) {
+        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), null);
+    }
+
+    public TeaKettleMenu(int containerInt, Inventory inv, SimpleContainer container, ContainerData data, TeaKettleBlockEntity kettle) {
         super(BBMenuTypes.TEA_KETTLE_MENU.get(), containerInt);
         checkContainerSize(inv, 6);
         this.level = inv.player.level();
         this.data = data;
-
+        this.kettle = kettle;
+        this.container = container;
+        container.addListener(this);
         buildSlots(container);
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
@@ -83,7 +95,7 @@ public class TeaKettleMenu extends AbstractContainerMenu {
                 return ItemStack.EMPTY;
             }
         } else {
-            System.out.println("Invalid slotIndex" + index);
+            BitterBrewsConstants.LOGGER.warn("Invalid slotIndex: %s".formatted(index));
             return ItemStack.EMPTY;
         }
 
@@ -108,9 +120,29 @@ public class TeaKettleMenu extends AbstractContainerMenu {
             }
         }
     }
+
     private void addPlayerHotbar(Inventory inventory) {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(inventory, i, 8 + i * 18, 178));
         }
     }
+
+    @Override
+    public void containerChanged(Container container) {
+        if (this.kettle == null) return;
+        this.kettle.updateItems(this.getAllContainerItems(container));
+    }
+
+    private List<ItemStack> getAllContainerItems(Container container) {
+        List<ItemStack> items = new ArrayList<>();
+        for (int i = 0; i < container.getContainerSize(); i++) {
+            items.add(container.getItem(i));
+        }
+        return items;
+    }
+
+    public void updateOutput(ItemStack stack) {
+        this.container.setItem(5, stack);
+    }
+
 }

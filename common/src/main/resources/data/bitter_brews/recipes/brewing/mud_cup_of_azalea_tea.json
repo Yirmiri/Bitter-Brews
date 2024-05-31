@@ -11,7 +11,7 @@
       "item": "bitter_brews:azalea_flower"
     }
   ],
-  "result": {
+  "output": {
     "item": "minecraft:string"
   }
 }

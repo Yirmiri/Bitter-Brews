@@ -1,11 +1,14 @@
 package net.azurune.bitter_brews.common.block_entity;
 
+import net.azurune.bitter_brews.BitterBrewsConstants;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -155,6 +158,16 @@ public interface ImplementedInventory extends WorldlyContainer {
         return result;
     }
 
+    default ItemStack removeItem(ItemLike itemLike) {
+        for (int i = 0; i < getContainerSize(); i++) {
+            ItemStack stack = getItem(i);
+            if (stack.getItem() == itemLike) {
+                return removeItem(i, 1);
+            }
+        }
+        return ItemStack.EMPTY;
+    }
+
     /**
      * Removes the current stack in the {@code slot} and returns it.
      *
@@ -179,7 +192,6 @@ public interface ImplementedInventory extends WorldlyContainer {
      */
     @Override
     default void setItem(int slot, ItemStack stack) {
-        getItems().set(slot, stack);
         if (stack.getCount() > getMaxStackSize()) {
             stack.setCount(getMaxStackSize());
         }

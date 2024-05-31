@@ -23,15 +23,11 @@ public class BBRecipeSerializer<T extends Recipe<?>> {
     }
 
     private static <T extends Recipe<?>> Supplier<RecipeType<T>> registerRecipeType(String name) {
-        Supplier<RecipeType<T>> type = () -> new RecipeType<>() {
-            @Override
-            public String toString() {
-                return name;
-            }
-        };
-        return Services.REGISTRY_HELPER.register(BuiltInRegistries.RECIPE_TYPE, name, type);
+        Supplier<RecipeType<T>> recipeType = () -> (RecipeType<T>) TeaKettleRecipe.Type.INSTANCE;
+        return Services.REGISTRY_HELPER.register(BuiltInRegistries.RECIPE_TYPE, name, recipeType);
     }
 
     public static void loadRecipeTypes() {
     }
+
 }
