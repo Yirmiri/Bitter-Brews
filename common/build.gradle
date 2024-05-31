@@ -37,7 +37,6 @@ publishing {
         }
     }
 }
-
 sourceSets {
     main {
         resources {
