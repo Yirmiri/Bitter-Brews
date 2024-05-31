@@ -121,6 +121,16 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
             return new TeaKettleRecipe(id, output, inputs);
         }
 
+//        @Override
+//        public TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+//            NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
+//
+//            inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
+//
+//            ItemStack output = buf.readItem();
+//            return new TeaKettleRecipe(id, output, inputs);
+//        }
+
         @Override
         public void toNetwork(FriendlyByteBuf buf, TeaKettleRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
