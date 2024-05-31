@@ -58,12 +58,12 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
     }
 
     private void buildSlots(Container container) {
-        this.addSlot(new TeaKettleSlot(container, 0, 28, 92, stack -> stack.getItem() instanceof GenericDrinkItem));
-        this.addSlot(new TeaKettleSlot(container, 1, 18, 48, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new TeaKettleSlot(container, 2, 38, 48, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new TeaKettleSlot(container, 3, 18, 70, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new TeaKettleSlot(container, 4, 38, 70, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new SimpleOutputSlot(container, 5, 100, 70));
+        this.addSlot(new TeaKettleSlot(container, 0, 27, 68, stack -> stack.getItem() instanceof GenericDrinkItem));
+        this.addSlot(new TeaKettleSlot(container, 1, 17, 26, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 2, 37, 26, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 3, 17, 46, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 4, 37, 46, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new SimpleOutputSlot(container, 5, 99, 46));
     }//
 
     public boolean isCrafting() {
@@ -117,14 +117,14 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
     private void addPlayerInventory(Inventory inventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(inventory, l + i * 9 + 9, 8 + l * 18, 126 + i * 18));
+                this.addSlot(new Slot(inventory, l + i * 9 + 9, 9 + l * 18, 97 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory inventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(inventory, i, 18 + i * 18, 176));
+            this.addSlot(new Slot(inventory, i, 9 + i * 18, 155));
         }
     }
 
