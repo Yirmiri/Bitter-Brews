@@ -92,7 +92,6 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
     public static class Serializer implements RecipeSerializer<TeaKettleRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "brewing";
-        // this is the name given in the json file.
 
         @Override
         public TeaKettleRecipe fromJson(ResourceLocation id, JsonObject json) {
