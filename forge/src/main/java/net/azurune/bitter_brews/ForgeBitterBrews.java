@@ -62,7 +62,8 @@ public class ForgeBitterBrews {
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             addAfter(event, Items.NETHER_WART, BBItems.PEPPER_SEEDS.get());
             addAfter(event, BBItems.PEPPER_SEEDS.get(), BBItems.SOUL_PEPPER_SEEDS.get());
-            addAfter(event, Blocks.FLOWERING_AZALEA, BBBlocks.COFFEE_BUSH.get());
+            addAfter(event, Blocks.FLOWERING_AZALEA, BBBlocks.AZALEA_FLOWER.get());
+            addAfter(event, Items.SWEET_BERRIES, BBBlocks.COFFEE_BUSH.get());
         }
 
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
