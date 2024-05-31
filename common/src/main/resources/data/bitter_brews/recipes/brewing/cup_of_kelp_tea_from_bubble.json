@@ -1,5 +1,5 @@
 {
-  "type": "bitter_brews:brewing",
+  "type": "bitter_brews:brewing/cup_of_kelp_tea_from_bubble",
   "ingredients": [
     {
       "item": "bitter_brews:cup_of_water"

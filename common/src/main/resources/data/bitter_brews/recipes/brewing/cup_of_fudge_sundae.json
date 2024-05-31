@@ -1,5 +1,5 @@
 {
-  "type": "bitter_brews:brewing",
+  "type": "bitter_brews:brewing/cup_of_fudge_sundae",
   "ingredients": [
     {
       "item": "bitter_brews:cup_of_water"
@@ -18,6 +18,6 @@
     }
   ],
   "output": {
-    "item": "bitter_brews:cup_of_dark_coffee"
+    "item": "bitter_brews:cup_of_fudge_sundae"
   }
 }

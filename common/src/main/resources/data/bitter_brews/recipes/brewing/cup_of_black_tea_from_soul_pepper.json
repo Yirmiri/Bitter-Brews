@@ -1,5 +1,5 @@
 {
-  "type": "bitter_brews:brewing",
+  "type": "bitter_brews:brewing/cup_of_black_tea_from_soul_pepper",
   "ingredients": [
     {
       "item": "bitter_brews:cup_of_water"

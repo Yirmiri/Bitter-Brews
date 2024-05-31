@@ -1,5 +1,5 @@
 {
-  "type": "bitter_brews:brewing",
+  "type": "bitter_brews:brewing/cup_of_coffee",
   "ingredients": [
     {
       "item": "bitter_brews:cup_of_water"
