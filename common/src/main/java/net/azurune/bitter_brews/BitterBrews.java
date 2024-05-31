@@ -9,15 +9,12 @@ import net.minecraft.resources.ResourceLocation;
 public class BitterBrews {
 
     public static void init() {
-
         BBItems.loadItems();
         BBBlocks.loadBlocks();
         BBBlockEntityTypes.loadBlockEntityTypes();
         BBRecipeSerializer.loadRecipeTypes();
         BBMenuTypes.loadMenuTypes();
 
-
-        // the platform specific approach.
         if (Services.PLATFORM.isModLoaded("tipsylib")) {
             BitterBrewsConstants.LOGGER.info("Bitter Brews depends off TipsyLib which is a mod that adds many different effects for mod creators to use!");
         }
