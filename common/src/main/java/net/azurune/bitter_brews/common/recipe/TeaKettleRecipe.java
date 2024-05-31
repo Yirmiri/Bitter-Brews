@@ -29,7 +29,23 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
         if (world.isClientSide()) {
             return false;
         }
-        return recipeItems.get(1).test(inventory.getItem(1));
+        return recipeItems.stream().allMatch(ingredient -> {
+            for (int i = 0; i < inventory.getContainerSize(); i++) {
+                if (ingredient.test(inventory.getItem(i))) {
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+
+    public boolean containsItem(ItemStack stack) {
+        for (Ingredient ingredient : recipeItems) {
+            if (ingredient.test(stack)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -41,7 +57,6 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
     public boolean canCraftInDimensions(int width, int height) {
         return true;
     }
-
 
     @Override
     public ItemStack getResultItem(RegistryAccess registryManager) {
@@ -84,7 +99,7 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(ingredients.size(), Ingredient.EMPTY);
 
             for (int j = 0; j < inputs.size(); j++) {
                 inputs.set(j, Ingredient.fromJson(ingredients.get(j)));
@@ -97,9 +112,7 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
         public TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromNetwork(buf));
-            }
+            inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
 
             ItemStack output = buf.readItem();
             return new TeaKettleRecipe(id, output, inputs);
