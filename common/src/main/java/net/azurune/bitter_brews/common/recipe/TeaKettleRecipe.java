@@ -86,8 +86,8 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
             NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
 
-            for (int i = 0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+            for (int j = 0; j < inputs.size(); j++) {
+                inputs.set(j, Ingredient.fromJson(ingredients.get(j)));
             }
 
             return new TeaKettleRecipe(id, output, inputs);
