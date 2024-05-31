@@ -1,7 +1,6 @@
 package net.azurune.bitter_brews.common.block_entity;
 
 
-import net.azurune.bitter_brews.BitterBrewsConstants;
 import net.azurune.bitter_brews.common.recipe.TeaKettleRecipe;
 import net.azurune.bitter_brews.common.screen.TeaKettleMenu;
 import net.azurune.bitter_brews.core.registry.BBBlockEntityTypes;
@@ -21,13 +20,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -46,12 +43,10 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
 
     private TeaKettleMenu menu;
 
-    //private static BooleanProperty teaKettleBlock;
     private final NonNullList<ItemStack> items = NonNullList.withSize(6, ItemStack.EMPTY);
 
     public TeaKettleBlockEntity(BlockPos pos, BlockState state) {
         super(BBBlockEntityTypes.TEA_KETTLE_BLOCK_ENTITY.get(), pos, state);
-        //teaKettleBlock = ((TeaKettleBlock)state.getBlock()).getMillingState();
         this.containerData = new ContainerData() {
             @Override
             public int get(int index) {
@@ -144,6 +139,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
                 this.removeItem(i, 1);
             }
         }
+
         this.updateOutput(new ItemStack(recipe.get().getResultItem(this.getLevel().registryAccess()).getItem(),
                 this.getItem(OUTPUT_SLOT).getCount() + recipe.get().getResultItem(this.getLevel().registryAccess()).getCount()));
     }
