@@ -11,6 +11,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.Nullable;
 
 public class TeaKettleRecipe implements Recipe<SimpleContainer> {
 
@@ -108,12 +109,15 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
         }
 
         @Override
-        public TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
-            NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
+        public @Nullable TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf byteBuf) {
+            int i = byteBuf.readInt();
+            NonNullList<Ingredient> inputs = NonNullList.withSize(i, Ingredient.EMPTY);
 
-            inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
+            for (int j = 0; j < inputs.size(); j++) {
+                inputs.set(j, Ingredient.fromNetwork(byteBuf));
+            }
 
-            ItemStack output = buf.readItem();
+            ItemStack output = byteBuf.readItem();
             return new TeaKettleRecipe(id, output, inputs);
         }
 
