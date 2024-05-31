@@ -31,26 +31,25 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
     private static final int INVENTORY_SLOT_COUNT = 6;
     private static final int INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    private final Level level;
     private final ContainerData data;
     private final TeaKettleBlockEntity kettle;
     private final SimpleContainer container;
 
-    public TeaKettleMenu(int container, Inventory inventory, TeaKettleBlockEntity kettle) {
-        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), kettle);
+    public TeaKettleMenu(int container, Inventory inventory, TeaKettleBlockEntity kettle, List<ItemStack> stacks) {
+        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), kettle, stacks);
     }
 
     public TeaKettleMenu(int container, Inventory inventory) {
-        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), null);
+        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), null, List.of());
     }
 
-    public TeaKettleMenu(int containerInt, Inventory inv, SimpleContainer container, ContainerData data, TeaKettleBlockEntity kettle) {
+    public TeaKettleMenu(int containerInt, Inventory inv, SimpleContainer container, ContainerData data, TeaKettleBlockEntity kettle, List<ItemStack> stacks) {
         super(BBMenuTypes.TEA_KETTLE_MENU.get(), containerInt);
         checkContainerSize(inv, 6);
-        this.level = inv.player.level();
         this.data = data;
         this.kettle = kettle;
         this.container = container;
+        this.load(stacks);
         container.addListener(this);
         buildSlots(container);
         addPlayerInventory(inv);
@@ -81,8 +80,10 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
 
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
-        Slot sourceSlot = slots.get(index);
-        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;
+        Slot sourceSlot = this.slots.get(index);
+
+        if (!sourceSlot.hasItem()) return ItemStack.EMPTY;
+
         ItemStack sourceStack = sourceSlot.getItem();
         ItemStack copyOfSourceStack = sourceStack.copy();
 
@@ -95,7 +96,7 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
                 return ItemStack.EMPTY;
             }
         } else {
-            BitterBrewsConstants.LOGGER.warn("Invalid slotIndex: %s".formatted(index));
+            BitterBrewsConstants.LOGGER.warn("Invalid slotIndex: {}", index);
             return ItemStack.EMPTY;
         }
 
@@ -143,6 +144,13 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
 
     public void updateOutput(ItemStack stack) {
         this.container.setItem(5, stack);
+    }
+
+    public TeaKettleMenu load(List<ItemStack> stacks) {
+        for (int i = 0; i < stacks.size(); i++) {
+            this.container.setItem(i, stacks.get(i));
+        }
+        return this;
     }
 
 }

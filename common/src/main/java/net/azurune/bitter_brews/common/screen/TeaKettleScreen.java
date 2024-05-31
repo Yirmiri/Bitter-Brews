@@ -8,6 +8,8 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.inventory.Slot;
 
 public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
     private static final ResourceLocation GUI_TEXTURE = new ResourceLocation(BitterBrewsConstants.MOD_ID, "textures/gui/tea_kettle.png");
@@ -37,7 +39,7 @@ public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
     }
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
-        if(menu.isCrafting()) {
+        if (menu.isCrafting()) {
             guiGraphics.blit(GUI_TEXTURE, x + 86, y + 37, 176, 0, 9, menu.getScaledProgress());
         }
     }
@@ -47,5 +49,13 @@ public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
         renderBackground(guiGraphics);
         super.render(guiGraphics, mouseX, mouseY, delta);
         renderTooltip(guiGraphics, mouseX, mouseY);
+    }
+
+    @Override
+    protected void slotClicked(Slot $$0, int $$1, int $$2, ClickType clickType) {
+        if (clickType == ClickType.THROW) { // Hardcoded for now TODO fix fabric
+            clickType = ClickType.PICKUP;
+        }
+        super.slotClicked($$0, $$1, $$2, clickType);
     }
 }

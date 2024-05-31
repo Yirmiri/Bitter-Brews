@@ -31,11 +31,6 @@ import java.util.Optional;
 
 public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, ImplementedInventory {
 
-    private static final int CUP_SLOT = 0;
-    private static final int INPUT_SLOT_1 = 1;
-    private static final int INPUT_SLOT_2 = 2;
-    private static final int INPUT_SLOT_3 = 3;
-    private static final int INPUT_SLOT_4 = 4;
     private static final int OUTPUT_SLOT = 5;
 
     protected final ContainerData containerData;
@@ -75,25 +70,23 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
         };
     }
 
-
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
-        ContainerHelper.saveAllItems(nbt, items);
         nbt.putInt("tea_kettle.progress", progress);
+        ContainerHelper.saveAllItems(nbt, this.items);
     }
-
 
     @Override
     public void load(CompoundTag nbt) {
-        ContainerHelper.loadAllItems(nbt, items);
         super.load(nbt);
         this.progress = nbt.getInt("tea_kettle.progress");
+        ContainerHelper.loadAllItems(nbt, this.items);
     }
 
     @Override
     public Component getDisplayName() {
-        return Component.literal("This took too much work honestly");
+        return Component.literal("Rebel :D");
     }
 
     public void drops() {
@@ -198,7 +191,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return this.menu == null ? this.menu = new TeaKettleMenu(i, inventory, this) : this.menu;
+        return this.menu == null ? this.menu = new TeaKettleMenu(i, inventory, this, this.items) : this.menu;
     }
 
     /**
@@ -217,11 +210,13 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
         for (int i = 0; i < stacks.size(); i++) {
             this.items.set(i, stacks.get(i));
         }
+        setChanged();
     }
 
     public void updateOutput(ItemStack stack) {
         if (this.menu != null)
             this.menu.updateOutput(stack);
+        setChanged();
     }
 
     @Nullable
