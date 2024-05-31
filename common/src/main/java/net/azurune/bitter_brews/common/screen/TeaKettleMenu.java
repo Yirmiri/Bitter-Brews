@@ -58,12 +58,12 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
     }
 
     private void buildSlots(Container container) {
-        this.addSlot(new TeaKettleSlot(container, 0, 28, 54, stack -> stack.getItem() instanceof GenericDrinkItem));
-        this.addSlot(new TeaKettleSlot(container, 1, 18, 12, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new TeaKettleSlot(container, 2, 38, 12, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new TeaKettleSlot(container, 3, 18, 32, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new TeaKettleSlot(container, 4, 38, 32, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new SimpleOutputSlot(container, 5, 100, 32));
+        this.addSlot(new TeaKettleSlot(container, 0, 28, 92, stack -> stack.getItem() instanceof GenericDrinkItem));
+        this.addSlot(new TeaKettleSlot(container, 1, 18, 48, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 2, 38, 48, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 3, 18, 70, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleSlot(container, 4, 38, 70, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new SimpleOutputSlot(container, 5, 100, 70));
     }
 
     public boolean isCrafting() {
@@ -73,7 +73,7 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);
-        int progressBarSize = 12;
+        int progressBarSize = 50;
 
         return maxProgress != 0 && progress != 0 ? progress * progressBarSize / maxProgress : 0;
     }
@@ -117,14 +117,14 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
     private void addPlayerInventory(Inventory inventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(inventory, l + i * 9 + 9, 8 + l * 18, 112 + i * 18));
+                this.addSlot(new Slot(inventory, l + i * 9 + 9, 8 + l * 18, 126 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory inventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(inventory, i, 8 + i * 18, 178));
+            this.addSlot(new Slot(inventory, i, 18 + i * 18, 176));
         }
     }
 

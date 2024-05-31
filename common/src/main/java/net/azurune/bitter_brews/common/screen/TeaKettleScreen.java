@@ -24,6 +24,8 @@ public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
         this.inventoryLabelY = 10000;
         this.titleLabelY = 10000;
         this.titleLabelX = 10000;
+        this.imageWidth = 176;
+        this.imageHeight = 192;
     }
 
     @Override
@@ -31,8 +33,8 @@ public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, GUI_TEXTURE);
-        int x = (width - imageWidth) / 2 + 1;
-        int y = (height - imageHeight) / 2 - 27;
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
 
         guiGraphics.blit(GUI_TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
         renderProgressArrow(guiGraphics, x, y);
@@ -40,7 +42,7 @@ public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if (menu.isCrafting()) {
-            guiGraphics.blit(GUI_TEXTURE, x + 86, y + 37, 176, 0, 9, menu.getScaledProgress());
+            guiGraphics.blit(GUI_TEXTURE, x + 176, y + 45, 226, 0, 46, menu.getScaledProgress());
         }
     }
 
@@ -52,10 +54,10 @@ public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
     }
 
     @Override
-    protected void slotClicked(Slot $$0, int $$1, int $$2, ClickType clickType) {
-        if (clickType == ClickType.THROW) { // Hardcoded for now TODO fix fabric
+    protected void slotClicked(Slot slot, int i, int j, ClickType clickType) {
+        if (clickType == ClickType.THROW) { // Hardcoded for now TODO: fix fabric
             clickType = ClickType.PICKUP;
         }
-        super.slotClicked($$0, $$1, $$2, clickType);
+        super.slotClicked(slot, i, j, clickType);
     }
 }
