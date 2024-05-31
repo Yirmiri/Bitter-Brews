@@ -3,7 +3,9 @@ package net.azurune.bitter_brews.common.recipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import net.azurune.bitter_brews.BitterBrews;
 import net.azurune.bitter_brews.BitterBrewsConstants;
+import net.azurune.bitter_brews.core.registry.BBRecipeSerializer;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -28,13 +30,18 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
         this.id = id;
     }
 
+    public static class Type implements RecipeType<TeaKettleRecipe> {
+        public static final Type INSTANCE = new Type();
+        public static final String ID = "brewing";
+    }
+
 
     @Override
     public boolean matches(SimpleContainer simpleContainer, Level level) {
         if (level.isClientSide()) {
             return false;
         }
-        return ingredient.get(0).test(simpleContainer.getItem(0)) && ingredient.get(1).test(simpleContainer.getItem(1));
+        return ingredient.get(0).test(simpleContainer.getItem(0)) && ingredient.get(0).test(simpleContainer.getItem(0));
     }
 
     @Override
@@ -45,6 +52,10 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
     @Override
     public boolean canCraftInDimensions(int i, int i1) {
         return true;
+    }
+    @Override @NotNull
+    public NonNullList<Ingredient> getIngredients() {
+        return ingredient;
     }
 
     @Override
@@ -57,14 +68,15 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
         return id;
     }
 
+
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return null;
+        return BBRecipeSerializer.TEA_KETTLE_RECIPE.get();
     }
 
     @Override
     public RecipeType<?> getType() {
-        return null;
+        return BBRecipeSerializer.TEA_KETTLE_RECIPE_TYPE.get();
     }
 
     public static class Serializer implements RecipeSerializer<TeaKettleRecipe> {
@@ -118,7 +130,7 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
                 ingredient.toNetwork(byteBuf);
             }
 
-            byteBuf.writeItem(recipe.getResultItem(null));
+            byteBuf.writeItem(recipe.getResultItem(RegistryAccess.EMPTY));
         }
     }
 }

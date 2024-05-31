@@ -84,6 +84,27 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
         return InteractionResult.sidedSuccess(level.isClientSide());
     }
 
+    @Nullable @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level world, BlockState blockState, BlockEntityType<T> entityType) {
+        if(world.isClientSide()) {
+            return null;
+        }
+
+        return createTickerHelper(entityType, BBBlockEntityTypes.TEA_KETTLE_BLOCK_ENTITY.get(), (level, pos, state, blockEntity) -> blockEntity.tick(level, pos, state));
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState blockState, boolean isMoving) {
+        if (state.getBlock() != blockState.getBlock()) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity instanceof TeaKettleBlockEntity) {
+                ((TeaKettleBlockEntity) blockEntity).drops();
+            }
+        }
+
+        super.onRemove(state, level, pos, blockState, isMoving);
+    }
+
     static { //wtf
         SHAPE = Block.box(3, 0, 3, 13, 7, 13);
         Block.box(4, 7, 4, 12, 8, 12);
