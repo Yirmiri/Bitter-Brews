@@ -13,13 +13,12 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import org.jetbrains.annotations.Nullable;
 
 public class HorizontalDirectionalBlockWithBlockEntity extends BaseEntityBlock {
+    public static final DirectionProperty FACING;
 
     @Nullable @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
         return null;
     }
-
-    public static final DirectionProperty FACING;
 
     protected HorizontalDirectionalBlockWithBlockEntity(BlockBehaviour.Properties properties) {
         super(properties);
