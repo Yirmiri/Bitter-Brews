@@ -113,9 +113,7 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
             int i = byteBuf.readInt();
             NonNullList<Ingredient> inputs = NonNullList.withSize(i, Ingredient.EMPTY);
 
-            for (int j = 0; j < inputs.size(); j++) {
-                inputs.set(j, Ingredient.fromNetwork(byteBuf));
-            }
+            inputs.replaceAll(ignored -> Ingredient.fromNetwork(byteBuf));
 
             ItemStack output = byteBuf.readItem();
             return new TeaKettleRecipe(id, output, inputs);
@@ -139,5 +137,7 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
             }
             buf.writeItem(recipe.getResultItem(null));
         }
+
     }
+
 }
