@@ -109,8 +109,9 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
     }
 
     public void tick(Level level, BlockPos pos, BlockState state) {
+        BlockState blockState = level.getBlockState(pos.below());
         if (!level.isClientSide()) {
-            if (state.is(BBTags.BlockTags.HEAT_SOURCES) || getLevel().dimensionType().piglinSafe()) {
+            if (blockState.is(BBTags.BlockTags.HEAT_SOURCES) || getLevel().dimensionType().piglinSafe()) {
                 if (canInsertOutputSlot() && hasRecipe()) {
                     increaseCraftingProgress();
                     setChanged(level, pos, state);
