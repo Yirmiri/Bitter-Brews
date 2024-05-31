@@ -1,0 +1,14 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:cup_of_water"
+    },
+    {
+      "item": "bitter_brews:dried_tea_leaves"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_green_tea"
+  }
+}
