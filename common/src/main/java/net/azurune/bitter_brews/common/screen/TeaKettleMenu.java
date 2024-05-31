@@ -64,7 +64,7 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
         this.addSlot(new TeaKettleSlot(container, 3, 18, 70, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
         this.addSlot(new TeaKettleSlot(container, 4, 38, 70, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
         this.addSlot(new SimpleOutputSlot(container, 5, 100, 70));
-    }
+    }//
 
     public boolean isCrafting() {
         return data.get(0) > 0;
