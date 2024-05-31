@@ -83,11 +83,12 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
         nbt.putInt("tea_kettle.progress", progress);
     }
 
+
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         ContainerHelper.loadAllItems(nbt, items);
-        progress = nbt.getInt("tea_kettle.progress");
+        super.load(nbt);
+        this.progress = nbt.getInt("tea_kettle.progress");
     }
 
     @Override
