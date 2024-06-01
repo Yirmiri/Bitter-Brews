@@ -36,6 +36,7 @@ public class BBProperties {
 
         //MISC
         public static final Item.Properties GENERIC_ITEM = new Item.Properties();
+        public static final Item.Properties WATER_CUP = new Item.Properties().food(new FoodProperties.Builder().build());
         public static final Item.Properties DRIED_TEA_LEAVES = new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build());
         public static final Item.Properties MANGO = new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build());
         public static final Item.Properties PEPPER = new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build());

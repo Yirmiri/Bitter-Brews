@@ -26,7 +26,7 @@ public class BBItems {
     public static final Supplier<Item> SOUL_PEPPER_SEEDS = registerItem("soul_pepper_seeds", () -> new ItemNameBlockItem(BBBlocks.SOUL_PEPPER_CROP.get(), new Item.Properties()));
 
     //DRINKS
-    public static final Supplier<Item> CUP_OF_WATER = registerItem("cup_of_water", () -> new GenericDrinkItem(BBProperties.ItemP.GENERIC_ITEM, 32, false));
+    public static final Supplier<Item> CUP_OF_WATER = registerItem("cup_of_water", () -> new GenericDrinkItem(BBProperties.ItemP.WATER_CUP, 32, false));
     public static final Supplier<Item> CUP_OF_MILK = registerItem("cup_of_milk", () -> new ExtinguishDrinkItem(BBProperties.ItemP.MILK, 48, false));
     public static final Supplier<Item> CUP_OF_GREEN_TEA = registerItem("cup_of_green_tea", () -> new GenericDrinkItem(BBProperties.ItemP.GREEN_TEA, 32, true));
     public static final Supplier<Item> CUP_OF_AZALEA_TEA = registerItem("cup_of_azalea_tea", () -> new GenericDrinkItem(BBProperties.ItemP.AZALEA_TEA, 32, true));
