@@ -37,7 +37,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
     private int progress = 0;
     private int maxProgress = 200;
 
-    private TeaKettleMenu menu;
+    private final SimpleContainer container = new SimpleContainer(6);
 
     private final NonNullList<ItemStack> items = NonNullList.withSize(6, ItemStack.EMPTY);
 
@@ -188,7 +188,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
 
     @Nullable @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return this.menu == null ? this.menu = new TeaKettleMenu(i, inventory, this, this.items) : this.menu;
+        return new TeaKettleMenu(i, inventory, this.container, this.containerData, this, this.items);
     }
 
     /**
@@ -211,8 +211,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
     }
 
     public void updateOutput(ItemStack stack) {
-        if (this.menu != null)
-            this.menu.updateOutput(stack);
+        this.container.setItem(5, stack);
         setChanged();
     }
 

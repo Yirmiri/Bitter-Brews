@@ -142,10 +142,6 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
         return items;
     }
 
-    public void updateOutput(ItemStack stack) {
-        this.container.setItem(5, stack);
-    }
-
     public TeaKettleMenu load(List<ItemStack> stacks) {
         for (int i = 0; i < stacks.size(); i++) {
             this.container.setItem(i, stacks.get(i));
