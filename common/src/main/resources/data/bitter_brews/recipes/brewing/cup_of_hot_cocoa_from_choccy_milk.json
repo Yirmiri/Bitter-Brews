@@ -1,5 +1,5 @@
 {
-  "type": "bitter_brews:brewing/cup_of_hot_cocoa_from_choccy_milk",
+  "type": "bitter_brews:brewing",
   "ingredients": [
     {
       "item": "bitter_brews:cup_of_chocolate_milk"

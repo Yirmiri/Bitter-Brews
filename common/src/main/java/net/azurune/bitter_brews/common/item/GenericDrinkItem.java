@@ -2,6 +2,7 @@ package net.azurune.bitter_brews.common.item;
 
 import net.azurune.bitter_brews.BitterBrews;
 import net.azurune.bitter_brews.core.registry.BBItems;
+import net.azurune.tipsylib.core.register.TLStatusEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
@@ -10,12 +11,12 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -40,20 +41,20 @@ public class GenericDrinkItem extends Item {
         }
     }
 
-    public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
+    public @NotNull ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity user) {
         super.finishUsingItem(stack, world, user);
-        if (user instanceof ServerPlayer serverPlayerEntity) {
-            CriteriaTriggers.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
-            serverPlayerEntity.awardStat(Stats.ITEM_USED.get(this));
+        if (user instanceof ServerPlayer player) {
+            CriteriaTriggers.CONSUME_ITEM.trigger(player, stack);
+            player.awardStat(Stats.ITEM_USED.get(this));
         }
 
         if (stack.isEmpty()) {
             return new ItemStack(BBItems.MUD_CUP.get());
         } else {
-            if (user instanceof Player playerEntity && !((Player)user).getAbilities().instabuild) {
+            if (user instanceof Player player && !((Player)user).getAbilities().instabuild) {
                 ItemStack itemStack = new ItemStack(BBItems.MUD_CUP.get());
-                if (!playerEntity.getInventory().add(itemStack)) {
-                    playerEntity.drop(itemStack, false);
+                if (!player.getInventory().add(itemStack)) {
+                    player.drop(itemStack, false);
                 }
             }
 

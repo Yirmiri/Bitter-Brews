@@ -42,6 +42,7 @@ public class BBProperties {
         public static final Item.Properties SOUL_PEPPER = new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(TLStatusEffects.TRAIL_BLAZING, BRIEF_DURATION, 0), 1.0F).alwaysEat().build());
 
         //DRINKS
+        public static final Item.Properties WATER = new Item.Properties().stacksTo(16);
         public static final Item.Properties MILK = new Item.Properties().stacksTo(4);
 
         public static final Item.Properties GREEN_TEA = new Item.Properties().stacksTo(4).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)

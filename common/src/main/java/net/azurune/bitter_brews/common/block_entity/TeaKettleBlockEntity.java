@@ -74,14 +74,14 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
     protected void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
         nbt.putInt("tea_kettle.progress", progress);
-        ContainerHelper.saveAllItems(nbt, this.items);
+        ContainerHelper.saveAllItems(nbt, items);
     }
 
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
         this.progress = nbt.getInt("tea_kettle.progress");
-        ContainerHelper.loadAllItems(nbt, this.items);
+        ContainerHelper.loadAllItems(nbt, items);
     }
 
     @Override
@@ -183,13 +183,10 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
     }
 
     private boolean canInsertOutputSlot() {
-        return this.getItem(OUTPUT_SLOT).isEmpty() ||
-                this.getItem(OUTPUT_SLOT).getCount() < this.getItem(OUTPUT_SLOT).getMaxStackSize();
+        return this.getItem(OUTPUT_SLOT).isEmpty() || this.getItem(OUTPUT_SLOT).getCount() < this.getItem(OUTPUT_SLOT).getMaxStackSize();
     }
 
-
-    @Nullable
-    @Override
+    @Nullable @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
         return this.menu == null ? this.menu = new TeaKettleMenu(i, inventory, this, this.items) : this.menu;
     }
@@ -206,9 +203,9 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
     }
 
     public void updateItems(List<ItemStack> stacks) {
-        this.items.clear();
+        items.clear();
         for (int i = 0; i < stacks.size(); i++) {
-            this.items.set(i, stacks.get(i));
+            items.set(i, stacks.get(i));
         }
         setChanged();
     }
@@ -219,8 +216,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
         setChanged();
     }
 
-    @Nullable
-    @Override
+    @Nullable @Override
     public Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
     }
@@ -229,5 +225,4 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
     public CompoundTag getUpdateTag() {
         return saveWithoutMetadata();
     }
-
 }

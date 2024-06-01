@@ -2,6 +2,8 @@ package net.azurune.bitter_brews.common.recipe;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.azurune.bitter_brews.core.registry.BBRecipeSerializer;
+import net.azurune.bitter_brews.core.registry.BBRecipeTypes;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
@@ -11,6 +13,7 @@ import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class TeaKettleRecipe implements Recipe<SimpleContainer> {
@@ -71,12 +74,12 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
+        return BBRecipeSerializer.TEA_KETTLE_RECIPE.get();
     }
 
     @Override
     public RecipeType<?> getType() {
-        return Type.INSTANCE;
+        return BBRecipeTypes.TEA_KETTLE_RECIPE_TYPE.get();
     }
 
     @Override
@@ -95,7 +98,7 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
         public static final String ID = "brewing";
 
         @Override
-        public TeaKettleRecipe fromJson(ResourceLocation id, JsonObject json) {
+        public @NotNull TeaKettleRecipe fromJson(ResourceLocation id, JsonObject json) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
@@ -104,40 +107,27 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
             for (int j = 0; j < inputs.size(); j++) {
                 inputs.set(j, Ingredient.fromJson(ingredients.get(j)));
             }
-
             return new TeaKettleRecipe(id, output, inputs);
         }
 
         @Override
-        public @Nullable TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf byteBuf) {
-            int i = byteBuf.readInt();
+        public @Nullable TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+            int i = buf.readInt();
             NonNullList<Ingredient> inputs = NonNullList.withSize(i, Ingredient.EMPTY);
 
-            inputs.replaceAll(ignored -> Ingredient.fromNetwork(byteBuf));
+            inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
 
-            ItemStack output = byteBuf.readItem();
+            ItemStack output = buf.readItem();
             return new TeaKettleRecipe(id, output, inputs);
         }
-
-//        @Override
-//        public TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
-//            NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
-//
-//            inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
-//
-//            ItemStack output = buf.readItem();
-//            return new TeaKettleRecipe(id, output, inputs);
-//        }
 
         @Override
         public void toNetwork(FriendlyByteBuf buf, TeaKettleRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
-            for (Ingredient ing : recipe.getIngredients()) {
-                ing.toNetwork(buf);
+            for (Ingredient ingredient : recipe.getIngredients()) {
+                ingredient.toNetwork(buf);
             }
             buf.writeItem(recipe.getResultItem(null));
         }
-
     }
-
 }
