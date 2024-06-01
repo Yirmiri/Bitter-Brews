@@ -49,7 +49,6 @@ public interface ImplementedInventory extends WorldlyContainer {
     }
 
     // SidedInventory
-
     /**
      * Gets the available slots to automation on the side.
      *
