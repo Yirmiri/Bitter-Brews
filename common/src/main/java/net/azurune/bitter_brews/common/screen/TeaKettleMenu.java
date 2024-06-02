@@ -35,21 +35,20 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
     private final TeaKettleBlockEntity kettle;
     private final SimpleContainer container;
 
-    public TeaKettleMenu(int container, Inventory inventory, TeaKettleBlockEntity kettle, List<ItemStack> stacks) {
-        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), kettle, stacks);
+    public TeaKettleMenu(int container, Inventory inventory, TeaKettleBlockEntity kettle) {
+        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), kettle);
     }
 
     public TeaKettleMenu(int container, Inventory inventory) {
-        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), null, List.of());
+        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), null);
     }
 
-    public TeaKettleMenu(int containerInt, Inventory inv, SimpleContainer container, ContainerData data, TeaKettleBlockEntity kettle, List<ItemStack> stacks) {
+    public TeaKettleMenu(int containerInt, Inventory inv, SimpleContainer container, ContainerData data, TeaKettleBlockEntity kettle) {
         super(BBMenuTypes.TEA_KETTLE_MENU.get(), containerInt);
         checkContainerSize(inv, 6);
         this.data = data;
         this.kettle = kettle;
         this.container = container;
-        this.load(stacks);
         container.addListener(this);
         buildSlots(container);
         addPlayerInventory(inv);
@@ -64,7 +63,7 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
         this.addSlot(new TeaKettleSlot(container, 3, 17, 46, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
         this.addSlot(new TeaKettleSlot(container, 4, 37, 46, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
         this.addSlot(new SimpleOutputSlot(container, 5, 99, 46));
-    }//
+    }
 
     public boolean isCrafting() {
         return data.get(0) > 0;
@@ -140,13 +139,6 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
             items.add(container.getItem(i));
         }
         return items;
-    }
-
-    public TeaKettleMenu load(List<ItemStack> stacks) {
-        for (int i = 0; i < stacks.size(); i++) {
-            this.container.setItem(i, stacks.get(i));
-        }
-        return this;
     }
 
 }

@@ -188,7 +188,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
 
     @Nullable @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return new TeaKettleMenu(i, inventory, this.container, this.containerData, this, this.items);
+        return new TeaKettleMenu(i, inventory, this.container, this.containerData, this);
     }
 
     /**
