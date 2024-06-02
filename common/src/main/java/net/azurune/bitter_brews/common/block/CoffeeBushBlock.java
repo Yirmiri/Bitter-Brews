@@ -33,10 +33,13 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class CoffeeBushBlock extends BushBlock implements BonemealableBlock {
     public static final IntegerProperty AGE;
+    private static final VoxelShape TOP_BOX_SHAPE;
+    private static final VoxelShape BOTTOM_BOX_SHAPE;
     private static final VoxelShape LARGE_SHAPE;
 
     public CoffeeBushBlock(BlockBehaviour.Properties settings) {
@@ -119,6 +122,8 @@ public class CoffeeBushBlock extends BushBlock implements BonemealableBlock {
 
     static {
         AGE = BlockStateProperties.AGE_3;
-        LARGE_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+        BOTTOM_BOX_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+        TOP_BOX_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 26.0, 15.0);
+        LARGE_SHAPE = Shapes.or(BOTTOM_BOX_SHAPE, new VoxelShape[]{TOP_BOX_SHAPE});
     }
 }
