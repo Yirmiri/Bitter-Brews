@@ -20,6 +20,9 @@
         ],
         "client": [
             "net.azurune.bitter_brews.ClientFabricBitterBrews"
+        ],
+        "jei_mod_plugin": [
+            "net.azurune.bitter_brews.compat.jei.BitterBrewsJEIPlugin"
         ]
     },
     "mixins": [

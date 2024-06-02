@@ -73,5 +73,8 @@ public class BBEnUsLangGen extends LanguageProvider {
         add("death.attack.bitter_brews.soul_pepper.player", "%1$s failed the soul pepper challenge to %2$s");
         add("death.attack.bitter_brews.coffee_bush", "%1$s was tangled and pricked to death by coffee bush");
         add("death.attack.bitter_brews.coffee_bush.player", "%1$s was forced into a prickly death to a coffee bush by %2$s");
+
+        //JEI
+        add("block.bitter_brews.tea_kettle", "Tea Kettle");
     }
 }
