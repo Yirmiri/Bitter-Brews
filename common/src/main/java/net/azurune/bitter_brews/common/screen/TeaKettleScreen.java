@@ -42,7 +42,7 @@ public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if (menu.isCrafting()) {
-            guiGraphics.blit(GUI_TEXTURE, x + 176, y + 45, 226, 0, 46, menu.getScaledProgress());
+            guiGraphics.blit(GUI_TEXTURE, x + 46, y + 46, 177, 0, menu.getScaledProgress(), 52);
         }
     }
 
