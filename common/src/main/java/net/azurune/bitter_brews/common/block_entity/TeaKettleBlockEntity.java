@@ -6,16 +6,14 @@ import net.azurune.bitter_brews.common.screen.TeaKettleMenu;
 import net.azurune.bitter_brews.core.registry.BBBlockEntityTypes;
 import net.azurune.bitter_brews.core.registry.BBTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.Containers;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.*;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -26,20 +24,21 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.Optional;
 
-public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, ImplementedInventory {
+public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, WorldlyContainer {
 
     private static final int OUTPUT_SLOT = 5;
+
+    public static final int INVENTORY_SLOT_COUNT = 6;
+
+    private static final int[] SLOTS = {0,2,3,4,5};
 
     protected final ContainerData containerData;
     private int progress = 0;
     private int maxProgress = 200;
 
-    private final SimpleContainer container = new SimpleContainer(6);
-
-    private final NonNullList<ItemStack> items = NonNullList.withSize(6, ItemStack.EMPTY);
+    private final NonNullList<ItemStack> items = NonNullList.withSize(INVENTORY_SLOT_COUNT, ItemStack.EMPTY);
 
     public TeaKettleBlockEntity(BlockPos pos, BlockState state) {
         super(BBBlockEntityTypes.TEA_KETTLE_BLOCK_ENTITY.get(), pos, state);
@@ -138,8 +137,10 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
             }
         }
 
-        this.updateOutput(new ItemStack(recipe.get().getResultItem(this.getLevel().registryAccess()).getItem(),
-                this.getItem(OUTPUT_SLOT).getCount() + recipe.get().getResultItem(this.getLevel().registryAccess()).getCount()));
+        this.setItem(OUTPUT_SLOT, new ItemStack(recipe.get().getResultItem(this.getLevel().registryAccess()).getItem(),
+                this.getItem(OUTPUT_SLOT).getCount() + recipe.get().getResultItem(
+                        this.getLevel().registryAccess()).getCount()));
+        setChanged();
     }
 
     private boolean hasCraftingFinished() {
@@ -188,31 +189,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
 
     @Nullable @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return new TeaKettleMenu(i, inventory, this.container, this.containerData, this);
-    }
-
-    /**
-     * Gets the item list of this inventory.
-     * Must return the same instance every time it's called.
-     *
-     * @return the item list
-     */
-    @Override
-    public NonNullList<ItemStack> getItems() {
-        return items;
-    }
-
-    public void updateItems(List<ItemStack> stacks) {
-        items.clear();
-        for (int i = 0; i < stacks.size(); i++) {
-            items.set(i, stacks.get(i));
-        }
-        setChanged();
-    }
-
-    public void updateOutput(ItemStack stack) {
-        this.container.setItem(5, stack);
-        setChanged();
+        return new TeaKettleMenu(i, inventory, this, this.containerData);
     }
 
     @Nullable @Override
@@ -223,5 +200,70 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, I
     @Override
     public CompoundTag getUpdateTag() {
         return saveWithoutMetadata();
+    }
+
+    @Override
+    public int[] getSlotsForFace(final Direction direction) {
+        return SLOTS;
+    }
+
+    @Override
+    public boolean canPlaceItemThroughFace(final int i, final ItemStack itemStack,
+                                           @Nullable final Direction direction) {
+        return true;
+    }
+
+    @Override
+    public boolean canTakeItemThroughFace(final int i, final ItemStack itemStack, final Direction direction) {
+        return true;
+    }
+
+    @Override
+    public int getContainerSize() {
+        return INVENTORY_SLOT_COUNT;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return this.items.stream().allMatch(ItemStack::isEmpty);
+    }
+
+    @Override
+    public ItemStack getItem(final int slotIndex) {
+        return this.items.get(slotIndex);
+    }
+
+    @Override
+    public ItemStack removeItem(final int slotIndex, final int count) {
+        final ItemStack itemstack = ContainerHelper.removeItem(this.items, slotIndex, count);
+        if (!itemstack.isEmpty()) {
+            this.setChanged();
+        }
+
+        return itemstack;
+    }
+
+    @Override
+    public ItemStack removeItemNoUpdate(final int slotIndex) {
+        return ContainerHelper.takeItem(this.items, slotIndex);
+    }
+
+    @Override
+    public void setItem(final int slotIndex, final ItemStack itemStack) {
+        this.items.set(slotIndex, itemStack);
+        if (itemStack.getCount() > this.getMaxStackSize()) {
+            itemStack.setCount(this.getMaxStackSize());
+        }
+        this.setChanged();
+    }
+
+    @Override
+    public boolean stillValid(final Player player) {
+        return Container.stillValidBlockEntity(this, player);
+    }
+
+    @Override
+    public void clearContent() {
+        this.items.clear();
     }
 }

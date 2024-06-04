@@ -7,7 +7,6 @@ import net.azurune.bitter_brews.common.screen.slot.SimpleOutputSlot;
 import net.azurune.bitter_brews.common.screen.slot.TeaKettleSlot;
 import net.azurune.bitter_brews.core.registry.BBMenuTypes;
 import net.minecraft.world.Container;
-import net.minecraft.world.ContainerListener;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -16,40 +15,28 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class TeaKettleMenu extends AbstractContainerMenu implements ContainerListener {
+public class TeaKettleMenu extends AbstractContainerMenu {
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
-    private static final int INVENTORY_SLOT_COUNT = 6;
     private static final int INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     private final ContainerData data;
-    private final TeaKettleBlockEntity kettle;
-    private final SimpleContainer container;
-
-    public TeaKettleMenu(int container, Inventory inventory, TeaKettleBlockEntity kettle) {
-        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), kettle);
-    }
+    private final Container container;
 
     public TeaKettleMenu(int container, Inventory inventory) {
-        this(container, inventory, new SimpleContainer(6), new SimpleContainerData(6), null);
+        this(container, inventory, new SimpleContainer(TeaKettleBlockEntity.INVENTORY_SLOT_COUNT), new SimpleContainerData(6));
     }
 
-    public TeaKettleMenu(int containerInt, Inventory inv, SimpleContainer container, ContainerData data, TeaKettleBlockEntity kettle) {
+    public TeaKettleMenu(int containerInt, Inventory inv, Container container, ContainerData data) {
         super(BBMenuTypes.TEA_KETTLE_MENU.get(), containerInt);
-        checkContainerSize(inv, 6);
+        checkContainerSize(inv, TeaKettleBlockEntity.INVENTORY_SLOT_COUNT);
         this.data = data;
-        this.kettle = kettle;
         this.container = container;
-        container.addListener(this);
         buildSlots(container);
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
@@ -63,7 +50,7 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
         this.addSlot(new TeaKettleSlot(container, 3, 17, 46, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
         this.addSlot(new TeaKettleSlot(container, 4, 37, 46, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
         this.addSlot(new SimpleOutputSlot(container, 5, 99, 46));
-    }
+    }//
 
     public boolean isCrafting() {
         return data.get(0) > 0;
@@ -72,7 +59,7 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);
-        int progressBarSize = 52;
+        int progressBarSize = 50;
 
         return maxProgress != 0 && progress != 0 ? progress * progressBarSize / maxProgress : 0;
     }
@@ -87,10 +74,10 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
         ItemStack copyOfSourceStack = sourceStack.copy();
 
         if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            if (!moveItemStackTo(sourceStack, INVENTORY_FIRST_SLOT_INDEX, INVENTORY_FIRST_SLOT_INDEX + INVENTORY_SLOT_COUNT, false)) {
+            if (!moveItemStackTo(sourceStack, INVENTORY_FIRST_SLOT_INDEX, INVENTORY_FIRST_SLOT_INDEX + TeaKettleBlockEntity.INVENTORY_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
-        } else if (index < INVENTORY_FIRST_SLOT_INDEX + INVENTORY_SLOT_COUNT) {
+        } else if (index < INVENTORY_FIRST_SLOT_INDEX + TeaKettleBlockEntity.INVENTORY_SLOT_COUNT) {
             if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
@@ -110,7 +97,7 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
 
     @Override
     public boolean stillValid(Player player) {
-        return true;
+        return this.container.stillValid(player);
     }
 
     private void addPlayerInventory(Inventory inventory) {
@@ -125,20 +112,6 @@ public class TeaKettleMenu extends AbstractContainerMenu implements ContainerLis
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(inventory, i, 9 + i * 18, 155));
         }
-    }
-
-    @Override
-    public void containerChanged(Container container) {
-        if (this.kettle == null) return;
-        this.kettle.updateItems(this.getAllContainerItems(container));
-    }
-
-    private List<ItemStack> getAllContainerItems(Container container) {
-        List<ItemStack> items = new ArrayList<>();
-        for (int i = 0; i < container.getContainerSize(); i++) {
-            items.add(container.getItem(i));
-        }
-        return items;
     }
 
 }
