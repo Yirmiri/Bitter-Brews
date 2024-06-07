@@ -45,6 +45,13 @@ public class BBEnUsLangGen extends LanguageProvider {
         add(BBItems.MANGO.get(), "Mango");
         add(BBItems.PEPPER_SEEDS.get(), "Pepper Seeds");
         add(BBItems.SOUL_PEPPER_SEEDS.get(), "Soul Pepper Seeds");
+        add(BBItems.CUP_OF_MELON_JUICE.get(), "Cup of Melon Juice");
+        add(BBItems.CUP_OF_SWEET_BERRY_JUICE.get(), "Cup of Sweet Berry Juice");
+        add(BBItems.CUP_OF_GLOW_BERRY_JUICE.get(), "Cup of Glow Berry Juice");
+        add(BBItems.CUP_OF_CRIMSON_TEA.get(), "Cup of Weeping Tea");
+        add(BBItems.CUP_OF_WARPED_TEA.get(), "Cup of Twisting Tea");
+        add(BBItems.CUP_OF_SHROOMLIGHT_TEA.get(), "Cup of Shroomlight Tea");
+        add(BBItems.CUP_OF_CHORUS_JUICE.get(), "Cup of Chorus Juice");
 
         //TOOLTIPS
         add("bitter_brews.tooltip.soul_pepper", "You might wanna bring a cup of milk.");
@@ -62,6 +69,13 @@ public class BBEnUsLangGen extends LanguageProvider {
         add("bitter_brews.tooltip.cup_of_dark_coffee", "You might need a backup cup.");
         add("bitter_brews.tooltip.cup_of_iced_tea", "Tastes like perfection.");
         add("bitter_brews.tooltip.cup_of_jasmine_tea", "A calming brew that could put you to sleep.");
+        add("bitter_brews.tooltip.melon_juice", "A bitter brew that is great for a hot summer day.");
+        add("bitter_brews.tooltip.sweet_berry_juice", "At least you won't accidentally place this one.");
+        add("bitter_brews.tooltip.glow_berry_juice", "Glow and behold!");
+        add("bitter_brews.tooltip.crimson_tea", "A common refreshment enjoyed among piglin.");
+        add("bitter_brews.tooltip.warped_tea", "It reeks a horrible smell into the air.");
+        add("bitter_brews.tooltip.shroomlight_tea", "A mixture of the Nether's delight!");
+        add("bitter_brews.tooltip.chorus_juice", "It smells of a familiar place...");
 
         //ITEM GROUPS
         add("itemgroup.bitter_brews", "Bitter Brews");

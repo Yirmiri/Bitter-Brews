@@ -29,7 +29,13 @@ public class FabricBBItemGroups {
             entries.addAfter(BBItems.PEPPER.get(), BBItems.SOUL_PEPPER.get());
             entries.addAfter(Items.DRIED_KELP, BBItems.DRIED_TEA_LEAVES.get());
             entries.addAfter(Items.SPIDER_EYE, BBItems.CUP_OF_WATER.get());
-            entries.addAfter(BBItems.CUP_OF_WATER.get(), BBItems.CUP_OF_GREEN_TEA.get());
+            entries.addAfter(BBItems.CUP_OF_WATER.get(), BBItems.CUP_OF_MILK.get());
+            entries.addAfter(BBItems.CUP_OF_MILK.get(), BBItems.CUP_OF_CHOCOLATE_MILK.get());
+            entries.addAfter(BBItems.CUP_OF_CHOCOLATE_MILK.get(), BBItems.CUP_OF_MELON_JUICE.get());
+            entries.addAfter(BBItems.CUP_OF_MELON_JUICE.get(), BBItems.CUP_OF_SWEET_BERRY_JUICE.get());
+            entries.addAfter(BBItems.CUP_OF_SWEET_BERRY_JUICE.get(), BBItems.CUP_OF_GLOW_BERRY_JUICE.get());
+            entries.addAfter(BBItems.CUP_OF_GLOW_BERRY_JUICE.get(), BBItems.CUP_OF_CHORUS_JUICE.get());
+            entries.addAfter(BBItems.CUP_OF_CHORUS_JUICE.get(), BBItems.CUP_OF_GREEN_TEA.get());
             entries.addAfter(BBItems.CUP_OF_GREEN_TEA.get(), BBItems.CUP_OF_AZALEA_TEA.get());
             entries.addAfter(BBItems.CUP_OF_AZALEA_TEA.get(), BBItems.CUP_OF_BLACK_TEA.get());
             entries.addAfter(BBItems.CUP_OF_BLACK_TEA.get(), BBItems.CUP_OF_ICED_TEA.get());
@@ -37,12 +43,12 @@ public class FabricBBItemGroups {
             entries.addAfter(BBItems.CUP_OF_HONEY_TEA.get(), BBItems.CUP_OF_MANGO_TEA.get());
             entries.addAfter(BBItems.CUP_OF_MANGO_TEA.get(), BBItems.CUP_OF_KELP_TEA.get());
             entries.addAfter(BBItems.CUP_OF_KELP_TEA.get(), BBItems.CUP_OF_JASMINE_TEA.get());
-            entries.addAfter(BBItems.CUP_OF_JASMINE_TEA.get(), BBItems.CUP_OF_COFFEE.get());
+            entries.addAfter(BBItems.CUP_OF_JASMINE_TEA.get(), BBItems.CUP_OF_CRIMSON_TEA.get());
+            entries.addAfter(BBItems.CUP_OF_CRIMSON_TEA.get(), BBItems.CUP_OF_WARPED_TEA.get());
+            entries.addAfter(BBItems.CUP_OF_WARPED_TEA.get(), BBItems.CUP_OF_SHROOMLIGHT_TEA.get());
+            entries.addAfter(BBItems.CUP_OF_SHROOMLIGHT_TEA.get(), BBItems.CUP_OF_COFFEE.get());
             entries.addAfter(BBItems.CUP_OF_COFFEE.get(), BBItems.CUP_OF_DARK_COFFEE.get());
             entries.addAfter(BBItems.CUP_OF_DARK_COFFEE.get(), BBItems.CUP_OF_ESPRESSO.get());
-            entries.addAfter(BBItems.CUP_OF_ESPRESSO.get(), BBItems.CUP_OF_MILK.get());
-            entries.addAfter(BBItems.CUP_OF_MILK.get(), BBItems.CUP_OF_CHOCOLATE_MILK.get());
-            entries.addAfter(BBItems.CUP_OF_CHOCOLATE_MILK.get(), BBItems.CUP_OF_HOT_COCOA.get());
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {

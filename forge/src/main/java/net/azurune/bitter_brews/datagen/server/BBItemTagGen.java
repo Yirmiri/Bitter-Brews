@@ -13,8 +13,8 @@ import java.util.concurrent.CompletableFuture;
 
 public class BBItemTagGen extends ItemTagsProvider {
 
-    public BBItemTagGen(PackOutput output, CompletableFuture<HolderLookup.Provider> p_275729_, CompletableFuture<TagLookup<Block>> p_275322_, String modId, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, p_275729_, p_275322_, modId, existingFileHelper);
+    public BBItemTagGen(PackOutput output, CompletableFuture<HolderLookup.Provider> future, CompletableFuture<TagLookup<Block>> future1, String modId, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, future, future1, modId, existingFileHelper);
     }
 
     @Override
@@ -39,6 +39,12 @@ public class BBItemTagGen extends ItemTagsProvider {
                 .add(BBItems.CUP_OF_MILK.get())
                 .add(BBItems.CUP_OF_ICED_TEA.get())
                 .add(BBItems.CUP_OF_JASMINE_TEA.get())
-        ;
+                .add(BBItems.CUP_OF_MELON_JUICE.get())
+                .add(BBItems.CUP_OF_SWEET_BERRY_JUICE.get())
+                .add(BBItems.CUP_OF_GLOW_BERRY_JUICE.get())
+                .add(BBItems.CUP_OF_CRIMSON_TEA.get())
+                .add(BBItems.CUP_OF_WARPED_TEA.get())
+                .add(BBItems.CUP_OF_SHROOMLIGHT_TEA.get())
+                .add(BBItems.CUP_OF_CHORUS_JUICE.get());
     }
 }

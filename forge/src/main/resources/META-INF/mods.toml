@@ -23,7 +23,7 @@ side = "BOTH"
 [[dependencies.bitter_brews]]
 modId="tipsylib" #mandatory
 mandatory=true #mandatory
-versionRange="[2.0.3,)" #mandatory
+versionRange="[2.0.4,)" #mandatory
 ordering="NONE"
 side="BOTH"
 

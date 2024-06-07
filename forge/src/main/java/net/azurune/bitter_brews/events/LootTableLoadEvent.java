@@ -30,34 +30,53 @@ public class LootTableLoadEvent extends net.minecraftforge.event.LootTableLoadEv
     @SubscribeEvent
     public void lootLoad(LootTableLoadEvent evt) {
         if (evt.getName().equals(PIGLIN_BARTERING)) {
-            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.3F)).add(LootItem.lootTableItem(BBItems.PEPPER.get()))
-                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))).build());
+            //PEPPER
+            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.15F)).add(LootItem.lootTableItem(BBItems.PEPPER.get()))
+                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 3))).build());
         }
-        if (evt.getName().equals(AZALEA_LEAVES)) {
-            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.2F)).add(LootItem.lootTableItem(BBItems.TEA_LEAVES.get()))
+
+        if (evt.getName().equals(PIGLIN_BARTERING)) {
+            //CRIMSON TEA
+            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.05F)).add(LootItem.lootTableItem(BBItems.CUP_OF_CRIMSON_TEA.get()))
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))).build());
         }
+
+        if (evt.getName().equals(AZALEA_LEAVES)) {
+            //TEA LEAVES
+            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.05F)).add(LootItem.lootTableItem(BBItems.TEA_LEAVES.get()))
+                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))).build());
+        }
+
         if (evt.getName().equals(FLOWERING_AZALEA_LEAVES)) {
             //TEA LEAVES
-            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.1F)).add(LootItem.lootTableItem(BBItems.TEA_LEAVES.get()))
-                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))).build());
-            //FLOWER
-            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.1F)).add(LootItem.lootTableItem(BBBlocks.AZALEA_FLOWER.get()))
+            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.025F)).add(LootItem.lootTableItem(BBItems.TEA_LEAVES.get()))
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))).build());
         }
+
+        if (evt.getName().equals(FLOWERING_AZALEA_LEAVES)) {
+            //AZALEA FLOWER
+            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.025F)).add(LootItem.lootTableItem(BBBlocks.AZALEA_FLOWER.get()))
+                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))).build());
+        }
+
         if (evt.getName().equals(JUNGLE_LEAVES)) {
-            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.2F)).add(LootItem.lootTableItem(BBItems.MANGO.get()))
+            //MANGO
+            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.025F)).add(LootItem.lootTableItem(BBItems.MANGO.get()))
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 1))).build());
         }
+
         if (evt.getName().equals(BASTION_OTHER)) {
-            //SOUL
-            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.2F)).add(LootItem.lootTableItem(BBItems.SOUL_PEPPER_SEEDS.get()))
+            //PEPPER SEEDS
+            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.1F)).add(LootItem.lootTableItem(BBItems.PEPPER_SEEDS.get()))
+                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 6))).build());
+
+            //SOUL PEPPER SEEDS
+            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.05F)).add(LootItem.lootTableItem(BBItems.SOUL_PEPPER_SEEDS.get()))
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 2))).build());
-            //NORMAL
-            evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(0.3F)).add(LootItem.lootTableItem(BBItems.PEPPER_SEEDS.get()))
-                    .apply(SetItemCountFunction.setCount(UniformGenerator.between(3, 6))).build());
         }
+
         if (evt.getName().equals(BASTION_TREASURE)) {
+            //SOUL PEPPER SEEDS
             evt.getTable().addPool(LootPool.lootPool().when(LootItemRandomChanceCondition.randomChance(1.0F)).add(LootItem.lootTableItem(BBItems.SOUL_PEPPER_SEEDS.get()))
                     .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 4))).build());
         }

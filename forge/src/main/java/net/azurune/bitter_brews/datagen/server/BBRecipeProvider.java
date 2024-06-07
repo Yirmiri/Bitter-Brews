@@ -49,5 +49,9 @@ public class BBRecipeProvider extends RecipeProvider {
                 .unlockedBy(getItemName(Blocks.PACKED_MUD), has(Blocks.PACKED_MUD))
                 .save(exporter);
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, BBItems.CUP_OF_MILK.get(), 1)
+                .requires(BBItems.MUD_CUP.get()).requires(Items.MILK_BUCKET)
+                .unlockedBy(getItemName(BBItems.MUD_CUP.get()), has(BBItems.MUD_CUP.get()))
+                .save(exporter);
     }
 }

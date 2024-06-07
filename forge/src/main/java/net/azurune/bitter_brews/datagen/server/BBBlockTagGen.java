@@ -18,7 +18,7 @@ public class BBBlockTagGen extends BlockTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider p_256380_) {
+    protected void addTags(HolderLookup.Provider provider) {
         appendMineableWithPickaxes();
         appendNeedsStoneTool();
         appendHeatSources();
@@ -36,12 +36,15 @@ public class BBBlockTagGen extends BlockTagsProvider {
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(BBBlocks.COPPER_TEA_KETTLE.get());
     }
+
     private void appendHeatSources() {
         tag(BBTags.BlockTags.HEAT_SOURCES)
                 .add(Blocks.MAGMA_BLOCK)
                 .add(Blocks.FIRE)
                 .add(Blocks.SOUL_FIRE)
                 .add(BBBlocks.MUD_STOVE.get())
-                .add(BBBlocks.SOUL_PEPPER_CROP.get());
+                .add(BBBlocks.SOUL_PEPPER_CROP.get())
+                .add(Blocks.CAMPFIRE)
+                .add(Blocks.SOUL_CAMPFIRE);
     }
 }
