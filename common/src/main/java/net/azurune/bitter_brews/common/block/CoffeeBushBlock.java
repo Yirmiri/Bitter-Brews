@@ -41,6 +41,7 @@ public class CoffeeBushBlock extends BushBlock implements BonemealableBlock {
     private static final VoxelShape TOP_BOX_SHAPE;
     private static final VoxelShape BOTTOM_BOX_SHAPE;
     private static final VoxelShape LARGE_SHAPE;
+    private static final VoxelShape SMALL_SHAPE;
 
     public CoffeeBushBlock(BlockBehaviour.Properties settings) {
         super(settings);
@@ -52,7 +53,11 @@ public class CoffeeBushBlock extends BushBlock implements BonemealableBlock {
     }
 
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext ctx) {
-        return LARGE_SHAPE;
+        if (state.getValue(AGE) > 1) {
+            return LARGE_SHAPE;
+        } else {
+            return SMALL_SHAPE;
+        }
     }
 
     public boolean isRandomlyTicking(BlockState state) {
@@ -125,5 +130,6 @@ public class CoffeeBushBlock extends BushBlock implements BonemealableBlock {
         BOTTOM_BOX_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
         TOP_BOX_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 26.0, 15.0);
         LARGE_SHAPE = Shapes.or(BOTTOM_BOX_SHAPE, new VoxelShape[]{TOP_BOX_SHAPE});
+        SMALL_SHAPE = Shapes.or(BOTTOM_BOX_SHAPE);
     }
 }
