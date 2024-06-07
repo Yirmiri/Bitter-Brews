@@ -77,12 +77,11 @@ public class TeaKettleRecipeCategory implements IRecipeCategory<TeaKettleRecipe>
      */
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, TeaKettleRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 27, 81).addItemStacks(Arrays.asList(recipe.getIngredients().get(1).getItems()));
+        builder.addSlot(RecipeIngredientRole.INPUT, 27, 81).addItemStacks(Arrays.asList(recipe.getIngredients().get(0).getItems()));
         builder.addSlot(RecipeIngredientRole.INPUT, 17, 39).addItemStacks(Arrays.asList(recipe.getIngredients().get(1).getItems()));
         builder.addSlot(RecipeIngredientRole.INPUT, 37, 39).addItemStacks(Arrays.asList(recipe.getIngredients().get(2).getItems()));
         builder.addSlot(RecipeIngredientRole.INPUT, 17, 59).addItemStacks(Arrays.asList(recipe.getIngredients().get(3).getItems()));
         builder.addSlot(RecipeIngredientRole.INPUT, 37, 59).addItemStacks(Arrays.asList(recipe.getIngredients().get(4).getItems()));
-
         builder.addSlot(RecipeIngredientRole.OUTPUT, 99, 59).addItemStack(recipe.getResultItem(null));
     }
 }
