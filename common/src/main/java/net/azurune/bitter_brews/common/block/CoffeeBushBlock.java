@@ -22,7 +22,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -36,7 +35,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class CoffeeBushBlock extends BushBlock implements BonemealableBlock {
+public class CoffeeBushBlock extends BushBlock {
     public static final IntegerProperty AGE;
     private static final VoxelShape TOP_BOX_SHAPE;
     private static final VoxelShape BOTTOM_BOX_SHAPE;
@@ -112,18 +111,18 @@ public class CoffeeBushBlock extends BushBlock implements BonemealableBlock {
         builder.add(AGE);
     }
 
-    public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean isClient) {
-        return state.getValue(AGE) < 3;
-    }
-
-    public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState state) {
-        return true;
-    }
-
-    public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState state) {
-        int i = Math.min(3, state.getValue(AGE) + 1);
-        world.setBlock(pos, state.setValue(AGE, i), 2);
-    }
+//    public boolean isValidBonemealTarget(LevelReader world, BlockPos pos, BlockState state, boolean isClient) {
+//        return state.getValue(AGE) < 3;
+//    }
+//
+//    public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState state) {
+//        return true;
+//    }
+//
+//    public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState state) {
+//        int i = Math.min(3, state.getValue(AGE) + 1);
+//        world.setBlock(pos, state.setValue(AGE, i), 2);
+//    }
 
     static {
         AGE = BlockStateProperties.AGE_3;

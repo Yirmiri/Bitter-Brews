@@ -2,13 +2,12 @@ package net.azurune.bitter_brews.common.util;
 
 import net.azurune.bitter_brews.common.block.SoulPepperCropBlock;
 import net.azurune.bitter_brews.common.block.StoveBlock;
-import net.azurune.bitter_brews.core.registry.BBBlocks;
 import net.azurune.tipsylib.core.register.TLStatusEffects;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,6 +26,7 @@ public class BBProperties {
     }
 
     public static class ItemP {
+        public static final int INSTANT = 6; //0.3s
         public static final int BRIEF_DURATION = 300; //15s
         public static final int VERY_SHORT_DURATION = 600; //30s
         public static final int SHORT_DURATION = 1200; //1m
@@ -36,82 +36,111 @@ public class BBProperties {
 
         //MISC
         public static final Item.Properties GENERIC_ITEM = new Item.Properties();
-        public static final Item.Properties WATER_CUP = new Item.Properties().food(new FoodProperties.Builder().build());
         public static final Item.Properties DRIED_TEA_LEAVES = new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build());
         public static final Item.Properties MANGO = new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).build());
-        public static final Item.Properties PEPPER = new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).build());
+        public static final Item.Properties PEPPER = new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, BRIEF_DURATION, 0), 1.0F).alwaysEat().build());
         public static final Item.Properties SOUL_PEPPER = new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(TLStatusEffects.TRAIL_BLAZING, BRIEF_DURATION, 0), 1.0F).alwaysEat().build());
 
         //DRINKS
-        public static final Item.Properties WATER = new Item.Properties().stacksTo(16);
-        public static final Item.Properties MILK = new Item.Properties().stacksTo(4);
+        public static final Item.Properties WATER = new Item.Properties().stacksTo(16).food(new FoodProperties.Builder().alwaysEat().build());
+        public static final Item.Properties MILK = new Item.Properties().stacksTo(16).food(new FoodProperties.Builder().alwaysEat().build());
 
-        public static final Item.Properties GREEN_TEA = new Item.Properties().stacksTo(4).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(MobEffects.REGENERATION, BRIEF_DURATION, 0), 1.0F)
+        public static final Item.Properties CHOCOLATE_MILK = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.CHRONOS, AVERAGE_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.VULNERABILITY, AVERAGE_DURATION, 5), 1.0F)
                 .alwaysEat().build());
 
-        public static final Item.Properties AZALEA_TEA = new Item.Properties().stacksTo(4).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
+        public static final Item.Properties MELON_JUICE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, BRIEF_DURATION, 0), 1.0F) //TODO: Improve with water speed effect (When TipsyLib 1.21 releases)
+                .alwaysEat().build());
+
+        public static final Item.Properties SWEET_BERRY_JUICE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, BRIEF_DURATION, 2), 1.0F) //TODO: Improve with an effect that grants additional hp when healed
+                .effect(new MobEffectInstance(MobEffects.CONFUSION, VERY_SHORT_DURATION, 2), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties GLOW_BERRY_JUICE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.PERCEPTION, SHORT_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties CHORUS_JUICE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.TRAVERSAL, INSTANT, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.CONFUSION, BRIEF_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties GREEN_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.RESTORATION, BRIEF_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties AZALEA_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                 .effect(new MobEffectInstance(MobEffects.HEALTH_BOOST, SHORT_DURATION, 0), 1.0F)
                 .alwaysEat().build());
 
-        public static final Item.Properties HONEY_TEA = new Item.Properties().stacksTo(2).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.BACKLASH, AVERAGE_DURATION, 0), 1.0F)
+        public static final Item.Properties BLACK_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(MobEffects.SATURATION, INSTANT, 0), 1.0F) //TODO: Improve with an effect that stops hunger (when TipsyLib updates)
                 .alwaysEat().build());
 
-        public static final Item.Properties KELP_TEA = new Item.Properties().stacksTo(6).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.WATER_WALKING, VERY_LONG_DURATION, 0), 1.0F)
+        public static final Item.Properties ICED_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.HEARTBREAK, SHORT_DURATION, 9), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.LESSER_STRENGTH, SHORT_DURATION, 9), 1.0F)
                 .alwaysEat().build());
 
-        public static final Item.Properties MANGO_TEA = new Item.Properties().stacksTo(2).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.STEEL_FEET, LONG_DURATION, 0), 1.0F)
+        public static final Item.Properties HONEY_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.DEVOUR, AVERAGE_DURATION, 1), 1.0F)
                 .alwaysEat().build());
 
-        public static final Item.Properties BLACK_TEA = new Item.Properties().stacksTo(4).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.LAVA_WALKING, VERY_LONG_DURATION, 0), 1.0F)
+        public static final Item.Properties MANGO_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.STEEL_FEET, SHORT_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.VULNERABILITY, SHORT_DURATION, 1), 1.0F)
                 .alwaysEat().build());
 
-        public static final Item.Properties CHOCOLATE_MILK = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.CHRONOS, LONG_DURATION, 0), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.VULNERABILITY, LONG_DURATION, 3), 1.0F)
+        public static final Item.Properties KELP_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.WATER_WALKING, LONG_DURATION, 0), 1.0F)
                 .alwaysEat().build());
 
-        public static final Item.Properties HOT_COCOA = new Item.Properties().stacksTo(4).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.BURNING_THORNS, AVERAGE_DURATION, 0), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.IMPURE, AVERAGE_DURATION, 0), 1.0F)
-                .alwaysEat().build());
-
-        public static final Item.Properties COFFEE = new Item.Properties().stacksTo(2).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(MobEffects.DIG_SPEED, AVERAGE_DURATION, 0), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.LESSER_WEAKNESS, AVERAGE_DURATION, 0), 1.0F)
-                .alwaysEat().build());
-
-        public static final Item.Properties DARK_COFFEE = new Item.Properties().stacksTo(2).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, AVERAGE_DURATION, 2), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.LESSER_WEAKNESS, AVERAGE_DURATION, 0), 1.0F)
-                .alwaysEat().build());
-
-        public static final Item.Properties ESPRESSO = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.BERSERK, LONG_DURATION, 2), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.SHATTERSPLEEN, LONG_DURATION, 1), 1.0F)
-                .alwaysEat().build());
-
-        public static final Item.Properties ICED_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.HEARTBREAK, LONG_DURATION, 9), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.LESSER_STRENGTH, LONG_DURATION, 7), 1.0F)
-                .alwaysEat().build());
-
-        public static final Item.Properties JASMINE_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.CONFUSION, AVERAGE_DURATION, 0), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.DIVERSION, AVERAGE_DURATION, 0), 1.0F)
-                .alwaysEat().build());
-
-        public static final Item.Properties FUDGE_SUNDAE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().nutrition(0).saturationMod(0.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.HEARTBREAK, AVERAGE_DURATION, 19), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.LESSER_STRENGTH, AVERAGE_DURATION, 7), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.CHRONOS, AVERAGE_DURATION, 0), 1.0F)
+        public static final Item.Properties JASMINE_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                 .effect(new MobEffectInstance(TLStatusEffects.PRECISION, AVERAGE_DURATION, 0), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.CONFUSION, AVERAGE_DURATION, 0), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.RETALIATION, AVERAGE_DURATION, 2), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.LESSER_WEAKNESS, AVERAGE_DURATION, 1), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties CRIMSON_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.BURNING_THORNS, LONG_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties WARPED_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.DIVERSION, SHORT_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties SHROOMLIGHT_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.LAVA_WALKING, LONG_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties COFFEE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.ADRENALINE, AVERAGE_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties DARK_COFFEE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(MobEffects.DIG_SPEED, AVERAGE_DURATION, 3), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.HUNGER, AVERAGE_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties ESPRESSO = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.TRAIL_BLAZING, AVERAGE_DURATION, 0), 1.0F) //TODO: Replace with caffeinated effect when it is finished
+                .alwaysEat().build());
+
+        public static final Item.Properties HOT_COCOA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.BERSERK, AVERAGE_DURATION, 0), 1.0F)
+                .alwaysEat().build());
+
+        public static final Item.Properties FUDGE_SUNDAE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(TLStatusEffects.CONFUSION, VERY_LONG_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.CONFUSION, VERY_LONG_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.LESSER_STRENGTH, VERY_LONG_DURATION, 11), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.HEARTBREAK, VERY_LONG_DURATION, 19), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.SHATTERSPLEEN, VERY_LONG_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.VULNERABILITY, VERY_LONG_DURATION, 19), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.IMPURE, VERY_LONG_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.CHRONOS, VERY_LONG_DURATION, 0), 1.0F)
                 .alwaysEat().build());
     }
 }

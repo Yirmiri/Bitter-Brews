@@ -69,13 +69,13 @@ public class BBEnUsLangGen extends LanguageProvider {
         add("bitter_brews.tooltip.cup_of_dark_coffee", "You might need a backup cup.");
         add("bitter_brews.tooltip.cup_of_iced_tea", "Tastes like perfection.");
         add("bitter_brews.tooltip.cup_of_jasmine_tea", "A calming brew that could put you to sleep.");
-        add("bitter_brews.tooltip.melon_juice", "A bitter brew that is great for a hot summer day.");
-        add("bitter_brews.tooltip.sweet_berry_juice", "At least you won't accidentally place this one.");
-        add("bitter_brews.tooltip.glow_berry_juice", "Glow and behold!");
-        add("bitter_brews.tooltip.crimson_tea", "A common refreshment enjoyed among piglin.");
-        add("bitter_brews.tooltip.warped_tea", "It reeks a horrible smell into the air.");
-        add("bitter_brews.tooltip.shroomlight_tea", "A mixture of the Nether's delight!");
-        add("bitter_brews.tooltip.chorus_juice", "It smells of a familiar place...");
+        add("bitter_brews.tooltip.cup_of_melon_juice", "A bitter brew that is great for a hot summer day.");
+        add("bitter_brews.tooltip.cup_of_sweet_berry_juice", "At least you won't accidentally place this one.");
+        add("bitter_brews.tooltip.cup_of_glow_berry_juice", "Glow and behold!");
+        add("bitter_brews.tooltip.cup_of_crimson_tea", "A common refreshment enjoyed among piglin.");
+        add("bitter_brews.tooltip.cup_of_warped_tea", "It reeks a horrible smell into the air.");
+        add("bitter_brews.tooltip.cup_of_shroomlight_tea", "A mixture of the Nether's delight!");
+        add("bitter_brews.tooltip.cup_of_chorus_juice", "It smells of a familiar place...");
 
         //ITEM GROUPS
         add("itemgroup.bitter_brews", "Bitter Brews");
