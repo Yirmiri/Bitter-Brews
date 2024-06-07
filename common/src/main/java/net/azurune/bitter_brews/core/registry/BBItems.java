@@ -42,6 +42,13 @@ public class BBItems {
     public static final Supplier<Item> CUP_OF_HOT_COCOA = registerItem("cup_of_hot_cocoa", () -> new GenericDrinkItem(BBProperties.ItemP.HOT_COCOA, 48, true));
     public static final Supplier<Item> CUP_OF_ICED_TEA = registerItem("cup_of_iced_tea", () -> new GenericDrinkItem(BBProperties.ItemP.ICED_TEA, 64, true));
     public static final Supplier<Item> CUP_OF_JASMINE_TEA = registerItem("cup_of_jasmine_tea", () -> new GenericDrinkItem(BBProperties.ItemP.JASMINE_TEA, 32, true));
+    public static final Supplier<Item> CUP_OF_MELON_JUICE = registerItem("cup_of_melon_juice", () -> new GenericDrinkItem(BBProperties.ItemP.WATER_CUP, 32, false));
+    public static final Supplier<Item> CUP_OF_SWEET_BERRY_JUICE = registerItem("cup_of_sweet_berry_juice", () -> new GenericDrinkItem(BBProperties.ItemP.WATER_CUP, 32, false));
+    public static final Supplier<Item> CUP_OF_GLOW_BERRY_JUICE = registerItem("cup_of_glow_berry_juice", () -> new GenericDrinkItem(BBProperties.ItemP.WATER_CUP, 32, false));
+    public static final Supplier<Item> CUP_OF_CRIMSON_TEA = registerItem("cup_of_crimson_tea", () -> new GenericDrinkItem(BBProperties.ItemP.WATER_CUP, 32, false));
+    public static final Supplier<Item> CUP_OF_WARPED_TEA = registerItem("cup_of_warped_tea", () -> new GenericDrinkItem(BBProperties.ItemP.WATER_CUP, 32, false));
+    public static final Supplier<Item> CUP_OF_SHROOMLIGHT_TEA = registerItem("cup_of_shroomlight_tea", () -> new GenericDrinkItem(BBProperties.ItemP.WATER_CUP, 32, false));
+    public static final Supplier<Item> CUP_OF_CHORUS_JUICE = registerItem("cup_of_chorus_juice", () -> new GenericDrinkItem(BBProperties.ItemP.WATER_CUP, 32, false));
 
     private static <T extends Item> Supplier<T> registerItem(String name, Supplier<T> itemSupplier) {
         return Services.REGISTRY_HELPER.register(BuiltInRegistries.ITEM, name, itemSupplier);
