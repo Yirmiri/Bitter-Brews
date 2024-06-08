@@ -33,7 +33,8 @@
         "fabricloader": ">=0.14",
         "fabric": "*",
         "minecraft": "${minecraft_version}",
-        "java": ">=17"
+        "java": ">=17",
+        "forgeconfigapiport": "8.0.0"
     },
     "suggests": {
         "another-mod": "*"

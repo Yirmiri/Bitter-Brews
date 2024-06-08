@@ -23,6 +23,7 @@ dependencies {
     //DEP
     compileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     implementation "curse.maven:tipsylib-${tipsylib_forge}"
+    implementation "curse.maven:forge-config-api-port-fabric-${forge_config_api}"
 }
 
 publishing {

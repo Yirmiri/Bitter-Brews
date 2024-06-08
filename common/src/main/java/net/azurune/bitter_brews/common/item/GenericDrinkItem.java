@@ -2,7 +2,6 @@ package net.azurune.bitter_brews.common.item;
 
 import net.azurune.bitter_brews.BitterBrews;
 import net.azurune.bitter_brews.core.registry.BBItems;
-import net.azurune.tipsylib.core.register.TLStatusEffects;
 import net.minecraft.ChatFormatting;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.network.chat.Component;
