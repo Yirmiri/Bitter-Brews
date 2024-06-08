@@ -52,12 +52,4 @@ public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
         super.render(guiGraphics, mouseX, mouseY, delta);
         renderTooltip(guiGraphics, mouseX, mouseY);
     }
-
-    @Override
-    protected void slotClicked(Slot slot, int i, int j, ClickType clickType) {
-        if (clickType == ClickType.THROW) { // Hardcoded for now TODO: fix fabric
-            clickType = ClickType.PICKUP;
-        }
-        super.slotClicked(slot, i, j, clickType);
-    }
 }

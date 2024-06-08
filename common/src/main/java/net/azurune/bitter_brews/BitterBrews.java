@@ -14,7 +14,6 @@ public class BitterBrews {
         BBRecipeSerializer.loadRecipeSerializers();
         BBMenuTypes.loadMenuTypes();
         BBRecipeTypes.loadRecipeTypes();
-        BBStatusEffects.loadEffects();
     }
 
     public static MutableComponent tooltipId(String key, Object... args) {

@@ -2,9 +2,7 @@ package net.azurune.bitter_brews.common.util;
 
 import net.azurune.bitter_brews.common.block.SoulPepperCropBlock;
 import net.azurune.bitter_brews.common.block.StoveBlock;
-import net.azurune.bitter_brews.core.registry.BBStatusEffects;
 import net.azurune.tipsylib.core.register.TLStatusEffects;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -126,7 +124,7 @@ public class BBProperties {
                 .alwaysEat().build());
 
         public static final Item.Properties ESPRESSO = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                .effect(new MobEffectInstance(BBStatusEffects.CAFFEINATED, AVERAGE_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.TRAIL_BLAZING, AVERAGE_DURATION, 0), 1.0F)
                 .alwaysEat().build());
 
         public static final Item.Properties HOT_COCOA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()

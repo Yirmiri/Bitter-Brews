@@ -42,6 +42,6 @@ public class BitterBrewsJEIPlugin implements IModPlugin {
 
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-        registration.addRecipeClickArea(TeaKettleScreen.class, 85, 37, 10, 11, TeaKettleRecipeCategory.BREWING);
+        //registration.addRecipeClickArea(TeaKettleScreen.class, 85, 37, 10, 11, TeaKettleRecipeCategory.BREWING);
     }
 }
