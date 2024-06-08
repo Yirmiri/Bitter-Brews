@@ -1,4 +1,12 @@
 {
+  "advancements.husbandry.obtain_brew.description": "Brew any bitter brew.",
+  "advancements.husbandry.obtain_brew.title": "Bitter Brew",
+  "advancements.husbandry.place_kettle.description": "Place down a copper tea kettle and begin brewing!",
+  "advancements.husbandry.place_kettle.title": "Spill The Tea",
+  "advancements.nether.pepper.description": "Barter with a piglin for a pepper.",
+  "advancements.nether.pepper.title": "Turning Up The Heat",
+  "advancements.nether.soul_pepper.description": "Venture into a bastion and grow a soul pepper- just be sure to have a cup of milk...",
+  "advancements.nether.soul_pepper.title": "Soul Pepper Challenge",
   "bitter_brews.tooltip.cup_of_azalea_tea": "A sweet blooming brew that soothes you",
   "bitter_brews.tooltip.cup_of_black_tea": "Black tea makes great rocket fuel.",
   "bitter_brews.tooltip.cup_of_chocolate_milk": "Not to be confused with hot cocoa.",
