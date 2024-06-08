@@ -101,9 +101,9 @@ public class ForgeBitterBrews {
         }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            addAfter(event, Items.KELP, BBItems.TEA_LEAVES.get());
+            addAfter(event, Items.WHEAT, BBItems.TEA_LEAVES.get());
             addAfter(event, BBItems.TEA_LEAVES.get(), BBBlocks.AZALEA_FLOWER.get());
-            addAfter(event, Items.COCOA_BEANS, BBItems.COFFEE_BEANS.get());
+            addAfter(event, BBBlocks.AZALEA_FLOWER.get(), BBItems.COFFEE_BEANS.get());
             addAfter(event, Items.GLASS_BOTTLE, BBItems.MUD_CUP.get());
         }
     }

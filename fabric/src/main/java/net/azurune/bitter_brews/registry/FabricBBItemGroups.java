@@ -52,9 +52,9 @@ public class FabricBBItemGroups {
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {
-            entries.addAfter(Items.KELP, BBItems.TEA_LEAVES.get());
+            entries.addAfter(Items.WHEAT, BBItems.TEA_LEAVES.get());
             entries.addAfter(BBItems.TEA_LEAVES.get(), BBBlocks.AZALEA_FLOWER.get());
-            entries.addAfter(Items.COCOA_BEANS, BBItems.COFFEE_BEANS.get());
+            entries.addAfter(BBBlocks.AZALEA_FLOWER.get(), BBItems.COFFEE_BEANS.get());
             entries.addAfter(Items.GLASS_BOTTLE, BBItems.MUD_CUP.get());
         });
     }
