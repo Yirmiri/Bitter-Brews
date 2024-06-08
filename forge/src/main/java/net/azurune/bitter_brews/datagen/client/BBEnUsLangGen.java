@@ -1,5 +1,6 @@
 package net.azurune.bitter_brews.datagen.client;
 
+import net.azurune.bitter_brews.common.effect.CaffeinatedEffect;
 import net.azurune.bitter_brews.core.registry.BBBlocks;
 import net.azurune.bitter_brews.core.registry.BBItems;
 import net.minecraft.data.PackOutput;
@@ -52,6 +53,14 @@ public class BBEnUsLangGen extends LanguageProvider {
         add(BBItems.CUP_OF_WARPED_TEA.get(), "Cup of Twisting Tea");
         add(BBItems.CUP_OF_SHROOMLIGHT_TEA.get(), "Cup of Shroomlight Tea");
         add(BBItems.CUP_OF_CHORUS_JUICE.get(), "Cup of Chorus Juice");
+
+        //EFFECTS
+        add("effect.bitter_brews.caffeinated", "Caffeinated");
+        add("effect.bitter_brews.caffeine_crash", "Caffeine Crash");
+
+        //JEED
+        add("effect.bitter_brews.caffeinated.description", "Small increase to most major stats");
+        add("effect.bitter_brews.caffeine_crash.description", "Small decrease to most major stats");
 
         //TOOLTIPS
         add("bitter_brews.tooltip.soul_pepper", "You might wanna bring a cup of milk.");
