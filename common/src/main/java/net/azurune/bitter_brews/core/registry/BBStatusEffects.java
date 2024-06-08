@@ -1,6 +1,5 @@
 package net.azurune.bitter_brews.core.registry;
 
-import net.azurune.bitter_brews.common.effect.CaffeinatedEffect;
 import net.azurune.tipsylib.common.effect.NoSpecialEffect;
 import net.azurune.tipsylib.core.platform.Services;
 import net.minecraft.world.effect.MobEffect;
@@ -13,7 +12,7 @@ import java.util.function.Supplier;
 public class BBStatusEffects {
 
     //BENEFICIAL
-    public static final MobEffect CAFFEINATED = new CaffeinatedEffect(MobEffectCategory.BENEFICIAL, 0x492f25);
+    public static final MobEffect CAFFEINATED = new NoSpecialEffect(MobEffectCategory.BENEFICIAL, 0x492f25);
 
     //HARMFUL
     public static final MobEffect CAFFEINE_CRASH = new NoSpecialEffect(MobEffectCategory.HARMFUL, 0x313d99);
@@ -37,6 +36,9 @@ public class BBStatusEffects {
                 .addAttributeModifier(Attributes.JUMP_STRENGTH, "c428b22a-8db3-4778-9dba-27fae9f9b6a4", -1.0, AttributeModifier.Operation.ADDITION)
                 .addAttributeModifier(Attributes.LUCK, "5213feef-1d5f-407a-a708-629b79d12bf3", -1.0, AttributeModifier.Operation.ADDITION));
     }
+
+    //TODO: Caffeinated should grant caffeine crash when ending
+    //TODO: [1.21] Add size, water movement, digging speed, and block reach
 
     private static <T extends MobEffect> Supplier<T> registerEffect(String name, Supplier<T> supplier) {
         return Services.REGISTRY.registerEffect(name, supplier);
