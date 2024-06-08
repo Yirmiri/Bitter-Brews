@@ -1,6 +1,5 @@
 package net.azurune.bitter_brews;
 
-import net.azurune.bitter_brews.core.platform.Services;
 import net.azurune.bitter_brews.core.registry.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -16,10 +15,6 @@ public class BitterBrews {
         BBMenuTypes.loadMenuTypes();
         BBRecipeTypes.loadRecipeTypes();
         BBStatusEffects.loadEffects();
-
-        if (Services.PLATFORM.isModLoaded("tipsylib")) {
-            BitterBrewsConstants.LOGGER.info("Bitter Brews depends off TipsyLib which is a mod that adds many different effects for mod creators to use!");
-        }
     }
 
     public static MutableComponent tooltipId(String key, Object... args) {

@@ -13,6 +13,7 @@ public class FabricBitterBrews implements ModInitializer {
     
     @Override
     public void onInitialize() {
+
         BitterBrews.init();
         BBLootModifiers.modifyLoot();
         FabricBBItemGroups.buildCreativeTabs();
