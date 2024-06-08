@@ -55,12 +55,12 @@ public class BBEnUsLangGen extends LanguageProvider {
         add(BBItems.CUP_OF_CHORUS_JUICE.get(), "Cup of Chorus Juice");
 
         //EFFECTS
-        add("effect.bitter_brews.caffeinated", "Caffeinated");
-        add("effect.bitter_brews.caffeine_crash", "Caffeine Crash");
+        add("effect.tipsylib.caffeinated", "Caffeinated");
+        add("effect.tipsylib.caffeine_crash", "Caffeine Crash");
 
         //JEED
-        add("effect.bitter_brews.caffeinated.description", "Small increase to most major stats");
-        add("effect.bitter_brews.caffeine_crash.description", "Small decrease to most major stats");
+        add("effect.tipsylib.caffeinated.description", "Small increase to most major stats");
+        add("effect.tipsylib.caffeine_crash.description", "Small decrease to most major stats");
 
         //TOOLTIPS
         add("bitter_brews.tooltip.soul_pepper", "You might wanna bring a cup of milk.");
