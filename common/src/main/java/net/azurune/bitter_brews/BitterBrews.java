@@ -15,6 +15,7 @@ public class BitterBrews {
         BBRecipeSerializer.loadRecipeSerializers();
         BBMenuTypes.loadMenuTypes();
         BBRecipeTypes.loadRecipeTypes();
+        BBStatusEffects.loadEffects();
 
         if (Services.PLATFORM.isModLoaded("tipsylib")) {
             BitterBrewsConstants.LOGGER.info("Bitter Brews depends off TipsyLib which is a mod that adds many different effects for mod creators to use!");
