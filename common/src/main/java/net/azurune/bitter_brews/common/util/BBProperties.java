@@ -90,8 +90,8 @@ public class BBProperties {
                 .alwaysEat().build());
 
         public static final Item.Properties MANGO_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                .effect(new MobEffectInstance(TLStatusEffects.STEEL_FEET, SHORT_DURATION, 0), 1.0F)
-                .effect(new MobEffectInstance(TLStatusEffects.VULNERABILITY, SHORT_DURATION, 1), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.STEEL_FEET, AVERAGE_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.VULNERABILITY, AVERAGE_DURATION, 1), 1.0F)
                 .alwaysEat().build());
 
         public static final Item.Properties KELP_TEA = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
@@ -120,7 +120,7 @@ public class BBProperties {
                 .alwaysEat().build());
 
         public static final Item.Properties DARK_COFFEE = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
-                .effect(new MobEffectInstance(MobEffects.DIG_SPEED, AVERAGE_DURATION, 3), 1.0F)
+                .effect(new MobEffectInstance(MobEffects.DIG_SPEED, AVERAGE_DURATION, 2), 1.0F)
                 .effect(new MobEffectInstance(MobEffects.HUNGER, AVERAGE_DURATION, 0), 1.0F)
                 .alwaysEat().build());
 

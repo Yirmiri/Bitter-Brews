@@ -2,7 +2,7 @@
   "type": "bitter_brews:brewing",
   "ingredients": [
     {
-      "item": "bitter_brews:cup_of_water"
+      "item": "bitter_brews:cup_of_milk"
     },
     {
       "item": "bitter_brews:coffee_beans"
@@ -11,7 +11,10 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:milk_bucket"
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
     }
   ],
   "output": {

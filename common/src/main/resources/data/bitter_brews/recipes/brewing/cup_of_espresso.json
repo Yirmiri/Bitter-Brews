@@ -2,19 +2,19 @@
   "type": "bitter_brews:brewing",
   "ingredients": [
     {
-      "item": "bitter_brews:cup_of_water"
-    },
-    {
-      "item": "bitter_brews:soul_pepper"
+      "item": "bitter_brews:cup_of_coffee"
     },
     {
       "item": "bitter_brews:coffee_beans"
     },
     {
-      "item": "minecraft:sugar"
+      "item": "bitter_brews:coffee_beans"
     },
     {
-      "item": "minecraft:milk_bucket"
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:blaze_powder"
     }
   ],
   "output": {

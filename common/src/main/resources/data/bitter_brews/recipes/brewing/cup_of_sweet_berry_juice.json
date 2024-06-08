@@ -5,19 +5,19 @@
       "item": "bitter_brews:cup_of_water"
     },
     {
-      "item": "minecraft:cocoa_beans"
+      "item": "minecraft:sweet_berries"
     },
     {
-      "item": "minecraft:cocoa_beans"
+      "item": "minecraft:sweet_berries"
     },
     {
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:milk_bucket"
+      "item": "minecraft:gold_ingot"
     }
   ],
   "output": {
-    "item": "bitter_brews:cup_of_hot_cocoa"
+    "item": "bitter_brews:cup_of_sweet_berry_juice"
   }
 }

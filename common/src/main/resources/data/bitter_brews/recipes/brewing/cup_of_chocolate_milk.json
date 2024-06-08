@@ -5,19 +5,19 @@
       "item": "bitter_brews:cup_of_milk"
     },
     {
-      "item": "bitter_brews:mango"
+      "item": "minecraft:cocoa_beans"
     },
     {
-      "item": "bitter_brews:mango"
+      "item": "minecraft:cocoa_beans"
     },
     {
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:iron_ingot"
+      "item": "minecraft:ender_eye"
     }
   ],
   "output": {
-    "item": "bitter_brews:cup_of_mango_tea"
+    "item": "bitter_brews:cup_of_chocolate_milk"
   }
 }

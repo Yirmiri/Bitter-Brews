@@ -5,16 +5,16 @@
       "item": "bitter_brews:cup_of_water"
     },
     {
-      "item": "bitter_brews:dried_tea_leaves"
+      "item": "minecraft:blue_ice"
     },
     {
-      "item": "bitter_brews:mango"
+      "item": "minecraft:fermented_spider_eye"
+    },
+    {
+      "item": "minecraft:blaze_powder"
     },
     {
       "item": "minecraft:diamond"
-    },
-    {
-      "item": "minecraft:blue_ice"
     }
   ],
   "output": {

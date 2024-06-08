@@ -5,16 +5,19 @@
       "item": "bitter_brews:cup_of_water"
     },
     {
-      "item": "bitter_brews:soul_pepper"
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
     },
     {
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:hanging_roots"
+      "item": "minecraft:golden_carrot"
     }
   ],
   "output": {
-    "item": "bitter_brews:cup_of_black_tea"
+    "item": "bitter_brews:cup_of_glow_berry_juice"
   }
 }

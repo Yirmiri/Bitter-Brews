@@ -8,13 +8,13 @@
       "item": "minecraft:honey_block"
     },
     {
-      "item": "minecraft:honey_block"
-    },
-    {
       "item": "minecraft:sugar"
     },
     {
       "item": "minecraft:oxeye_daisy"
+    },
+    {
+      "item": "minecraft:gold_ingot"
     }
   ],
   "output": {
