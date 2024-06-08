@@ -2,7 +2,7 @@
   "type": "bitter_brews:brewing",
   "ingredients": [
     {
-      "item": "bitter_brews:cup_of_milk"
+      "item": "bitter_brews:cup_of_water"
     },
     {
       "item": "bitter_brews:mango"
