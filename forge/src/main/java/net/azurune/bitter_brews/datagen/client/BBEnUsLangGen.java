@@ -77,6 +77,16 @@ public class BBEnUsLangGen extends LanguageProvider {
         add("bitter_brews.tooltip.cup_of_shroomlight_tea", "A mixture of the Nether's delight!");
         add("bitter_brews.tooltip.cup_of_chorus_juice", "It smells of a familiar place...");
 
+        //ADVANCEMENTS
+        add("advancements.husbandry.obtain_brew.title", "Bitter Brew");
+        add("advancements.husbandry.obtain_brew.description", "Brew any bitter brew.");
+        add("advancements.husbandry.place_kettle.title", "Spill The Tea");
+        add("advancements.husbandry.place_kettle.description", "Place down a copper tea kettle and begin brewing!");
+        add("advancements.nether.pepper.title", "Turning Up The Heat");
+        add("advancements.nether.pepper.description", "Barter with a piglin for a pepper.");
+        add("advancements.nether.soul_pepper.title", "Soul Pepper Challenge");
+        add("advancements.nether.soul_pepper.description", "Venture into a bastion and grow a soul pepper- just be sure to have a cup of milk...");
+
         //ITEM GROUPS
         add("itemgroup.bitter_brews", "Bitter Brews");
 

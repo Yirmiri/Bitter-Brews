@@ -23,7 +23,6 @@ public class TeaKettleMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
-    private static final int INVENTORY_SLOT_COUNT = 6;
     private static final int INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     private final ContainerData data;
@@ -67,21 +66,21 @@ public class TeaKettleMenu extends AbstractContainerMenu {
 
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
-        Slot sourceSlot = slots.get(index);
-        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;
+        Slot sourceSlot = this.slots.get(index);
+        if (!sourceSlot.hasItem()) return ItemStack.EMPTY;
         ItemStack sourceStack = sourceSlot.getItem();
         ItemStack copyOfSourceStack = sourceStack.copy();
 
         if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            if (!moveItemStackTo(sourceStack, INVENTORY_FIRST_SLOT_INDEX, INVENTORY_FIRST_SLOT_INDEX + INVENTORY_SLOT_COUNT, false)) {
+            if (!moveItemStackTo(sourceStack, INVENTORY_FIRST_SLOT_INDEX, INVENTORY_FIRST_SLOT_INDEX + TeaKettleBlockEntity.INVENTORY_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
-        } else if (index < INVENTORY_FIRST_SLOT_INDEX + INVENTORY_SLOT_COUNT) {
+        } else if (index < INVENTORY_FIRST_SLOT_INDEX + TeaKettleBlockEntity.INVENTORY_SLOT_COUNT) {
             if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
         } else {
-            System.out.println("Invalid slotIndex" + index);
+            BitterBrewsConstants.LOGGER.warn("Invalid slotIndex: {}", index);
             return ItemStack.EMPTY;
         }
 
