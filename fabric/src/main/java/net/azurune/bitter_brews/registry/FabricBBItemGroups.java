@@ -31,7 +31,8 @@ public class FabricBBItemGroups {
             entries.addAfter(Items.SPIDER_EYE, BBItems.CUP_OF_WATER.get());
             entries.addAfter(BBItems.CUP_OF_WATER.get(), BBItems.CUP_OF_MILK.get());
             entries.addAfter(BBItems.CUP_OF_MILK.get(), BBItems.CUP_OF_CHOCOLATE_MILK.get());
-            entries.addAfter(BBItems.CUP_OF_CHOCOLATE_MILK.get(), BBItems.CUP_OF_MELON_JUICE.get());
+            entries.addAfter(BBItems.CUP_OF_CHOCOLATE_MILK.get(), BBItems.CUP_OF_HOT_COCOA.get());
+            entries.addAfter(BBItems.CUP_OF_HOT_COCOA.get(), BBItems.CUP_OF_MELON_JUICE.get());
             entries.addAfter(BBItems.CUP_OF_MELON_JUICE.get(), BBItems.CUP_OF_SWEET_BERRY_JUICE.get());
             entries.addAfter(BBItems.CUP_OF_SWEET_BERRY_JUICE.get(), BBItems.CUP_OF_GLOW_BERRY_JUICE.get());
             entries.addAfter(BBItems.CUP_OF_GLOW_BERRY_JUICE.get(), BBItems.CUP_OF_CHORUS_JUICE.get());

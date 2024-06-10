@@ -80,7 +80,8 @@ public class ForgeBitterBrews {
             addAfter(event, Items.SPIDER_EYE, BBItems.CUP_OF_WATER.get());
             addAfter(event, BBItems.CUP_OF_WATER.get(), BBItems.CUP_OF_MILK.get());
             addAfter(event, BBItems.CUP_OF_MILK.get(), BBItems.CUP_OF_CHOCOLATE_MILK.get());
-            addAfter(event, BBItems.CUP_OF_CHOCOLATE_MILK.get(), BBItems.CUP_OF_MELON_JUICE.get());
+            addAfter(event, BBItems.CUP_OF_CHOCOLATE_MILK.get(), BBItems.CUP_OF_HOT_COCOA.get());
+            addAfter(event, BBItems.CUP_OF_HOT_COCOA.get(), BBItems.CUP_OF_MELON_JUICE.get());
             addAfter(event, BBItems.CUP_OF_MELON_JUICE.get(), BBItems.CUP_OF_SWEET_BERRY_JUICE.get());
             addAfter(event, BBItems.CUP_OF_SWEET_BERRY_JUICE.get(), BBItems.CUP_OF_GLOW_BERRY_JUICE.get());
             addAfter(event, BBItems.CUP_OF_GLOW_BERRY_JUICE.get(), BBItems.CUP_OF_CHORUS_JUICE.get());
