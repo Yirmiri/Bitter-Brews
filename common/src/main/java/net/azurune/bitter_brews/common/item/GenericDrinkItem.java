@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class GenericDrinkItem extends Item {
+public class GenericDrinkItem extends FuelSlotItem {
     private final int useTime;
     private final boolean hasTooltip;
 

@@ -18,7 +18,7 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
-public class CupItem extends Item {
+public class CupItem extends FuelSlotItem {
     public CupItem(Item.Properties settings) {
         super(settings);
     }

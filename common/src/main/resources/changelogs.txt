@@ -8,6 +8,7 @@ Version Release v1.0.1 MC-1.20.1
 
   Bug Fixes
 •   Fixed recipes that required multiple of one type of item to only require one (this should also fix a few broken recipes)
+•   Fixed players not being able to place some items that are required for recipes in the fuel slot
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
