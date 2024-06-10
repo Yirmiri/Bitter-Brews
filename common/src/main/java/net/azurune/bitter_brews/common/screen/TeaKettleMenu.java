@@ -6,8 +6,10 @@ import net.azurune.bitter_brews.common.screen.slot.SimpleOutputSlot;
 import net.azurune.bitter_brews.common.screen.slot.TeaKettleFuelSlot;
 import net.azurune.bitter_brews.common.screen.slot.TeaKettleIngredientSlot;
 import net.azurune.bitter_brews.core.registry.BBMenuTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -15,6 +17,7 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.phys.Vec3;
 
 public class TeaKettleMenu extends AbstractContainerMenu {
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
@@ -50,7 +53,7 @@ public class TeaKettleMenu extends AbstractContainerMenu {
         this.addSlot(new TeaKettleIngredientSlot(container, 3, 17, 46));
         this.addSlot(new TeaKettleIngredientSlot(container, 4, 37, 46));
         this.addSlot(new SimpleOutputSlot(container, 5, 99, 46));
-    }//
+    }
 
     public boolean isCrafting() {
         return data.get(0) > 0;
@@ -111,5 +114,4 @@ public class TeaKettleMenu extends AbstractContainerMenu {
             this.addSlot(new Slot(inventory, i, 9 + i * 18, 155));
         }
     }
-
 }
