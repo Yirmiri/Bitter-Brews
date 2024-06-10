@@ -9,13 +9,16 @@ Version Release v1.0.1 MC-1.20.1
   Additions
 •   Tea kettles now grant experience when they finish brewing a tea
 •   Pepper & soul pepper crops now grow slightly faster when near lava or in the Nether
+•   Coffee bushes are now bonemealable but only grows to the next stage 12% of the time
+•   Added missing recipe for hot cocoa
+•   Added hot cocoa to the creative inventory
 
   Changes
 •   Tea recipes are now shaped meaning they have to be in a specific order (it is recommended to use JEI to view the recipes)
 •   Espresso now grants the caffeinated effect (trailblazing was a leftover placeholder effect)
 •   Espresso now requires a soul pepper to brew
 •   Green tea's restoration effect increased from 15s -> 1m
-•   Coffee bushes are now bonemealable but only grows to the next stage 12% of the time
+•   Changed the name of the "Bitter Brew" advancement to "Bitter Brews"
 •   Changed stack sizes of some brews:
         Sweet Berry Juice -> 2
         Glow Berry Juice -> 4
@@ -27,14 +30,19 @@ Version Release v1.0.1 MC-1.20.1
         Coffee -> 4
         Dark Coffee -> 2
         Hot Cocoa -> 2
+•   Changed the textures for some items:
+        Coffee Bush (item texture)
+        Iced Tea
+        Crimson Tea
+        Warped Tea
+        Shroomlight Tea
+        Chorus Juice
 
   Bug Fixes
 •   Fixed recipes that required multiple of one type of item to only require one (this should also fix a few broken recipes)
 •   Fixed an issue that caused conflictions with recipes that use the same ingredients, this only matters if you are planning to create a Bitter Brews addon mod
 •   Fixed players not being able to place some items that are required for recipes in the fuel slot
 •   Fixed ingredient slots allowing drinks to be placed in them
-•   Fixed missing recipe for hot cocoa
-•   Added hot cocoa to the creative inventory
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

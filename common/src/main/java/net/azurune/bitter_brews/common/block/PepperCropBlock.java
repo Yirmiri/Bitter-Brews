@@ -3,7 +3,6 @@ package net.azurune.bitter_brews.common.block;
 import net.azurune.bitter_brews.core.registry.BBItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;

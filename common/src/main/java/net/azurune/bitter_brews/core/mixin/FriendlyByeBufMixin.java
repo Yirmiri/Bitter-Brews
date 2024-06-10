@@ -16,5 +16,4 @@ public class FriendlyByeBufMixin {
         if (resourceLocation == null)
             cir.setReturnValue((FriendlyByteBuf) ((Object) this));
     }
-
 }
