@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.NetherWartBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class SoulPepperCropBlock extends NetherWartBlock {
+public class SoulPepperCropBlock extends PepperCropBlock {
     public SoulPepperCropBlock(BlockBehaviour.Properties settings) {
         super(settings);
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
