@@ -2,9 +2,9 @@ package net.azurune.bitter_brews.common.screen;
 
 import net.azurune.bitter_brews.BitterBrewsConstants;
 import net.azurune.bitter_brews.common.block_entity.TeaKettleBlockEntity;
-import net.azurune.bitter_brews.common.item.GenericDrinkItem;
 import net.azurune.bitter_brews.common.screen.slot.SimpleOutputSlot;
-import net.azurune.bitter_brews.common.screen.slot.FuelSlot;
+import net.azurune.bitter_brews.common.screen.slot.TeaKettleFuelSlot;
+import net.azurune.bitter_brews.common.screen.slot.TeaKettleIngredientSlot;
 import net.azurune.bitter_brews.core.registry.BBMenuTypes;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
@@ -44,11 +44,11 @@ public class TeaKettleMenu extends AbstractContainerMenu {
     }
 
     private void buildSlots(Container container) {
-        this.addSlot(new FuelSlot(container, 0, 27, 68, stack -> stack.getItem() instanceof GenericDrinkItem));
-        this.addSlot(new FuelSlot(container, 1, 17, 26, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new FuelSlot(container, 2, 37, 26, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new FuelSlot(container, 3, 17, 46, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
-        this.addSlot(new FuelSlot(container, 4, 37, 46, stack -> !(stack.getItem() instanceof GenericDrinkItem)));
+        this.addSlot(new TeaKettleFuelSlot(container, 0, 27, 68));
+        this.addSlot(new TeaKettleIngredientSlot(container, 1, 17, 26));
+        this.addSlot(new TeaKettleIngredientSlot(container, 2, 37, 26));
+        this.addSlot(new TeaKettleIngredientSlot(container, 3, 17, 46));
+        this.addSlot(new TeaKettleIngredientSlot(container, 4, 37, 46));
         this.addSlot(new SimpleOutputSlot(container, 5, 99, 46));
     }//
 
