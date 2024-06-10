@@ -30,17 +30,13 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer inventory, Level world) {
-        if (world.isClientSide()) {
-            return false;
-        }
-        return recipeItems.stream().allMatch(ingredient -> {
-            for (int i = 0; i < inventory.getContainerSize(); i++) {
-                if (ingredient.test(inventory.getItem(i))) {
-                    return true;
-                }
-            }
-            return false;
-        });
+        if (recipeItems.get(0).test(inventory.getItem(0))) {
+            if (recipeItems.get(1).test(inventory.getItem(1))) {
+                if (recipeItems.get(2).test(inventory.getItem(2))) {
+                    if (recipeItems.get(3).test(inventory.getItem(3))) {
+                            return (recipeItems.get(4).test(inventory.getItem(4)));
+                    }}}}
+        return false;
     }
 
     public boolean containsItem(ItemStack stack) {
