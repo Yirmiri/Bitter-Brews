@@ -1,14 +1,21 @@
 package net.azurune.bitter_brews.common.block;
 
 import net.azurune.bitter_brews.common.block_entity.TeaKettleBlockEntity;
+import net.azurune.bitter_brews.common.util.BBStats;
 import net.azurune.bitter_brews.core.registry.BBBlockEntityTypes;
+import net.azurune.bitter_brews.core.registry.BBTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -16,6 +23,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -25,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     private static final VoxelShape SHAPE;
+    public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
     public TeaKettleBlock(BlockBehaviour.Properties settings) {
         super(settings);
@@ -50,12 +60,19 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING, LIT);
     }
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
-        return defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite());
+        LevelAccessor accessor = ctx.getLevel();
+        BlockPos pos = ctx.getClickedPos();
+        return defaultBlockState().setValue(FACING, ctx.getHorizontalDirection().getOpposite())
+                .setValue(LIT, Boolean.valueOf(isHeated(accessor.getBlockState(pos.below()))));
+    }
+
+    private boolean isHeated(BlockState state) {
+        return state.is(BBTags.BlockTags.HEAT_SOURCES);
     }
 
     @Override
@@ -69,10 +86,8 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pos);
             if(entity instanceof TeaKettleBlockEntity teaKettleBlockEntity) {
-                //teaKettleBlockEntity.createMenu(6, new Inventory(player), player);
                 player.openMenu(teaKettleBlockEntity);
-                //NetworkHooks.openScreen(((ServerPlayer)player), (TeaKettleBlockEntity)entity, pos);
-                //player.awardStat(DSStats.INTERACT_WITH_KETTLE);
+                player.awardStat(BBStats.INTERACT_WITH_KETTLE);
             } else {
                 throw new IllegalStateException("It seems our container is missing, uh oh!");
             }
@@ -91,6 +106,18 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
     }
 
     @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource source) {
+        if (state.getValue(LIT)) {
+            double x = pos.getX() + 0.5;
+            double y = pos.getY();
+            double z = pos.getZ() + 0.5;
+            if (source.nextDouble() < 0.1) {
+                level.playLocalSound(x, y, z, SoundEvents.CAMPFIRE_CRACKLE, SoundSource.BLOCKS, 1.0F, 1.0F, false);
+            }
+        }
+    }
+
+    @Override
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState blockState, boolean isMoving) {
         if (state.getBlock() != blockState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
@@ -102,7 +129,7 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
         super.onRemove(state, level, pos, blockState, isMoving);
     }
 
-    static { //wtf
+    static {
         SHAPE = Block.box(3, 0, 3, 13, 7, 13);
         Block.box(4, 7, 4, 12, 8, 12);
         Block.box(-0.5, 6, 7, 5, 8.5, 9);

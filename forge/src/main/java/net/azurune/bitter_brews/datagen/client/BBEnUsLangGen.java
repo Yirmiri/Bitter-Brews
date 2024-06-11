@@ -87,6 +87,9 @@ public class BBEnUsLangGen extends LanguageProvider {
         add("advancements.nether.soul_pepper.title", "Soul Pepper Challenge");
         add("advancements.nether.soul_pepper.description", "Venture into a bastion and grow a soul pepper- just be sure to have a cup of milk...");
 
+        //STATS
+        add("stat.minecraft.interact_with_kettle", "Interactions with Tea Kettle");
+
         //ITEM GROUPS
         add("itemgroup.bitter_brews", "Bitter Brews");
 

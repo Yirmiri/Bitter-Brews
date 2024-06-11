@@ -4,6 +4,15 @@ Literally just a secret .txt file of every single update's changelog
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Version Release v1.0.2 MC-1.20.1
+
+  Additions
+•   Added ambient sounds to the tea kettle when it is heated
+•   Added a statistic for interactions with the tea kettle
+•   Added ru_ru translations (@bricker_man)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Version Release v1.0.1 MC-1.20.1
 
   Additions

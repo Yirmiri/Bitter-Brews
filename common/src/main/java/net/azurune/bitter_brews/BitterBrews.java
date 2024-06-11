@@ -1,5 +1,6 @@
 package net.azurune.bitter_brews;
 
+import net.azurune.bitter_brews.common.util.BBStats;
 import net.azurune.bitter_brews.core.registry.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -14,6 +15,7 @@ public class BitterBrews {
         BBRecipeSerializer.loadRecipeSerializers();
         BBMenuTypes.loadMenuTypes();
         BBRecipeTypes.loadRecipeTypes();
+        BBStats.loadStats();
     }
 
     public static MutableComponent tooltipId(String key, Object... args) {
