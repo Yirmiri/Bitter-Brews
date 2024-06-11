@@ -50,6 +50,7 @@ public class FabricBBItemGroups {
             entries.addAfter(BBItems.CUP_OF_SHROOMLIGHT_TEA.get(), BBItems.CUP_OF_COFFEE.get());
             entries.addAfter(BBItems.CUP_OF_COFFEE.get(), BBItems.CUP_OF_DARK_COFFEE.get());
             entries.addAfter(BBItems.CUP_OF_DARK_COFFEE.get(), BBItems.CUP_OF_ESPRESSO.get());
+            entries.addAfter(BBItems.CUP_OF_ESPRESSO.get(), BBItems.CUP_OF_LIGHTNING.get());
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {

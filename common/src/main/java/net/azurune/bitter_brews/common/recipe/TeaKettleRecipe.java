@@ -16,6 +16,8 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class TeaKettleRecipe implements Recipe<SimpleContainer> {
 
     private final ResourceLocation id;
@@ -30,13 +32,9 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer inventory, Level world) {
-        if (recipeItems.get(0).test(inventory.getItem(0))) {
-            if (recipeItems.get(1).test(inventory.getItem(1))) {
-                if (recipeItems.get(2).test(inventory.getItem(2))) {
-                    if (recipeItems.get(3).test(inventory.getItem(3))) {
-                            return (recipeItems.get(4).test(inventory.getItem(4)));
-                    }}}}
-        return false;
+        AtomicInteger counter = new AtomicInteger();
+        return recipeItems.stream().allMatch(ingredient ->
+                ingredient.test(inventory.getItem(counter.getAndIncrement())));
     }
 
     public boolean containsItem(ItemStack stack) {

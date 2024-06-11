@@ -10,7 +10,7 @@ public class BBStats {
     public static ResourceLocation INTERACT_WITH_KETTLE;
 
     public static void loadStats() {
-        INTERACT_WITH_KETTLE = makeCustomStat("interact_with_kettle", StatFormatter.DEFAULT);
+        //INTERACT_WITH_KETTLE = makeCustomStat("interact_with_kettle", StatFormatter.DEFAULT);
     }
 
     private static ResourceLocation makeCustomStat(String string, StatFormatter formatter) {

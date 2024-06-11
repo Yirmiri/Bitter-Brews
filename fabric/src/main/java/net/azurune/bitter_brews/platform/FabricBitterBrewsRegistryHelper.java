@@ -21,7 +21,6 @@ public class FabricBitterBrewsRegistryHelper implements BitterBrewsRegistryHelpe
         return () -> value;
     }
 
-
     @Override
     public <T extends Block> Supplier<T> registerBlockWithItem(String id, Supplier<T> blockSupplier) {
         var block = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(BitterBrewsConstants.MOD_ID, id), blockSupplier.get());
@@ -34,4 +33,5 @@ public class FabricBitterBrewsRegistryHelper implements BitterBrewsRegistryHelpe
         var block = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(BitterBrewsConstants.MOD_ID, id), blockSupplier.get());
         return () -> block;
     }
+
 }

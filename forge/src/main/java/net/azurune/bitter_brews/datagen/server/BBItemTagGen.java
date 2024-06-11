@@ -45,6 +45,7 @@ public class BBItemTagGen extends ItemTagsProvider {
                 .add(BBItems.CUP_OF_CRIMSON_TEA.get())
                 .add(BBItems.CUP_OF_WARPED_TEA.get())
                 .add(BBItems.CUP_OF_SHROOMLIGHT_TEA.get())
-                .add(BBItems.CUP_OF_CHORUS_JUICE.get());
+                .add(BBItems.CUP_OF_CHORUS_JUICE.get())
+                .add(BBItems.CUP_OF_LIGHTNING.get());
     }
 }

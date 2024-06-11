@@ -5,8 +5,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class BitterBrewsItemModelProvider extends ItemModelProvider {
-    public BitterBrewsItemModelProvider(PackOutput output, String modid, ExistingFileHelper existingFileHelper) {
+public class BBItemModelProvider extends ItemModelProvider {
+    public BBItemModelProvider(PackOutput output, String modid, ExistingFileHelper existingFileHelper) {
         super(output, modid, existingFileHelper);
     }
 
@@ -44,5 +44,6 @@ public class BitterBrewsItemModelProvider extends ItemModelProvider {
         basicItem(BBItems.CUP_OF_WARPED_TEA.get());
         basicItem(BBItems.CUP_OF_SHROOMLIGHT_TEA.get());
         basicItem(BBItems.CUP_OF_CHORUS_JUICE.get());
+        basicItem(BBItems.CUP_OF_LIGHTNING.get());
     }
 }

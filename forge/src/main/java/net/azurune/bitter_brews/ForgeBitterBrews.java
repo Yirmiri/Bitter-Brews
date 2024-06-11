@@ -3,7 +3,7 @@ package net.azurune.bitter_brews;
 import net.azurune.bitter_brews.core.registry.BBBlocks;
 import net.azurune.bitter_brews.core.registry.BBItems;
 import net.azurune.bitter_brews.datagen.client.BBEnUsLangGen;
-import net.azurune.bitter_brews.datagen.client.BitterBrewsItemModelProvider;
+import net.azurune.bitter_brews.datagen.client.BBItemModelProvider;
 import net.azurune.bitter_brews.datagen.server.BBBlockTagGen;
 import net.azurune.bitter_brews.datagen.server.BBItemTagGen;
 import net.azurune.bitter_brews.datagen.server.BBRecipeProvider;
@@ -49,7 +49,7 @@ public class ForgeBitterBrews {
 
         //Client Datagen
         generator.addProvider(event.includeClient(), new BBEnUsLangGen(packOutput, BitterBrewsConstants.MOD_ID, "en_us"));
-        generator.addProvider(event.includeClient(), new BitterBrewsItemModelProvider(packOutput, BitterBrewsConstants.MOD_ID, fileHelper));
+        generator.addProvider(event.includeClient(), new BBItemModelProvider(packOutput, BitterBrewsConstants.MOD_ID, fileHelper));
 
         //Server Datagen
         generator.addProvider(event.includeServer(), new BBRecipeProvider(packOutput));
@@ -99,6 +99,7 @@ public class ForgeBitterBrews {
             addAfter(event, BBItems.CUP_OF_SHROOMLIGHT_TEA.get(), BBItems.CUP_OF_COFFEE.get());
             addAfter(event, BBItems.CUP_OF_COFFEE.get(), BBItems.CUP_OF_DARK_COFFEE.get());
             addAfter(event, BBItems.CUP_OF_DARK_COFFEE.get(), BBItems.CUP_OF_ESPRESSO.get());
+            addAfter(event, BBItems.CUP_OF_ESPRESSO.get(), BBItems.CUP_OF_LIGHTNING.get());
         }
 
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
