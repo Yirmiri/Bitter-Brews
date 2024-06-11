@@ -141,5 +141,11 @@ public class BBProperties {
                 .effect(new MobEffectInstance(TLStatusEffects.IMPURE, VERY_LONG_DURATION, 0), 1.0F)
                 .effect(new MobEffectInstance(TLStatusEffects.CHRONOS, VERY_LONG_DURATION, 0), 1.0F)
                 .alwaysEat().build());
+
+        //COMPAT FOODS
+        public static final Item.Properties AC_CHALK = new Item.Properties().stacksTo(2).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(MobEffects.REGENERATION, AVERAGE_DURATION, 1), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.SHATTERSPLEEN, AVERAGE_DURATION, 0), 1.0F)
+                .alwaysEat().build());
     }
 }
