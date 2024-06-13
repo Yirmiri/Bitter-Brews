@@ -16,12 +16,7 @@ Version Release v1.0.2 MC-1.20.1
 •   Lightning in a bottle?... nahh a cup
 
   Changes
-•   The "Soul Pepper Challenge" advancement now requires the player to consume a soul pepper rather than collect one
-•   Changed the name of "Bitter Brew" -> "A Bitter Brew"
-•   Changed the description for "Spill The Tea" from "Place down a copper tea kettle and begin brewing!" -> "Place down a tea kettle and begin brewing!"
-•   Changed the description for "Soul Pepper Challenge" from
-"Venture into a bastion and grow a soul pepper- just be sure to have a cup of milk..." -> "Consume the flaming hot delight of the Nether- just be sure to have a cup of milk."
-•   Removed cup of milk from the "brews" item tag
+•   Changed the stack size of cups of water & cups of milk from 16 -> 64
 •   Increased the chances of getting tea leaves from flowering azalea leaves from 2.5% -> 5%
 •   Increased the chances of getting azalea flowers from flowering azalea leaves from 2.5% -> 6.9%
 •   Decreased the chances of getting mangos from jungle leaves from 2.5% -> 2%
@@ -29,6 +24,12 @@ Version Release v1.0.2 MC-1.20.1
 •   Decreased the chances of getting soul peppers from generic bastion chests from 5% -> 2%
 •   Decreased the max amount of pepper seeds from generic bastion chests from 6 -> 4
 •   Decreased the max amount of soul pepper seeds from treasure bastion chests 4 -> 3
+•   The "Soul Pepper Challenge" advancement now requires the player to consume a soul pepper rather than collect one
+•   Changed the name of "Bitter Brew" -> "A Bitter Brew"
+•   Changed the description for "Spill The Tea" from "Place down a copper tea kettle and begin brewing!" -> "Place down a tea kettle and begin brewing!"
+•   Changed the description for "Soul Pepper Challenge" from
+"Venture into a bastion and grow a soul pepper- just be sure to have a cup of milk..." -> "Consume the flaming hot delight of the Nether- just be sure to have a cup of milk."
+•   Removed cup of milk from the "brews" item tag meaning they will no longer grant you the "A Bitter Brew" advancement
 
   Bug Fixes
 •   [Forge] Fixed missing loot modifiers (tea leaves from azaleas, peppers from bartering etc)

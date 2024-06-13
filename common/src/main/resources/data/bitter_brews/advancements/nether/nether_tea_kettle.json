@@ -16,7 +16,7 @@
   },
   "parent": "minecraft:nether/root",
   "criteria": {
-    "copper_tea_kettle": {
+    "nether_tea_kettle": {
       "trigger": "minecraft:placed_block",
       "conditions": {
         "player": [

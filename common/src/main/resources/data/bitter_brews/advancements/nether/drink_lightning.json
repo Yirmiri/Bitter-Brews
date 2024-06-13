@@ -12,20 +12,18 @@
     "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false
+    "hidden": true
   },
   "parent": "bitter_brews:nether/soul_pepper",
   "criteria": {
     "drink_lightning": {
       "trigger": "minecraft:consume_item",
       "conditions": {
-        "items": [
-          {
-            "items": [
-              "bitter_brews:cup_of_lighting"
-            ]
-          }
-        ]
+        "item": {
+          "items": [
+            "bitter_brews:cup_of_lightning"
+          ]
+        }
       }
     }
   },

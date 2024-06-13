@@ -19,13 +19,11 @@
     "soul_pepper": {
       "trigger": "minecraft:consume_item",
       "conditions": {
-        "items": [
-          {
-            "items": [
-              "bitter_brews:soul_pepper"
-            ]
-          }
-        ]
+        "item": {
+          "items": [
+            "bitter_brews:soul_pepper"
+          ]
+        }
       }
     }
   },

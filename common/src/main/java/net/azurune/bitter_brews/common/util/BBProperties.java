@@ -41,8 +41,9 @@ public class BBProperties {
         public static final Item.Properties SOUL_PEPPER = new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(0.6F).effect(new MobEffectInstance(TLStatusEffects.TRAIL_BLAZING, BRIEF_DURATION, 0), 1.0F).alwaysEat().build());
 
         //DRINKS
-        public static final Item.Properties WATER = new Item.Properties().stacksTo(16).food(new FoodProperties.Builder().alwaysEat().build());
-        public static final Item.Properties MILK = new Item.Properties().stacksTo(16).food(new FoodProperties.Builder().alwaysEat().build());
+        public static final Item.Properties WATER = new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().alwaysEat().build());
+        public static final Item.Properties MILK = new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().alwaysEat().build());
+        public static final Item.Properties LIGHTNING = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder().alwaysEat().build());
 
         public static final Item.Properties CHOCOLATE_MILK = new Item.Properties().stacksTo(1).food(new FoodProperties.Builder()
                 .effect(new MobEffectInstance(TLStatusEffects.CHRONOS, AVERAGE_DURATION, 0), 1.0F)

@@ -46,7 +46,7 @@ public class BBItems {
     public static final Supplier<Item> CUP_OF_WARPED_TEA = registerItem("cup_of_warped_tea", () -> new GenericDrinkItem(BBProperties.ItemP.WARPED_TEA, 32, true));
     public static final Supplier<Item> CUP_OF_SHROOMLIGHT_TEA = registerItem("cup_of_shroomlight_tea", () -> new GenericDrinkItem(BBProperties.ItemP.SHROOMLIGHT_TEA, 32, true));
     public static final Supplier<Item> CUP_OF_CHORUS_JUICE = registerItem("cup_of_chorus_juice", () -> new GenericDrinkItem(BBProperties.ItemP.CHORUS_JUICE, 64, true));
-    public static final Supplier<Item> CUP_OF_LIGHTNING = registerItem("cup_of_lightning", () -> new LightningDrinkItem(BBProperties.ItemP.WATER, 1, true));
+    public static final Supplier<Item> CUP_OF_LIGHTNING = registerItem("cup_of_lightning", () -> new LightningDrinkItem(BBProperties.ItemP.LIGHTNING, 1, true));
 
     private static <T extends Item> Supplier<T> registerItem(String name, Supplier<T> itemSupplier) {
         return Services.REGISTRY_HELPER.register(BuiltInRegistries.ITEM, name, itemSupplier);

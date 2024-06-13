@@ -1,11 +1,9 @@
 package net.azurune.bitter_brews.common.block;
 
 import net.azurune.bitter_brews.common.block_entity.TeaKettleBlockEntity;
-import net.azurune.bitter_brews.common.util.BBStats;
 import net.azurune.bitter_brews.core.registry.BBBlockEntityTypes;
 import net.azurune.bitter_brews.core.registry.BBTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -87,7 +85,6 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
             BlockEntity entity = level.getBlockEntity(pos);
             if(entity instanceof TeaKettleBlockEntity teaKettleBlockEntity) {
                 player.openMenu(teaKettleBlockEntity);
-                player.awardStat(BBStats.INTERACT_WITH_KETTLE);
             } else {
                 throw new IllegalStateException("It seems our container is missing, uh oh!");
             }
