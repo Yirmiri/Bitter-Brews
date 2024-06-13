@@ -80,6 +80,8 @@ public class BBEnUsLangGen extends LanguageProvider {
         add("bitter_brews.tooltip.cup_of_lightning", "Zeus told me to drink this 🤤🤤🤤");
 
         //HUSBANDRY ADVANCEMENTS
+        add("advancements.husbandry.place_stove.title", "Turning Up The Heat");
+        add("advancements.husbandry.place_stove.description", "Place down a stove which can be used to heat a tea kettle.");
         add("advancements.husbandry.place_kettle.title", "Spill The Tea");
         add("advancements.husbandry.place_kettle.description", "Place down a tea kettle and begin brewing!");
         add("advancements.husbandry.obtain_brew.title", "A Bitter Brew");
@@ -90,7 +92,7 @@ public class BBEnUsLangGen extends LanguageProvider {
         //NETHER ADVANCEMENTS
         add("advancements.nether.nether_tea_kettle.title", "Unusual Cooking Strategies");
         add("advancements.nether.nether_tea_kettle.description", "Use the Nether as a heating source for a tea kettle.");
-        add("advancements.nether.pepper.title", "Turning Up The Heat");
+        add("advancements.nether.pepper.title", "Getting Spicy");
         add("advancements.nether.pepper.description", "Barter with a piglin for a pepper.");
         add("advancements.nether.soul_pepper.title", "Soul Pepper Challenge");
         add("advancements.nether.soul_pepper.description", "Consume the flaming hot delight of the Nether- just be sure to have a cup of milk.");

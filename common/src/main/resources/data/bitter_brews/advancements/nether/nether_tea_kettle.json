@@ -16,7 +16,7 @@
   },
   "parent": "minecraft:nether/root",
   "criteria": {
-    "nether_tea_kettle": {
+    "place_tea_kettle_in_nether": {
       "trigger": "minecraft:placed_block",
       "conditions": {
         "player": [
@@ -39,7 +39,7 @@
   },
   "requirements": [
     [
-      "nether_tea_kettle"
+      "place_tea_kettle_in_nether"
     ]
   ],
   "sends_telemetry_event": true

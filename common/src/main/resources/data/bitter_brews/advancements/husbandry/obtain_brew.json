@@ -16,20 +16,20 @@
   },
   "parent": "bitter_brews:husbandry/place_kettle",
   "criteria": {
-    "get_brew": {
+    "obtain_brew": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "item": {
-          "tag": [
-            "bitter_brews:brews"
-          ]
-        }
+        "items": [
+          {
+            "tag": "bitter_brews:brews"
+          }
+        ]
       }
     }
   },
   "requirements": [
     [
-      "get_brew"
+      "obtain_brew"
     ]
   ],
   "sends_telemetry_event": true

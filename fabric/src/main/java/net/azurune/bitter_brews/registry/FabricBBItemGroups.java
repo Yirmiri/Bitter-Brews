@@ -20,7 +20,7 @@ public class FabricBBItemGroups {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(entries -> {
             entries.addAfter(Blocks.SMOKER, BBBlocks.MUD_STOVE.get());
             entries.addAfter(BBBlocks.MUD_STOVE.get(), BBBlocks.MUD_COUNTER.get());
-            entries.addAfter(BBBlocks.MUD_COUNTER.get(), BBBlocks.COPPER_TEA_KETTLE.get());
+            entries.addAfter(Items.END_CRYSTAL, BBBlocks.COPPER_TEA_KETTLE.get());
         });
 
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(entries -> {

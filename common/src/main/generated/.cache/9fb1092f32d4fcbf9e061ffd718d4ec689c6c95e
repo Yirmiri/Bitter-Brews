@@ -1,4 +1,4 @@
-// 1.20.1	2024-06-07T21:06:09.6618307	Recipes
+// 1.20.1	2024-06-13T02:03:43.1421269	Recipes
 dc2329d01ae7b64d58d2addbdea8a08f2fba8d7d data/bitter_brews/advancements/recipes/building_blocks/pepper_seeds.json
 22f14e54a5dbb8a53a86ee88094e54012eaa2427 data/bitter_brews/advancements/recipes/building_blocks/soul_pepper_seeds.json
 c9e4f07e4d37c7d0ca506567a6f5415e43d2d389 data/bitter_brews/advancements/recipes/decorations/mud_counter.json
@@ -11,5 +11,5 @@ a50637645dafd4f55a3a386c33563ea7aef08d4b data/bitter_brews/advancements/recipes/
 eaac4f05e473429c7ccb8d83481db4ba423c0106 data/bitter_brews/recipes/mud_counter.json
 673ff7ea8e32dea41c1f4222eea13fc510200deb data/bitter_brews/recipes/mud_cup.json
 1d8f08bc7a4dd7eb65dace5bd304d478a8623564 data/bitter_brews/recipes/mud_stove.json
-edc6ab5259b815de81f8364ca15b24abd063c78b data/bitter_brews/recipes/pepper_seeds.json
-4f085390dcf0b2ca1d60750badc1b555f6df46c9 data/bitter_brews/recipes/soul_pepper_seeds.json
+d521a33f2c459f29eae0d98f4940d220aa4a019a data/bitter_brews/recipes/pepper_seeds.json
+0d9b4c67f1fb1038759af580421cc7e591f0f87b data/bitter_brews/recipes/soul_pepper_seeds.json

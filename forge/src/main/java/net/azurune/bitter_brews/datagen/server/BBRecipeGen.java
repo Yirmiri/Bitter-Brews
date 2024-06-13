@@ -16,12 +16,12 @@ public class BBRecipeGen extends RecipeProvider {
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> exporter) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BBItems.PEPPER_SEEDS.get(), 2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BBItems.PEPPER_SEEDS.get(), 1)
                 .requires(BBItems.PEPPER.get())
                 .unlockedBy(getItemName(BBItems.PEPPER.get()), has(BBItems.PEPPER.get()))
                 .save(exporter);
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BBItems.SOUL_PEPPER_SEEDS.get(), 2)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, BBItems.SOUL_PEPPER_SEEDS.get(), 1)
                 .requires(BBItems.SOUL_PEPPER.get())
                 .unlockedBy(getItemName(BBItems.SOUL_PEPPER.get()), has(BBItems.SOUL_PEPPER.get()))
                 .save(exporter);
