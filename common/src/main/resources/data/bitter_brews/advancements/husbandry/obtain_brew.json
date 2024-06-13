@@ -19,11 +19,11 @@
     "get_brew": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "items": [
-          {
-            "tag": "bitter_brews:brews"
-          }
-        ]
+        "item": {
+          "tag": [
+            "bitter_brews:brews"
+          ]
+        }
       }
     }
   },
