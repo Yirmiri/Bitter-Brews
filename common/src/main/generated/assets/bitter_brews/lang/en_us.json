@@ -1,10 +1,10 @@
 {
+  "advancements.husbandry.consume_all_brews.description": "Consume all of the brews in Bitter Brews.",
+  "advancements.husbandry.consume_all_brews.title": "Taste The Rainbow",
   "advancements.husbandry.obtain_brew.description": "Brew any bitter brew.",
   "advancements.husbandry.obtain_brew.title": "A Bitter Brew",
   "advancements.husbandry.place_kettle.description": "Place down a tea kettle and begin brewing!",
   "advancements.husbandry.place_kettle.title": "Spill The Tea",
-  "advancements.nether.consume_all_brews.description": "Consume all of the brews in Bitter Brews.",
-  "advancements.nether.consume_all_brews.title": "Taste The Rainbow",
   "advancements.nether.drink_lighting.description": "It probably wasn't so good of an idea to drink a cup of lightning huh?.",
   "advancements.nether.drink_lighting.title": "Death at 20,000 Volts",
   "advancements.nether.nether_tea_kettle.description": "Use the Nether as a heating source for a tea kettle.",

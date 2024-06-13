@@ -16,6 +16,7 @@ Version Release v1.0.2 MC-1.20.1
 •   Lightning in a bottle?... nahh a cup
 
   Changes
+•   Crimson tea now requires a pepper rather than a nether wart
 •   Changed the stack size of cups of water & cups of milk from 16 -> 64
 •   Increased the chances of getting tea leaves from flowering azalea leaves from 2.5% -> 5%
 •   Increased the chances of getting azalea flowers from flowering azalea leaves from 2.5% -> 6.9%
@@ -33,6 +34,9 @@ Version Release v1.0.2 MC-1.20.1
 
   Bug Fixes
 •   [Forge] Fixed missing loot modifiers (tea leaves from azaleas, peppers from bartering etc)
+
+  Notes
+•   Next update will feature compatibility including a highly requested feature of using heat sources from Farmer's Delight for kettles or vice versa
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
