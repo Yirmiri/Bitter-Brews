@@ -6,3 +6,4 @@ Translator Credits:
 - en_us translated by "@yirmiris"
 - ru_ru translated by "@bricker_man"
 - zh_cn translated by "@junshengxie"
+- uk_ua translated by "@unroman"

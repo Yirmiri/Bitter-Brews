@@ -1,11 +1,19 @@
 {
+  "advancements.husbandry.consume_all_brews.description": "Попробуйте все варева в "Горьких Варевах".",
+  "advancements.husbandry.consume_all_brews.title": "Скиттлстрянка",
   "advancements.husbandry.obtain_brew.description": "Сварите любое горькое варево.",
   "advancements.husbandry.obtain_brew.title": "Горькое Варево",
   "advancements.husbandry.place_kettle.description": "Поставьте медный чайник и начинайте варить!",
   "advancements.husbandry.place_kettle.title": "Джесси, нам нужно варить",
+  "advancements.husbandry.place_stove.description": "Разместите саманную плиту, которая позволит вам вскипятить чайник.",
+  "advancements.husbandry.place_stove.title": "Поддай-ка жару!",
+  "advancements.nether.drink_lighting.description": "Не самая лучшая идея пить молнию, да?.",
+  "advancements.nether.drink_lighting.title": "Дурак и молния",
+  "advancements.nether.nether_tea_kettle.description": "Используйте Незер, чтобы вскипятить чайник.",
+  "advancements.nether.nether_tea_kettle.title": "Современные проблемы требуют современных решений",
   "advancements.nether.pepper.description": "Поторгуйте с Пиглином, чтобы раздобыть перец.",
   "advancements.nether.pepper.title": "Острая необходимость!",
-  "advancements.nether.soul_pepper.description": "Отправляйтесь в Бастион Пиглинов и вырастите призрачный перец- только не забудьте прихватить кружку молока...",
+  "advancements.nether.soul_pepper.description": "Попробуйте пылающе острую прелесть Незера - только не забудьте взять кружку молока...",
   "advancements.nether.soul_pepper.title": ""Перец душ" челлендж",
 
   "bitter_brews.tooltip.cup_of_azalea_tea": "Сладкое цветущее варево, способное успокоить даже самого буйного игрока.",
@@ -24,6 +32,7 @@
   "bitter_brews.tooltip.cup_of_iced_tea": "На вкус как шедевр.",
   "bitter_brews.tooltip.cup_of_jasmine_tea": "Успокаивающее варево, которое может вас усыпить.",
   "bitter_brews.tooltip.cup_of_kelp_tea": "Yirmiri специально выбрала веерные кораллы для крафта вместо обычных кораллов.",
+  "bitter_brews.tooltip.cup_of_lightning": "Зевс посоветовал мне выпить это 🤤🤤🤤",
   "bitter_brews.tooltip.cup_of_mango_tea": "Манговый чай - то, что доктор прописал.",
   "bitter_brews.tooltip.cup_of_melon_juice": "Варево, идеально подходящее для жаркого летнего дня.",
   "bitter_brews.tooltip.cup_of_shroomlight_tea": "Смесь незерского восторга!",
@@ -61,7 +70,8 @@
   "item.bitter_brews.cup_of_hot_cocoa": "Кружка горячего шоколада",
   "item.bitter_brews.cup_of_iced_tea": "Кружка ледяного чая",
   "item.bitter_brews.cup_of_jasmine_tea": "Кружка жасминового чая",
-  "item.bitter_brews.cup_of_kelp_tea": "Кружка ламинариевого чая",
+  "item.bitter_brews.cup_of_kelp_tea": "Кружка кораллового чая",
+  "item.bitter_brews.cup_of_lightning": "Кружка молнии",
   "item.bitter_brews.cup_of_mango_tea": "Кружка мангового чая",
   "item.bitter_brews.cup_of_melon_juice": "Кружка арбузного сока",
   "item.bitter_brews.cup_of_milk": "Кружка молока",
@@ -71,7 +81,7 @@
   "item.bitter_brews.cup_of_water": "Кружка воды",
   "item.bitter_brews.dried_tea_leaves": "Сушёные листья чая",
   "item.bitter_brews.mango": "Манго",
-  "item.bitter_brews.mud_cup": "Саманная кружка",
+  "item.bitter_brews.mud_cup": "Кружка",
   "item.bitter_brews.pepper": "Перец",
   "item.bitter_brews.pepper_seeds": "Семена перца",
   "item.bitter_brews.soul_pepper": "Перец душ",
@@ -79,4 +89,6 @@
   "item.bitter_brews.tea_leaves": "Листья чая",
 
   "itemgroup.bitter_brews": "Горькие Варева"
+
+  "stat.minecraft.interact_with_kettle": "Взаимодействия с чайником"
 }
