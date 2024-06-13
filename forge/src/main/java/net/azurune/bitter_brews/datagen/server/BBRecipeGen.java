@@ -9,8 +9,8 @@ import net.minecraft.world.level.block.Blocks;
 
 import java.util.function.Consumer;
 
-public class BBRecipeProvider extends RecipeProvider {
-    public BBRecipeProvider(PackOutput p_248933_) {
+public class BBRecipeGen extends RecipeProvider {
+    public BBRecipeGen(PackOutput p_248933_) {
         super(p_248933_);
     }
 

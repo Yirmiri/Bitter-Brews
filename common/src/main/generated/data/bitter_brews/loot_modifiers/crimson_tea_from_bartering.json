@@ -1,0 +1,16 @@
+{
+  "type": "bitter_brews:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:gameplay/piglin_bartering"
+    },
+    {
+      "chance": 0.05,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "bitter_brews:cup_of_crimson_tea",
+  "max": 1,
+  "min": 1
+}

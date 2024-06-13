@@ -3,10 +3,12 @@ package net.azurune.bitter_brews;
 import net.azurune.bitter_brews.core.registry.BBBlocks;
 import net.azurune.bitter_brews.core.registry.BBItems;
 import net.azurune.bitter_brews.datagen.client.BBEnUsLangGen;
-import net.azurune.bitter_brews.datagen.client.BBItemModelProvider;
+import net.azurune.bitter_brews.datagen.client.BBItemModelGen;
 import net.azurune.bitter_brews.datagen.server.BBBlockTagGen;
 import net.azurune.bitter_brews.datagen.server.BBItemTagGen;
-import net.azurune.bitter_brews.datagen.server.BBRecipeProvider;
+import net.azurune.bitter_brews.datagen.server.BBRecipeGen;
+import net.azurune.bitter_brews.datagen.server.loot.BBGlobalLootModifiersGen;
+import net.azurune.bitter_brews.datagen.server.loot.BBLootTableModifier;
 import net.azurune.bitter_brews.platform.ForgeBitterBrewsRegistryHelper;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -31,6 +33,7 @@ public class ForgeBitterBrews {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         BitterBrews.init();
+        BBLootTableModifier.register(modEventBus);
 
         ForgeBitterBrewsRegistryHelper.BLOCKS.register(modEventBus);
         ForgeBitterBrewsRegistryHelper.ITEMS.register(modEventBus);
@@ -49,11 +52,12 @@ public class ForgeBitterBrews {
 
         //Client Datagen
         generator.addProvider(event.includeClient(), new BBEnUsLangGen(packOutput, BitterBrewsConstants.MOD_ID, "en_us"));
-        generator.addProvider(event.includeClient(), new BBItemModelProvider(packOutput, BitterBrewsConstants.MOD_ID, fileHelper));
+        generator.addProvider(event.includeClient(), new BBItemModelGen(packOutput, BitterBrewsConstants.MOD_ID, fileHelper));
 
         //Server Datagen
-        generator.addProvider(event.includeServer(), new BBRecipeProvider(packOutput));
         BBBlockTagGen blockTagProvider = new BBBlockTagGen(packOutput, lookupProvider, BitterBrewsConstants.MOD_ID, fileHelper);
+        generator.addProvider(event.includeServer(), new BBRecipeGen(packOutput));
+        generator.addProvider(event.includeServer(), new BBGlobalLootModifiersGen(packOutput));
         generator.addProvider(event.includeServer(), blockTagProvider);
         generator.addProvider(event.includeServer(), new BBItemTagGen(packOutput, lookupProvider, blockTagProvider.contentsGetter(), BitterBrewsConstants.MOD_ID, fileHelper));
     }

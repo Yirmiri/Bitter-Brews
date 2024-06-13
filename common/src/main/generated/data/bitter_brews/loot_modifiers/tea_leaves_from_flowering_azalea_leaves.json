@@ -1,0 +1,16 @@
+{
+  "type": "bitter_brews:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:blocks/flowering_azalea_leaves"
+    },
+    {
+      "chance": 0.05,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "bitter_brews:tea_leaves",
+  "max": 1,
+  "min": 1
+}

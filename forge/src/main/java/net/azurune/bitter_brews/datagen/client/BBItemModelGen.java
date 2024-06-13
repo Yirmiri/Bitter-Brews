@@ -5,8 +5,8 @@ import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class BBItemModelProvider extends ItemModelProvider {
-    public BBItemModelProvider(PackOutput output, String modid, ExistingFileHelper existingFileHelper) {
+public class BBItemModelGen extends ItemModelProvider {
+    public BBItemModelGen(PackOutput output, String modid, ExistingFileHelper existingFileHelper) {
         super(output, modid, existingFileHelper);
     }
 

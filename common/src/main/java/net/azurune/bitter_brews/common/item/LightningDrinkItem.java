@@ -35,8 +35,7 @@ public class LightningDrinkItem extends GenericDrinkItem {
         super.appendHoverText(stack, level, tooltip, context);
         if (level != null && level.isClientSide) {
             boolean matches = Minecraft.getInstance().player.getUUID().equals(UUID.fromString("4bc0a7a9-497a-4aa1-a5af-cee312f94b01"));
-            if (matches) tooltip.add(Component.literal("Hi honey!! 💞"));
+            if (matches) tooltip.add(Component.literal("Hi honey!! 💞")); //- Zeus
         }
     }
-
 }

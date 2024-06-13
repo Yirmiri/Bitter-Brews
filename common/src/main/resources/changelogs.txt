@@ -7,9 +7,22 @@ Literally just a secret .txt file of every single update's changelog
 Version Release v1.0.2 MC-1.20.1
 
   Additions
+•   Added cup of lightning
 •   Added ambient sounds to the tea kettle when it is heated
-•   Added a statistic for interactions with the tea kettle
-•   Added ru_ru translations (@bricker_man)
+•   Added ru_ru translations (by @bricker_man)
+•   Added zh_cn translations (by @junshengxie)
+
+  Changes
+•   Increased the chances of getting tea leaves from flowering azalea leaves from 2.5% -> 5%
+•   Increased the chances of getting azalea flowers from flowering azalea leaves from 2.5% -> 6.9%
+•   Decreased the chances of getting mangos from jungle leaves from 2.5% -> 2%
+•   Decreased the chances of getting pepper seeds from generic bastion chests from 10% -> 5%
+•   Decreased the chances of getting soul peppers from generic bastion chests from 5% -> 2%
+•   Decreased the max amount of pepper seeds from generic bastion chests from 6 -> 4
+•   Decreased the max amount of soul pepper seeds from treasure bastion chests 4 -> 3
+
+  Bug Fixes
+•   [Forge] Fixed missing loot modifiers (tea leaves from azaleas, peppers from bartering etc)
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
