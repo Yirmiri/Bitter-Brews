@@ -7,12 +7,21 @@ Literally just a secret .txt file of every single update's changelog
 Version Release v1.0.2 MC-1.20.1
 
   Additions
-•   Added cup of lightning
 •   Added ambient sounds to the tea kettle when it is heated
+•   Added an advancement for using the Nether as a heat source for the tea kettle
+•   Added an advancement for consuming all brews in Bitter Brews
 •   Added ru_ru translations (by @bricker_man)
 •   Added zh_cn translations (by @junshengxie)
 
+•   Lightning in a bottle?... nahh a cup
+
   Changes
+•   The "Soul Pepper Challenge" advancement now requires the player to consume a soul pepper rather than collect one
+•   Changed the name of "Bitter Brew" -> "A Bitter Brew"
+•   Changed the description for "Spill The Tea" from "Place down a copper tea kettle and begin brewing!" -> "Place down a tea kettle and begin brewing!"
+•   Changed the description for "Soul Pepper Challenge" from
+"Venture into a bastion and grow a soul pepper- just be sure to have a cup of milk..." -> "Consume the flaming hot delight of the Nether- just be sure to have a cup of milk."
+•   Removed cup of milk from the "brews" item tag
 •   Increased the chances of getting tea leaves from flowering azalea leaves from 2.5% -> 5%
 •   Increased the chances of getting azalea flowers from flowering azalea leaves from 2.5% -> 6.9%
 •   Decreased the chances of getting mangos from jungle leaves from 2.5% -> 2%

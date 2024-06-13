@@ -1,28 +1,28 @@
 {
   "display": {
     "icon": {
-      "item": "bitter_brews:soul_pepper"
+      "item": "bitter_brews:cup_of_lightning"
     },
     "title": {
-      "translate": "advancements.nether.soul_pepper.title"
+      "translate": "advancements.nether.drink_lightning.title"
     },
     "description": {
-      "translate": "advancements.nether.soul_pepper.description"
+      "translate": "advancements.nether.drink_lightning.description"
     },
     "frame": "goal",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "minecraft:nether/loot_bastion",
+  "parent": "bitter_brews:nether/soul_pepper",
   "criteria": {
-    "soul_pepper": {
+    "drink_lightning": {
       "trigger": "minecraft:consume_item",
       "conditions": {
         "items": [
           {
             "items": [
-              "bitter_brews:soul_pepper"
+              "bitter_brews:cup_of_lighting"
             ]
           }
         ]
@@ -31,7 +31,7 @@
   },
   "requirements": [
     [
-      "soul_pepper"
+      "drink_lightning"
     ]
   ],
   "sends_telemetry_event": true

@@ -147,5 +147,11 @@ public class BBProperties {
                 .effect(new MobEffectInstance(MobEffects.REGENERATION, AVERAGE_DURATION, 1), 1.0F)
                 .effect(new MobEffectInstance(TLStatusEffects.SHATTERSPLEEN, AVERAGE_DURATION, 0), 1.0F)
                 .alwaysEat().build());
+
+        public static final Item.Properties AC_BLEACH_JUICE = new Item.Properties().stacksTo(2).food(new FoodProperties.Builder()
+                .effect(new MobEffectInstance(MobEffects.CONFUSION, SHORT_DURATION, 0), 0.69F)
+                .effect(new MobEffectInstance(TLStatusEffects.CONFUSION, AVERAGE_DURATION, 0), 1.0F)
+                .effect(new MobEffectInstance(TLStatusEffects.ENIGMA, SHORT_DURATION, 0), 1.0F)
+                .alwaysEat().build());
     }
 }

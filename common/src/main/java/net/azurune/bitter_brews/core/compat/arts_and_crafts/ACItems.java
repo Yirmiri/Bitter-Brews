@@ -12,6 +12,7 @@ public class ACItems {
 
     //DRINKS
     public static final Supplier<Item> CUP_OF_CHALK = registerItem("cup_of_chalk", () -> new GenericDrinkItem(BBProperties.ItemP.AC_CHALK, 32, true));
+    public static final Supplier<Item> CUP_OF_BLEACH_JUICE = registerItem("cup_of_bleach_juice", () -> new GenericDrinkItem(BBProperties.ItemP.AC_BLEACH_JUICE, 48, true));
 
     private static <T extends Item> Supplier<T> registerItem(String name, Supplier<T> itemSupplier) {
         return Services.REGISTRY_HELPER.register(BuiltInRegistries.ITEM, name, itemSupplier);

@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "item": "bitter_brews:copper_tea_kettle"
+    },
+    "title": {
+      "translate": "advancements.nether.nether_tea_kettle.title"
+    },
+    "description": {
+      "translate": "advancements.nether.nether_tea_kettle.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:nether/root",
+  "criteria": {
+    "copper_tea_kettle": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:the_nether"
+            }
+          }
+        ],
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "bitter_brews:copper_tea_kettle",
+            "properties": {}
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "nether_tea_kettle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

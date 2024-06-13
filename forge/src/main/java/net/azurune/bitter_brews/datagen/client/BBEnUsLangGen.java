@@ -80,14 +80,20 @@ public class BBEnUsLangGen extends LanguageProvider {
         add("bitter_brews.tooltip.cup_of_lightning", "Zeus told me to drink this 🤤🤤🤤");
 
         //ADVANCEMENTS
-        add("advancements.husbandry.obtain_brew.title", "Bitter Brew");
+        add("advancements.husbandry.obtain_brew.title", "A Bitter Brew");
         add("advancements.husbandry.obtain_brew.description", "Brew any bitter brew.");
         add("advancements.husbandry.place_kettle.title", "Spill The Tea");
-        add("advancements.husbandry.place_kettle.description", "Place down a copper tea kettle and begin brewing!");
+        add("advancements.husbandry.place_kettle.description", "Place down a tea kettle and begin brewing!");
         add("advancements.nether.pepper.title", "Turning Up The Heat");
         add("advancements.nether.pepper.description", "Barter with a piglin for a pepper.");
         add("advancements.nether.soul_pepper.title", "Soul Pepper Challenge");
-        add("advancements.nether.soul_pepper.description", "Venture into a bastion and grow a soul pepper- just be sure to have a cup of milk...");
+        add("advancements.nether.soul_pepper.description", "Consume the flaming hot delight of the Nether- just be sure to have a cup of milk.");
+        add("advancements.nether.nether_tea_kettle.title", "Unusual Cooking Strategies");
+        add("advancements.nether.nether_tea_kettle.description", "Use the Nether as a heating source for a tea kettle.");
+        add("advancements.nether.drink_lighting.title", "Death at 20,000 Volts");
+        add("advancements.nether.drink_lighting.description", "It probably wasn't so good of an idea to drink a cup of lightning huh?.");
+        add("advancements.nether.consume_all_brews.title", "Taste The Rainbow");
+        add("advancements.nether.consume_all_brews.description", "Consume all of the brews in Bitter Brews.");
 
         //STATS
         add("stat.minecraft.interact_with_kettle", "Interactions with Tea Kettle");

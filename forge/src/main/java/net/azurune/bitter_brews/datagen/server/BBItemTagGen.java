@@ -36,7 +36,6 @@ public class BBItemTagGen extends ItemTagsProvider {
                 .add(BBItems.CUP_OF_ESPRESSO.get())
                 .add(BBItems.CUP_OF_HOT_COCOA.get())
                 .add(BBItems.CUP_OF_CHOCOLATE_MILK.get())
-                .add(BBItems.CUP_OF_MILK.get())
                 .add(BBItems.CUP_OF_ICED_TEA.get())
                 .add(BBItems.CUP_OF_JASMINE_TEA.get())
                 .add(BBItems.CUP_OF_MELON_JUICE.get())
