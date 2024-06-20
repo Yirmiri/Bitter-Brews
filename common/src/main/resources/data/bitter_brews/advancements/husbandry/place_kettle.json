@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "bitter_brews:copper_tea_kettle"
+      "item": "bitter_brews:copper_kettle"
     },
     "title": {
       "translate": "advancements.husbandry.place_kettle.title"
@@ -16,13 +16,13 @@
   },
   "parent": "bitter_brews:husbandry/place_stove",
   "criteria": {
-    "place_tea_kettle": {
+    "place_kettle": {
       "trigger": "minecraft:placed_block",
       "conditions": {
         "location": [
           {
             "condition": "minecraft:block_state_property",
-            "block": "bitter_brews:copper_tea_kettle",
+            "block": "bitter_brews:copper_kettle",
             "properties": {}
           }
         ]
@@ -31,7 +31,7 @@
   },
   "requirements": [
     [
-      "place_tea_kettle"
+      "place_kettle"
     ]
   ],
   "sends_telemetry_event": true

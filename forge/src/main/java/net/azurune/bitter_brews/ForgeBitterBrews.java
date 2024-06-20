@@ -73,7 +73,7 @@ public class ForgeBitterBrews {
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             addAfter(event, Blocks.SMOKER, BBBlocks.MUD_STOVE.get());
             addAfter(event, BBBlocks.MUD_STOVE.get(), BBBlocks.MUD_COUNTER.get());
-            addAfter(event, Items.END_CRYSTAL, BBBlocks.COPPER_TEA_KETTLE.get());
+            addAfter(event, Items.END_CRYSTAL, BBBlocks.COPPER_KETTLE.get());
         }
         
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {

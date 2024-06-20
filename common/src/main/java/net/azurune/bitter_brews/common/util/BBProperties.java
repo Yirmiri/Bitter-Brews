@@ -20,7 +20,7 @@ public class BBProperties {
         public static final BlockBehaviour.Properties AZALEA_FLOWER = BlockBehaviour.Properties.copy(Blocks.GLOW_LICHEN).lightLevel((state) -> 0).sound(SoundType.WET_GRASS).mapColor(MapColor.TERRACOTTA_PINK);
         public static final BlockBehaviour.Properties PEPPER_CROP = BlockBehaviour.Properties.copy(Blocks.NETHER_WART).sound(SoundType.ROOTS).mapColor(MapColor.COLOR_RED);
         public static final BlockBehaviour.Properties SOUL_PEPPER_CROP = BlockBehaviour.Properties.copy(Blocks.NETHER_WART).sound(SoundType.ROOTS).mapColor(MapColor.COLOR_CYAN).lightLevel((state) -> { return SoulPepperCropBlock.mature(state) ? 0 : 7; });
-        public static final BlockBehaviour.Properties COPPER_TEA_KETTLE = BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.LANTERN);
+        public static final BlockBehaviour.Properties COPPER_KETTLE = BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK).sound(SoundType.LANTERN);
         public static final BlockBehaviour.Properties COFFEE_BUSH = BlockBehaviour.Properties.copy(Blocks.WHEAT).sound(SoundType.WET_GRASS).mapColor(MapColor.TERRACOTTA_GREEN);
     }
 

@@ -18,13 +18,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TeaKettleRecipe implements Recipe<SimpleContainer> {
+public class CopperKettleRecipe implements Recipe<SimpleContainer> {
 
     private final ResourceLocation id;
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
 
-    public TeaKettleRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems) {
+    public CopperKettleRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
@@ -68,12 +68,12 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return BBRecipeSerializer.TEA_KETTLE_RECIPE.get();
+        return BBRecipeSerializer.COPPER_KETTLE_RECIPE.get();
     }
 
     @Override
     public RecipeType<?> getType() {
-        return BBRecipeTypes.TEA_KETTLE_RECIPE_TYPE.get();
+        return BBRecipeTypes.COPPER_KETTLE_RECIPE_TYPE.get();
     }
 
     @Override
@@ -81,18 +81,18 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
         return this.recipeItems;
     }
 
-    public static class Type implements RecipeType<TeaKettleRecipe> {
+    public static class Type implements RecipeType<CopperKettleRecipe> {
         private Type() { }
         public static final Type INSTANCE = new Type();
         public static final String ID = "brewing";
     }
 
-    public static class Serializer implements RecipeSerializer<TeaKettleRecipe> {
+    public static class Serializer implements RecipeSerializer<CopperKettleRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final String ID = "brewing";
 
         @Override
-        public @NotNull TeaKettleRecipe fromJson(ResourceLocation id, JsonObject json) {
+        public @NotNull CopperKettleRecipe fromJson(ResourceLocation id, JsonObject json) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
@@ -101,22 +101,22 @@ public class TeaKettleRecipe implements Recipe<SimpleContainer> {
             for (int j = 0; j < inputs.size(); j++) {
                 inputs.set(j, Ingredient.fromJson(ingredients.get(j)));
             }
-            return new TeaKettleRecipe(id, output, inputs);
+            return new CopperKettleRecipe(id, output, inputs);
         }
 
         @Override
-        public @Nullable TeaKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+        public @Nullable CopperKettleRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
             int i = buf.readInt();
             NonNullList<Ingredient> inputs = NonNullList.withSize(i, Ingredient.EMPTY);
 
             inputs.replaceAll(ignored -> Ingredient.fromNetwork(buf));
 
             ItemStack output = buf.readItem();
-            return new TeaKettleRecipe(id, output, inputs);
+            return new CopperKettleRecipe(id, output, inputs);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf buf, TeaKettleRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buf, CopperKettleRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
             for (Ingredient ingredient : recipe.getIngredients()) {
                 ingredient.toNetwork(buf);

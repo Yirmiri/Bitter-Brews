@@ -6,9 +6,8 @@ import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.azurune.bitter_brews.BitterBrewsConstants;
-import net.azurune.bitter_brews.common.recipe.TeaKettleRecipe;
-import net.azurune.bitter_brews.common.screen.TeaKettleScreen;
-import net.azurune.bitter_brews.core.compat.jei.TeaKettleRecipeCategory;
+import net.azurune.bitter_brews.common.recipe.CopperKettleRecipe;
+import net.azurune.bitter_brews.core.compat.jei.CopperKettleRecipeCategory;
 import net.azurune.bitter_brews.core.registry.BBRecipeTypes;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
@@ -29,15 +28,15 @@ public class BitterBrewsJEIPlugin implements IModPlugin {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
-        registration.addRecipeCategories(new TeaKettleRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new CopperKettleRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
 
-        List<TeaKettleRecipe> brewingRecipes = recipeManager.getAllRecipesFor(BBRecipeTypes.TEA_KETTLE_RECIPE_TYPE.get());
-        registration.addRecipes(TeaKettleRecipeCategory.BREWING, brewingRecipes);
+        List<CopperKettleRecipe> brewingRecipes = recipeManager.getAllRecipesFor(BBRecipeTypes.COPPER_KETTLE_RECIPE_TYPE.get());
+        registration.addRecipes(CopperKettleRecipeCategory.BREWING, brewingRecipes);
     }
 
     @Override

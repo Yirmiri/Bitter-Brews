@@ -10,8 +10,8 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.function.Consumer;
 
 public class BBRecipeGen extends RecipeProvider {
-    public BBRecipeGen(PackOutput p_248933_) {
-        super(p_248933_);
+    public BBRecipeGen(PackOutput output) {
+        super(output);
     }
 
     @Override

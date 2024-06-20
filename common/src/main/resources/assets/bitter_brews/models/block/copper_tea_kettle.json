@@ -1,8 +1,0 @@
-{
-  "parent": "bitter_brews:template/template_tea_kettle",
-  "textures": {
-    "particle": "bitter_brews:block/copper_tea_kettle_particle",
-    "0": "bitter_brews:block/copper_tea_kettle"
-  },
-  "render_type": "cutout"
-}

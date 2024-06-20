@@ -29,12 +29,12 @@ public class BBBlockTagGen extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(BBBlocks.MUD_STOVE.get())
                 .add(BBBlocks.MUD_COUNTER.get())
-                .add(BBBlocks.COPPER_TEA_KETTLE.get());
+                .add(BBBlocks.COPPER_KETTLE.get());
     }
 
     private void appendNeedsStoneTool() {
         tag(BlockTags.NEEDS_STONE_TOOL)
-                .add(BBBlocks.COPPER_TEA_KETTLE.get());
+                .add(BBBlocks.COPPER_KETTLE.get());
     }
 
     private void appendHeatSources() {

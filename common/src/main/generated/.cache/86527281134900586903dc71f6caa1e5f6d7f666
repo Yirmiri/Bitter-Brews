@@ -1,4 +1,4 @@
-// 1.20.1	2024-06-07T04:26:42.3323638	Tags for minecraft:block mod id bitter_brews
+// 1.20.1	2024-06-20T15:59:59.8319396	Tags for minecraft:block mod id bitter_brews
 ca3072b1b9e980efbcdbd8877ed8550a296c2505 data/bitter_brews/tags/blocks/heat_sources.json
-59f9099502e84a87ed440450fc2c540384b0e0f8 data/minecraft/tags/blocks/mineable/pickaxe.json
-d4f4ae1d2300971bf4986dc998a472ffc2882cb2 data/minecraft/tags/blocks/needs_stone_tool.json
+b0427d306592b094aa9c99f2ba09a255dc919db6 data/minecraft/tags/blocks/mineable/pickaxe.json
+0881df585508c080ff788afe28a797a27da05a57 data/minecraft/tags/blocks/needs_stone_tool.json

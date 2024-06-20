@@ -1,6 +1,6 @@
 package net.azurune.bitter_brews.core.registry;
 
-import net.azurune.bitter_brews.common.screen.TeaKettleMenu;
+import net.azurune.bitter_brews.common.screen.CopperKettleMenu;
 import net.azurune.bitter_brews.core.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.flag.FeatureFlags;
@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 public class BBMenuTypes {
 
 
-    public static final Supplier<MenuType<TeaKettleMenu>> TEA_KETTLE_MENU = registerMenu("tea_kettle_menu", () -> new MenuType<>(TeaKettleMenu::new, FeatureFlags.VANILLA_SET));
+    public static final Supplier<MenuType<CopperKettleMenu>> TEA_KETTLE_MENU = registerMenu("tea_kettle_menu", () -> new MenuType<>(CopperKettleMenu::new, FeatureFlags.VANILLA_SET));
 
 
     private static <T extends AbstractContainerMenu> Supplier registerMenu(String name, Supplier<MenuType<T>> menuType) {

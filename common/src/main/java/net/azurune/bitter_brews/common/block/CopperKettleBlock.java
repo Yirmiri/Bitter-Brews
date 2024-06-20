@@ -1,6 +1,6 @@
 package net.azurune.bitter_brews.common.block;
 
-import net.azurune.bitter_brews.common.block_entity.TeaKettleBlockEntity;
+import net.azurune.bitter_brews.common.block_entity.CopperKettleBlockEntity;
 import net.azurune.bitter_brews.core.registry.BBBlockEntityTypes;
 import net.azurune.bitter_brews.core.registry.BBTags;
 import net.minecraft.core.BlockPos;
@@ -29,12 +29,12 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
+public class CopperKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     private static final VoxelShape SHAPE;
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
 
-    public TeaKettleBlock(BlockBehaviour.Properties settings) {
+    public CopperKettleBlock(BlockBehaviour.Properties settings) {
         super(settings);
     }
 
@@ -75,7 +75,7 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new TeaKettleBlockEntity(blockPos, blockState);
+        return new CopperKettleBlockEntity(blockPos, blockState);
     }
 
 
@@ -83,8 +83,8 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pos);
-            if(entity instanceof TeaKettleBlockEntity teaKettleBlockEntity) {
-                player.openMenu(teaKettleBlockEntity);
+            if(entity instanceof CopperKettleBlockEntity copperKettleBlockEntity) {
+                player.openMenu(copperKettleBlockEntity);
             } else {
                 throw new IllegalStateException("It seems our container is missing, uh oh!");
             }
@@ -99,7 +99,7 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
             return null;
         }
 
-        return createTickerHelper(entityType, BBBlockEntityTypes.TEA_KETTLE_BLOCK_ENTITY.get(), (level, pos, state, blockEntity) -> blockEntity.tick(level, pos, state));
+        return createTickerHelper(entityType, BBBlockEntityTypes.COPPER_KETTLE_BLOCK_ENTITY.get(), (level, pos, state, blockEntity) -> blockEntity.tick(level, pos, state));
     }
 
     @Override
@@ -118,8 +118,8 @@ public class TeaKettleBlock extends HorizontalDirectionalBlockWithBlockEntity {
     public void onRemove(BlockState state, Level level, BlockPos pos, BlockState blockState, boolean isMoving) {
         if (state.getBlock() != blockState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof TeaKettleBlockEntity) {
-                ((TeaKettleBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof CopperKettleBlockEntity) {
+                ((CopperKettleBlockEntity) blockEntity).drops();
             }
         }
 

@@ -9,7 +9,7 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.azurune.bitter_brews.BitterBrewsConstants;
-import net.azurune.bitter_brews.common.recipe.TeaKettleRecipe;
+import net.azurune.bitter_brews.common.recipe.CopperKettleRecipe;
 import net.azurune.bitter_brews.core.registry.BBBlocks;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
@@ -21,23 +21,23 @@ import java.util.Arrays;
 
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
-public class TeaKettleRecipeCategory implements IRecipeCategory<TeaKettleRecipe> {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(BitterBrewsConstants.MOD_ID, "textures/gui/tea_kettle_jei.png");
+public class CopperKettleRecipeCategory implements IRecipeCategory<CopperKettleRecipe> {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(BitterBrewsConstants.MOD_ID, "textures/gui/copper_kettle_jei.png");
     public static final ResourceLocation UID = new ResourceLocation(BitterBrewsConstants.MOD_ID, "brewing");
-    public static final RecipeType<TeaKettleRecipe> BREWING = new RecipeType<>(UID, TeaKettleRecipe.class);
+    public static final RecipeType<CopperKettleRecipe> BREWING = new RecipeType<>(UID, CopperKettleRecipe.class);
     private final IDrawable icon;
     private final IDrawable background;
 
-    public TeaKettleRecipeCategory(IGuiHelper helper) {
+    public CopperKettleRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 172, 105);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(BBBlocks.COPPER_TEA_KETTLE.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(BBBlocks.COPPER_KETTLE.get()));
     }
     /**
      * @return the type of recipe that this category handles.
      * @since 9.5.0
      */
     @Override
-    public RecipeType<TeaKettleRecipe> getRecipeType() {
+    public RecipeType<CopperKettleRecipe> getRecipeType() {
         return BREWING;
     }
 
@@ -49,7 +49,7 @@ public class TeaKettleRecipeCategory implements IRecipeCategory<TeaKettleRecipe>
      */
     @Override
     public Component getTitle() {
-        return  Component.translatable("block.bitter_brews.tea_kettle");
+        return  Component.translatable("block.bitter_brews.copper_kettle");
     }
 
     /**
@@ -76,7 +76,7 @@ public class TeaKettleRecipeCategory implements IRecipeCategory<TeaKettleRecipe>
      * @since 9.4.0
      */
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, TeaKettleRecipe recipe, IFocusGroup focuses) {
+    public void setRecipe(IRecipeLayoutBuilder builder, CopperKettleRecipe recipe, IFocusGroup focuses) {
         builder.addSlot(RecipeIngredientRole.INPUT, 27, 81).addItemStacks(Arrays.asList(recipe.getIngredients().get(0).getItems()));
         builder.addSlot(RecipeIngredientRole.INPUT, 17, 39).addItemStacks(Arrays.asList(recipe.getIngredients().get(1).getItems()));
         builder.addSlot(RecipeIngredientRole.INPUT, 37, 39).addItemStacks(Arrays.asList(recipe.getIngredients().get(2).getItems()));

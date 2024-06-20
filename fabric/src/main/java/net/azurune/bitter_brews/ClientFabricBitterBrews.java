@@ -1,6 +1,6 @@
 package net.azurune.bitter_brews;
 
-import net.azurune.bitter_brews.common.screen.TeaKettleScreen;
+import net.azurune.bitter_brews.common.screen.CopperKettleScreen;
 import net.azurune.bitter_brews.core.registry.BBBlocks;
 import net.azurune.bitter_brews.core.registry.BBMenuTypes;
 import net.fabricmc.api.ClientModInitializer;
@@ -16,9 +16,9 @@ public class ClientFabricBitterBrews implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.PEPPER_CROP.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.SOUL_PEPPER_CROP.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.AZALEA_FLOWER.get(), RenderType.cutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.COPPER_TEA_KETTLE.get(), RenderType.cutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.COPPER_KETTLE.get(), RenderType.cutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BBBlocks.COFFEE_BUSH.get(), RenderType.cutout());
 
-        MenuScreens.register(BBMenuTypes.TEA_KETTLE_MENU.get(), TeaKettleScreen::new);
+        MenuScreens.register(BBMenuTypes.TEA_KETTLE_MENU.get(), CopperKettleScreen::new);
     }
 }

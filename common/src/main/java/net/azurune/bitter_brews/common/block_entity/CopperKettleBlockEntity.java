@@ -1,8 +1,8 @@
 package net.azurune.bitter_brews.common.block_entity;
 
 
-import net.azurune.bitter_brews.common.recipe.TeaKettleRecipe;
-import net.azurune.bitter_brews.common.screen.TeaKettleMenu;
+import net.azurune.bitter_brews.common.recipe.CopperKettleRecipe;
+import net.azurune.bitter_brews.common.screen.CopperKettleMenu;
 import net.azurune.bitter_brews.core.registry.BBBlockEntityTypes;
 import net.azurune.bitter_brews.core.registry.BBTags;
 import net.minecraft.core.BlockPos;
@@ -29,28 +29,24 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, WorldlyContainer {
-
+public class CopperKettleBlockEntity extends BlockEntity implements MenuProvider, WorldlyContainer {
     private static final int OUTPUT_SLOT = 5;
-
     public static final int INVENTORY_SLOT_COUNT = 6;
-
     private static final int[] SLOTS = {0,2,3,4,5};
-
     protected final ContainerData containerData;
     private int progress = 0;
     private int maxProgress = 200;
 
     private final NonNullList<ItemStack> items = NonNullList.withSize(INVENTORY_SLOT_COUNT, ItemStack.EMPTY);
 
-    public TeaKettleBlockEntity(BlockPos pos, BlockState state) {
-        super(BBBlockEntityTypes.TEA_KETTLE_BLOCK_ENTITY.get(), pos, state);
+    public CopperKettleBlockEntity(BlockPos pos, BlockState state) {
+        super(BBBlockEntityTypes.COPPER_KETTLE_BLOCK_ENTITY.get(), pos, state);
         this.containerData = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> TeaKettleBlockEntity.this.progress;
-                    case 1 -> TeaKettleBlockEntity.this.maxProgress;
+                    case 0 -> CopperKettleBlockEntity.this.progress;
+                    case 1 -> CopperKettleBlockEntity.this.maxProgress;
                     default -> 0;
                 };
             }
@@ -59,9 +55,9 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, W
             public void set(int index, int value) {
                 switch (index) {
                     case 0:
-                        TeaKettleBlockEntity.this.progress = value;
+                        CopperKettleBlockEntity.this.progress = value;
                     case 1:
-                        TeaKettleBlockEntity.this.maxProgress = value;
+                        CopperKettleBlockEntity.this.maxProgress = value;
                 }
             }
 
@@ -75,14 +71,14 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, W
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
-        nbt.putInt("tea_kettle.progress", progress);
+        nbt.putInt("copper_kettle.progress", progress);
         ContainerHelper.saveAllItems(nbt, items);
     }
 
     @Override
     public void load(CompoundTag nbt) {
         super.load(nbt);
-        this.progress = nbt.getInt("tea_kettle.progress");
+        this.progress = nbt.getInt("copper_kettle.progress");
         ContainerHelper.loadAllItems(nbt, items);
     }
 
@@ -127,7 +123,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, W
     }
 
     private void craftItem() {
-        Optional<TeaKettleRecipe> recipe = getCurrentRecipe();
+        Optional<CopperKettleRecipe> recipe = getCurrentRecipe();
 
         if (recipe.isEmpty()) {
             return;
@@ -165,7 +161,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, W
     }
 
     private boolean hasRecipe() {
-        Optional<TeaKettleRecipe> recipe = getCurrentRecipe();
+        Optional<CopperKettleRecipe> recipe = getCurrentRecipe();
 
         if (recipe.isEmpty()) return false;
         ItemStack output = recipe.get().getResultItem(this.getLevel().registryAccess());
@@ -182,12 +178,12 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, W
         return this.getItem(OUTPUT_SLOT).getMaxStackSize() >= this.getItem(OUTPUT_SLOT).getCount() + count;
     }
 
-    private Optional<TeaKettleRecipe> getCurrentRecipe() {
+    private Optional<CopperKettleRecipe> getCurrentRecipe() {
         SimpleContainer inventory = new SimpleContainer(this.getContainerSize());
         for (int i = 0; i < this.getContainerSize(); i++) {
             inventory.setItem(i, this.getItem(i));
         }
-        return this.getLevel().getRecipeManager().getRecipeFor(TeaKettleRecipe.Type.INSTANCE, inventory, this.getLevel());
+        return this.getLevel().getRecipeManager().getRecipeFor(CopperKettleRecipe.Type.INSTANCE, inventory, this.getLevel());
     }
 
     private boolean canInsertOutputSlot() {
@@ -196,7 +192,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, W
 
     @Nullable @Override
     public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return new TeaKettleMenu(i, inventory, this, this.containerData);
+        return new CopperKettleMenu(i, inventory, this, this.containerData);
     }
 
     @Nullable @Override
@@ -215,8 +211,7 @@ public class TeaKettleBlockEntity extends BlockEntity implements MenuProvider, W
     }
 
     @Override
-    public boolean canPlaceItemThroughFace(final int i, final ItemStack itemStack,
-                                           @Nullable final Direction direction) {
+    public boolean canPlaceItemThroughFace(final int i, final ItemStack itemStack, @Nullable final Direction direction) {
         return true;
     }
 

@@ -40,10 +40,9 @@
   "bitter_brews.tooltip.soul_pepper": "You might wanna bring a cup of milk.",
   "block.bitter_brews.azalea_flower": "Azalea Flower",
   "block.bitter_brews.coffee_bush": "Coffee Bush",
-  "block.bitter_brews.copper_tea_kettle": "Tea Kettle",
+  "block.bitter_brews.copper_kettle": "Copper Kettle",
   "block.bitter_brews.mud_counter": "Mud Counter",
   "block.bitter_brews.mud_stove": "Mud Stove",
-  "block.bitter_brews.tea_kettle": "Tea Kettle",
   "death.attack.bitter_brews.coffee_bush": "%1$s was tangled and pricked to death by coffee bush",
   "death.attack.bitter_brews.coffee_bush.player": "%1$s was forced into a prickly death to a coffee bush by %2$s",
   "death.attack.bitter_brews.soul_pepper": "%1$s failed the soul pepper challenge",
@@ -84,5 +83,5 @@
   "item.bitter_brews.soul_pepper_seeds": "Soul Pepper Seeds",
   "item.bitter_brews.tea_leaves": "Tea Leaves",
   "itemgroup.bitter_brews": "Bitter Brews",
-  "stat.minecraft.interact_with_kettle": "Interactions with Tea Kettle"
+  "stat.minecraft.interact_with_kettle": "Interactions with Kettle"
 }

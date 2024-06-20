@@ -17,7 +17,7 @@ public class BBEnUsLangGen extends LanguageProvider {
         add(BBBlocks.MUD_COUNTER.get(), "Mud Counter");
         add(BBBlocks.AZALEA_FLOWER.get(), "Azalea Flower");
         add(BBBlocks.COFFEE_BUSH.get(), "Coffee Bush");
-        add(BBBlocks.COPPER_TEA_KETTLE.get(), "Tea Kettle");
+        add(BBBlocks.COPPER_KETTLE.get(), "Copper Kettle");
 
         //ITEMS
         add(BBItems.MUD_CUP.get(), "Mud Cup");
@@ -100,7 +100,7 @@ public class BBEnUsLangGen extends LanguageProvider {
         add("advancements.nether.drink_lighting.description", "It probably wasn't so good of an idea to drink a cup of lightning huh?.");
 
         //STATS
-        add("stat.minecraft.interact_with_kettle", "Interactions with Tea Kettle");
+        add("stat.minecraft.interact_with_kettle", "Interactions with Kettle");
 
         //ITEM GROUPS
         add("itemgroup.bitter_brews", "Bitter Brews");
@@ -112,8 +112,5 @@ public class BBEnUsLangGen extends LanguageProvider {
         add("death.attack.bitter_brews.soul_pepper.player", "%1$s failed the soul pepper challenge to %2$s");
         add("death.attack.bitter_brews.coffee_bush", "%1$s was tangled and pricked to death by coffee bush");
         add("death.attack.bitter_brews.coffee_bush.player", "%1$s was forced into a prickly death to a coffee bush by %2$s");
-
-        //JEI
-        add("block.bitter_brews.tea_kettle", "Tea Kettle");
     }
 }

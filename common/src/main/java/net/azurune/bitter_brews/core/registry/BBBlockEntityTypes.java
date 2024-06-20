@@ -1,6 +1,6 @@
 package net.azurune.bitter_brews.core.registry;
 
-import net.azurune.bitter_brews.common.block_entity.TeaKettleBlockEntity;
+import net.azurune.bitter_brews.common.block_entity.CopperKettleBlockEntity;
 import net.azurune.bitter_brews.core.platform.Services;
 import net.azurune.bitter_brews.core.platform.services.IPlatformHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -12,12 +12,11 @@ import java.util.function.Supplier;
 
 public class BBBlockEntityTypes {
 
-    public static final Supplier<BlockEntityType<TeaKettleBlockEntity>> TEA_KETTLE_BLOCK_ENTITY = registerBlockEntityType("tea_kettle_block_entity", () ->
-            createBlockEntity(TeaKettleBlockEntity::new,
-                    BBBlocks.COPPER_TEA_KETTLE.get()
+    public static final Supplier<BlockEntityType<CopperKettleBlockEntity>> COPPER_KETTLE_BLOCK_ENTITY = registerBlockEntityType("copper_kettle_block_entity", () ->
+            createBlockEntity(CopperKettleBlockEntity::new,
+                    BBBlocks.COPPER_KETTLE.get()
             )
     );
-
 
     private static <T extends BlockEntity> Supplier<BlockEntityType<T>> registerBlockEntityType(String name, Supplier<BlockEntityType<T>> type) {
         return Services.REGISTRY_HELPER.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, name, type);

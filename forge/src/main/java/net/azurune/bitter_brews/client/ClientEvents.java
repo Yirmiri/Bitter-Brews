@@ -1,7 +1,7 @@
 package net.azurune.bitter_brews.client;
 
 import net.azurune.bitter_brews.BitterBrewsConstants;
-import net.azurune.bitter_brews.common.screen.TeaKettleScreen;
+import net.azurune.bitter_brews.common.screen.CopperKettleScreen;
 import net.azurune.bitter_brews.core.registry.BBBlocks;
 import net.azurune.bitter_brews.core.registry.BBMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -23,9 +23,9 @@ public class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(BBBlocks.PEPPER_CROP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BBBlocks.SOUL_PEPPER_CROP.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BBBlocks.AZALEA_FLOWER.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(BBBlocks.COPPER_TEA_KETTLE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BBBlocks.COPPER_KETTLE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BBBlocks.COFFEE_BUSH.get(), RenderType.cutout());
 
-        MenuScreens.register(BBMenuTypes.TEA_KETTLE_MENU.get(), TeaKettleScreen::new);
+        MenuScreens.register(BBMenuTypes.TEA_KETTLE_MENU.get(), CopperKettleScreen::new);
     }
 }

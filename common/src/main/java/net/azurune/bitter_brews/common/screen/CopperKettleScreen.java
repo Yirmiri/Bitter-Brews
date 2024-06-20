@@ -9,10 +9,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class TeaKettleScreen extends AbstractContainerScreen<TeaKettleMenu> {
-    private static final ResourceLocation GUI_TEXTURE = new ResourceLocation(BitterBrewsConstants.MOD_ID, "textures/gui/tea_kettle.png");
+public class CopperKettleScreen extends AbstractContainerScreen<CopperKettleMenu> {
+    private static final ResourceLocation GUI_TEXTURE = new ResourceLocation(BitterBrewsConstants.MOD_ID, "textures/gui/copper_kettle.png");
 
-    public TeaKettleScreen(TeaKettleMenu menu, Inventory inv, Component title) {
+    public CopperKettleScreen(CopperKettleMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);
     }
 

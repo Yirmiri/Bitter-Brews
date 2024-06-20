@@ -1,15 +1,13 @@
 package net.azurune.bitter_brews.common.screen;
 
 import net.azurune.bitter_brews.BitterBrewsConstants;
-import net.azurune.bitter_brews.common.block_entity.TeaKettleBlockEntity;
+import net.azurune.bitter_brews.common.block_entity.CopperKettleBlockEntity;
 import net.azurune.bitter_brews.common.screen.slot.SimpleOutputSlot;
-import net.azurune.bitter_brews.common.screen.slot.TeaKettleFuelSlot;
-import net.azurune.bitter_brews.common.screen.slot.TeaKettleIngredientSlot;
+import net.azurune.bitter_brews.common.screen.slot.KettleFuelSlot;
+import net.azurune.bitter_brews.common.screen.slot.KettleIngredientSlot;
 import net.azurune.bitter_brews.core.registry.BBMenuTypes;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -17,9 +15,8 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.Vec3;
 
-public class TeaKettleMenu extends AbstractContainerMenu {
+public class CopperKettleMenu extends AbstractContainerMenu {
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
@@ -31,13 +28,13 @@ public class TeaKettleMenu extends AbstractContainerMenu {
     private final ContainerData data;
     private final Container container;
 
-    public TeaKettleMenu(int container, Inventory inventory) {
-        this(container, inventory, new SimpleContainer(TeaKettleBlockEntity.INVENTORY_SLOT_COUNT), new SimpleContainerData(6));
+    public CopperKettleMenu(int container, Inventory inventory) {
+        this(container, inventory, new SimpleContainer(CopperKettleBlockEntity.INVENTORY_SLOT_COUNT), new SimpleContainerData(6));
     }
 
-    public TeaKettleMenu(int containerInt, Inventory inv, Container container, ContainerData data) {
+    public CopperKettleMenu(int containerInt, Inventory inv, Container container, ContainerData data) {
         super(BBMenuTypes.TEA_KETTLE_MENU.get(), containerInt);
-        checkContainerSize(inv, TeaKettleBlockEntity.INVENTORY_SLOT_COUNT);
+        checkContainerSize(inv, CopperKettleBlockEntity.INVENTORY_SLOT_COUNT);
         this.data = data;
         this.container = container;
         buildSlots(container);
@@ -47,11 +44,11 @@ public class TeaKettleMenu extends AbstractContainerMenu {
     }
 
     private void buildSlots(Container container) {
-        this.addSlot(new TeaKettleFuelSlot(container, 0, 27, 68));
-        this.addSlot(new TeaKettleIngredientSlot(container, 1, 17, 26));
-        this.addSlot(new TeaKettleIngredientSlot(container, 2, 37, 26));
-        this.addSlot(new TeaKettleIngredientSlot(container, 3, 17, 46));
-        this.addSlot(new TeaKettleIngredientSlot(container, 4, 37, 46));
+        this.addSlot(new KettleFuelSlot(container, 0, 27, 68));
+        this.addSlot(new KettleIngredientSlot(container, 1, 17, 26));
+        this.addSlot(new KettleIngredientSlot(container, 2, 37, 26));
+        this.addSlot(new KettleIngredientSlot(container, 3, 17, 46));
+        this.addSlot(new KettleIngredientSlot(container, 4, 37, 46));
         this.addSlot(new SimpleOutputSlot(container, 5, 99, 46));
     }
 
@@ -75,10 +72,10 @@ public class TeaKettleMenu extends AbstractContainerMenu {
         ItemStack copyOfSourceStack = sourceStack.copy();
 
         if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            if (!moveItemStackTo(sourceStack, INVENTORY_FIRST_SLOT_INDEX, INVENTORY_FIRST_SLOT_INDEX + TeaKettleBlockEntity.INVENTORY_SLOT_COUNT, false)) {
+            if (!moveItemStackTo(sourceStack, INVENTORY_FIRST_SLOT_INDEX, INVENTORY_FIRST_SLOT_INDEX + CopperKettleBlockEntity.INVENTORY_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
-        } else if (index < INVENTORY_FIRST_SLOT_INDEX + TeaKettleBlockEntity.INVENTORY_SLOT_COUNT) {
+        } else if (index < INVENTORY_FIRST_SLOT_INDEX + CopperKettleBlockEntity.INVENTORY_SLOT_COUNT) {
             if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }

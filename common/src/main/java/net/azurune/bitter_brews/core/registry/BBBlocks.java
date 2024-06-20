@@ -13,7 +13,7 @@ public class BBBlocks {
     //MISC
     public static final Supplier<Block> MUD_STOVE = registerBlockWithItem("mud_stove", () -> new StoveBlock(BBProperties.BlockP.MUD_STOVE, 1));
     public static final Supplier<Block> MUD_COUNTER = registerBlockWithItem("mud_counter", () -> new CounterBlock(BBProperties.BlockP.MUD_COUNTER));
-    public static final Supplier<Block> COPPER_TEA_KETTLE = registerBlockWithItem("copper_tea_kettle", () -> new TeaKettleBlock(BBProperties.BlockP.COPPER_TEA_KETTLE));
+    public static final Supplier<Block> COPPER_KETTLE = registerBlockWithItem("copper_kettle", () -> new CopperKettleBlock(BBProperties.BlockP.COPPER_KETTLE));
 
     //NATURAL
     public static final Supplier<Block> AZALEA_FLOWER = registerBlockWithItem("azalea_flower", () -> new GlowLichenBlock(BBProperties.BlockP.AZALEA_FLOWER));

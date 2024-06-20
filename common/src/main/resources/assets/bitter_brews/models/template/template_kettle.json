@@ -1,9 +1,9 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "Made by Yirmiri",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "bitter_brews:block/copper_tea_kettle",
-		"particle": "bitter_brews:block/copper_tea_kettle"
+		"0": "bitter_brews:block/copper_kettle",
+		"particle": "bitter_brews:block/copper_kettle"
 	},
 	"elements": [
 		{
