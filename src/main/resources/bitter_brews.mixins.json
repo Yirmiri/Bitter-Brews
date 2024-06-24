@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.yirmiri.bitter_brews.core.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "FriendlyByeBufMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

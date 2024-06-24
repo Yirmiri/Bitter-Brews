@@ -1,0 +1,23 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:cup_of_water"
+    },
+    {
+      "item": "minecraft:blue_ice"
+    },
+    {
+      "item": "minecraft:fermented_spider_eye"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_iced_tea"
+  }
+}

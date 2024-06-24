@@ -1,0 +1,23 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:cup_of_water"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "bitter_brews:dried_tea_leaves"
+    },
+    {
+      "item": "minecraft:horn_coral_fan"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_kelp_tea"
+  }
+}
