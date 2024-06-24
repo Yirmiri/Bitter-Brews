@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "bitter_brews:pepper"
+    },
+    "title": {
+      "translate": "advancements.nether.pepper.title"
+    },
+    "description": {
+      "translate": "advancements.nether.pepper.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:nether/distract_piglin",
+  "criteria": {
+    "pepper": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "bitter_brews:pepper"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "pepper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

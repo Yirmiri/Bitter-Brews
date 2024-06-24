@@ -1,0 +1,23 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:cup_of_water"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:golden_carrot"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_glow_berry_juice"
+  }
+}

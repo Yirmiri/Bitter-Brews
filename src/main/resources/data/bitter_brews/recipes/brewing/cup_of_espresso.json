@@ -1,0 +1,23 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:cup_of_coffee"
+    },
+    {
+      "item": "bitter_brews:coffee_beans"
+    },
+    {
+      "item": "bitter_brews:soul_pepper"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_espresso"
+  }
+}

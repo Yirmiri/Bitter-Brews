@@ -1,0 +1,23 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:cup_of_milk"
+    },
+    {
+      "item": "bitter_brews:coffee_beans"
+    },
+    {
+      "item": "bitter_brews:coffee_beans"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:prismarine_crystals"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_dark_coffee"
+  }
+}

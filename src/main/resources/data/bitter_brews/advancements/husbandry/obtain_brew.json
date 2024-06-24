@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "bitter_brews:cup_of_green_tea"
+    },
+    "title": {
+      "translate": "advancements.husbandry.obtain_brew.title"
+    },
+    "description": {
+      "translate": "advancements.husbandry.obtain_brew.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "bitter_brews:husbandry/place_kettle",
+  "criteria": {
+    "obtain_brew": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "bitter_brews:brews"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_brew"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

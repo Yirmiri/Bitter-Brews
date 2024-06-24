@@ -1,0 +1,23 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:mud_cup"
+    },
+    {
+      "item": "minecraft:shroomlight"
+    },
+    {
+      "item": "minecraft:crimson_roots"
+    },
+    {
+      "item": "minecraft:crimson_fungus"
+    },
+    {
+      "item": "bitter_brews:pepper"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_crimson_tea"
+  }
+}

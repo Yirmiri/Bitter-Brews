@@ -1,0 +1,23 @@
+{
+  "type": "bitter_brews:brewing",
+  "ingredients": [
+    {
+      "item": "bitter_brews:cup_of_water"
+    },
+    {
+      "item": "bitter_brews:dried_tea_leaves"
+    },
+    {
+      "item": "bitter_brews:dried_tea_leaves"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:hanging_roots"
+    }
+  ],
+  "output": {
+    "item": "bitter_brews:cup_of_black_tea"
+  }
+}
