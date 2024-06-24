@@ -1,9 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": [
-    "jungle",
-    "sparse_jungle"
-  ],
-  "features": "bitter_brews:coffee_bush_placed",
-  "step": "vegetal_decoration"
-}

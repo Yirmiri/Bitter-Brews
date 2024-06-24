@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/crop",
-  "textures": {
-    "crop": "bitter_brews:block/pepper_crop_stage2"
-  }
-}
