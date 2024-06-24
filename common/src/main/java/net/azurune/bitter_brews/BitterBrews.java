@@ -16,7 +16,7 @@ public class BitterBrews {
         BBRecipeSerializer.loadRecipeSerializers();
         BBMenuTypes.loadMenuTypes();
         BBRecipeTypes.loadRecipeTypes();
-        BBCompatRegistries.init();
+        BBCompatRegistries.initCompat();
     }
 
     public static boolean isModLoaded(String modId) {

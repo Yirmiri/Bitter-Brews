@@ -6,7 +6,7 @@ import net.azurune.bitter_brews.core.compat.arts_and_crafts.ACItems;
 public class BBCompatRegistries {
     public static final boolean artsAndCrafts;
 
-    public static void init() {
+    public static void initCompat() {
         if (artsAndCrafts) ACItems.loadACItems();
     }
 
