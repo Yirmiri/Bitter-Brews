@@ -1,7 +1,6 @@
 package net.azurune.bitter_brews.item;
 
 import net.azurune.bitter_brews.registry.RegisterDrinkItems;
-import net.azurune.bitter_brews.registry.RegisterItems;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -38,7 +37,7 @@ public class CupItem extends Item {
                 if (world.getFluidState(blockPos).isIn(FluidTags.WATER)) {
                     world.playSound(user, user.getX(), user.getY(), user.getZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
                     world.emitGameEvent(user, GameEvent.FLUID_PICKUP, blockPos);
-                    return TypedActionResult.success(this.fill(itemStack, user, (new ItemStack(RegisterDrinkItems.CUP_OF_WATER))));
+                    return TypedActionResult.success(this.fillCup(itemStack, user, (new ItemStack(RegisterDrinkItems.CUP_OF_WATER))));
                 }
             }
 
@@ -46,7 +45,7 @@ public class CupItem extends Item {
         return TypedActionResult.pass(itemStack);
     }
 
-    protected ItemStack fill(ItemStack stack, PlayerEntity player, ItemStack outputStack) {
+    protected ItemStack fillCup(ItemStack stack, PlayerEntity player, ItemStack outputStack) {
         player.incrementStat(Stats.USED.getOrCreateStat(this));
         return ItemUsage.exchangeStack(stack, player, outputStack);
     }
