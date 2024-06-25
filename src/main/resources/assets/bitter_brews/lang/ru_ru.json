@@ -1,5 +1,5 @@
 {
-  "advancements.husbandry.consume_all_brews.description": "Попробуйте все варева в "Горьких Варевах".",
+  "advancements.husbandry.consume_all_brews.description": "Попробуйте все варева в \"Горьких Варевах\".",
   "advancements.husbandry.consume_all_brews.title": "Скиттлстрянка",
   "advancements.husbandry.obtain_brew.description": "Сварите любое горькое варево.",
   "advancements.husbandry.obtain_brew.title": "Горькое Варево",
@@ -14,7 +14,7 @@
   "advancements.nether.pepper.description": "Поторгуйте с Пиглином, чтобы раздобыть перец.",
   "advancements.nether.pepper.title": "Острая необходимость!",
   "advancements.nether.soul_pepper.description": "Попробуйте пылающе острую прелесть Незера - только не забудьте взять кружку молока...",
-  "advancements.nether.soul_pepper.title": ""Перец душ" челлендж",
+  "advancements.nether.soul_pepper.title": "\"Перец душ\" челлендж",
 
   "bitter_brews.tooltip.cup_of_azalea_tea": "Сладкое цветущее варево, способное успокоить даже самого буйного игрока.",
   "bitter_brews.tooltip.cup_of_black_tea": "Чёрный чай - хорошее ракетное топливо.",
@@ -49,8 +49,8 @@
 
   "death.attack.bitter_brews.coffee_bush": "%1$s застрял и искололся до смерти в кофейном кусте",
   "death.attack.bitter_brews.coffee_bush.player": "%1$s Был вынужден принять колючую смерть в кофейном кусте из-за %2$s",
-  "death.attack.bitter_brews.soul_pepper": "%1$s завалил челлендж "Перец душ"",
-  "death.attack.bitter_brews.soul_pepper.player": "%1$s проиграл у %2$s в челлендже "Перец душ"",
+  "death.attack.bitter_brews.soul_pepper": "%1$s завалил челлендж \"Перец душ\"",
+  "death.attack.bitter_brews.soul_pepper.player": "%1$s проиграл у %2$s в челлендже \"Перец душ\"",
   "death.attack.bitter_brews.stove": "%1$s на личном опыте узнал правила обращения с плитой",
   "death.attack.bitter_brews.stove.player": "%2$s приготовил деликатес из %1$s",
 
@@ -88,7 +88,7 @@
   "item.bitter_brews.soul_pepper_seeds": "Семена перца душ",
   "item.bitter_brews.tea_leaves": "Листья чая",
 
-  "itemgroup.bitter_brews": "Горькие Варева"
+  "itemgroup.bitter_brews": "Горькие Варева",
 
   "stat.minecraft.interact_with_kettle": "Взаимодействия с чайником"
 }

@@ -16,10 +16,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.azurune.bitter_brews.FabricBitterBrews"
+      "net.azurune.bitter_brews.BitterBrews"
     ],
     "client": [
-      "net.azurune.bitter_brews.ClientFabricBitterBrews"
+      "net.azurune.bitter_brews.BitterBrewsClient"
+    ],
+    "fabric-datagen": [
+      "net.azurune.bitter_brews.BitterBrewsDataGen"
     ],
     "jei_mod_plugin": [
       "net.azurune.bitter_brews.compat.jei.BitterBrewsJEIPlugin"
@@ -34,8 +37,5 @@
     "minecraft": "${minecraft_version}",
     "java": ">=17",
     "tipsylib": ">=2.0.7"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
